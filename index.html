@@ -1,0 +1,969 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Marpay Plus — Water Subscription for Homes, Offices & Events in Lagos</title>
+<meta name="description" content="Subscribe to Marpay Plus and get quality 50cl bottled water delivered to your home, office, event, or store at near-factory price. Lagos delivery. From ₦1,500/pack.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --navy: #0A2647;
+    --navy-mid: #0E3460;
+    --navy-light: #144272;
+    --blue: #205295;
+    --sky: #2C74B3;
+    --accent: #00B4D8;
+    --accent-bright: #48CAE4;
+    --white: #ffffff;
+    --off-white: #F0F7FF;
+    --pale: #E8F4FD;
+    --text-dark: #0A2647;
+    --text-mid: #2D4E6E;
+    --text-muted: #5B7FA0;
+    --border: rgba(44,116,179,0.15);
+    --radius: 12px;
+    --radius-lg: 20px;
+    --shadow: 0 4px 24px rgba(10,38,71,0.10);
+    --shadow-lg: 0 12px 40px rgba(10,38,71,0.16);
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--white);
+    color: var(--text-dark);
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4 { font-family: 'Sora', sans-serif; line-height: 1.2; }
+
+  /* NAV */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 1rem 5%;
+    background: rgba(10,38,71,0.95);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+  .nav-logo { font-family: 'Sora', sans-serif; font-weight: 700; font-size: 1.3rem; color: var(--white); letter-spacing: -0.02em; }
+  .nav-logo span { color: var(--accent); }
+  .nav-cta {
+    background: var(--accent); color: var(--navy); font-family: 'Sora', sans-serif;
+    font-weight: 600; font-size: 0.875rem; padding: 0.55rem 1.4rem;
+    border-radius: 50px; text-decoration: none; transition: all 0.2s;
+    white-space: nowrap;
+  }
+  .nav-cta:hover { background: var(--accent-bright); transform: translateY(-1px); }
+
+  /* HERO */
+  .hero {
+    min-height: 100vh;
+    background: var(--navy);
+    display: flex; align-items: center;
+    position: relative; overflow: hidden;
+    padding: 8rem 5% 5rem;
+  }
+  .hero::before {
+    content: '';
+    position: absolute; top: -30%; right: -10%; width: 70%; height: 130%;
+    background: radial-gradient(ellipse at center, rgba(0,180,216,0.12) 0%, transparent 65%);
+    pointer-events: none;
+  }
+  .hero::after {
+    content: '';
+    position: absolute; bottom: 0; left: 0; right: 0; height: 1px;
+    background: linear-gradient(90deg, transparent, var(--accent), transparent);
+  }
+  .hero-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 4rem;
+    align-items: center; max-width: 1200px; margin: 0 auto; width: 100%;
+  }
+  .hero-badge {
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    background: rgba(0,180,216,0.15); border: 1px solid rgba(0,180,216,0.3);
+    color: var(--accent-bright); font-size: 0.78rem; font-weight: 500;
+    padding: 0.4rem 1rem; border-radius: 50px; margin-bottom: 1.5rem;
+    letter-spacing: 0.06em; text-transform: uppercase;
+  }
+  .hero-badge::before { content: ''; width: 6px; height: 6px; background: var(--accent); border-radius: 50%; animation: pulse 2s infinite; }
+  @keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:0.5;transform:scale(1.3)} }
+
+  .hero h1 {
+    font-size: clamp(2.2rem, 4.5vw, 3.5rem);
+    color: var(--white); font-weight: 700; margin-bottom: 1.25rem;
+    letter-spacing: -0.03em;
+  }
+  .hero h1 span { color: var(--accent); }
+  .hero-sub {
+    font-size: 1.1rem; color: rgba(255,255,255,0.72); line-height: 1.7;
+    margin-bottom: 2.5rem; max-width: 480px;
+  }
+  .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
+  .btn-primary {
+    background: var(--accent); color: var(--navy); font-family: 'Sora', sans-serif;
+    font-weight: 700; font-size: 1rem; padding: 0.9rem 2rem;
+    border-radius: 50px; text-decoration: none; transition: all 0.2s;
+    display: inline-flex; align-items: center; gap: 0.4rem;
+  }
+  .btn-primary:hover { background: var(--accent-bright); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,180,216,0.35); }
+  .btn-ghost {
+    background: transparent; color: var(--white);
+    border: 1px solid rgba(255,255,255,0.3); font-family: 'Sora', sans-serif;
+    font-weight: 500; font-size: 1rem; padding: 0.9rem 2rem;
+    border-radius: 50px; text-decoration: none; transition: all 0.2s;
+  }
+  .btn-ghost:hover { border-color: var(--accent); color: var(--accent); }
+
+  .hero-visual {
+    display: flex; justify-content: center; align-items: center;
+    position: relative;
+  }
+  .bottle-wrapper {
+    position: relative; display: flex; justify-content: center; align-items: center;
+  }
+  .hero-circle {
+    width: 380px; height: 380px; border-radius: 50%;
+    background: rgba(0,180,216,0.06);
+    border: 1px solid rgba(0,180,216,0.2);
+    display: flex; align-items: center; justify-content: center;
+    position: relative;
+  }
+  .hero-circle::before {
+    content: ''; position: absolute; inset: 30px; border-radius: 50%;
+    border: 1px dashed rgba(0,180,216,0.2);
+    animation: spin 20s linear infinite;
+  }
+  @keyframes spin { from{transform:rotate(0deg)} to{transform:rotate(360deg)} }
+  .hero-bottle-svg { position: relative; z-index: 2; }
+
+  .hero-stat-pill {
+    position: absolute; background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.15); border-radius: 50px;
+    padding: 0.6rem 1.2rem; color: var(--white);
+    font-size: 0.82rem; backdrop-filter: blur(8px);
+    white-space: nowrap;
+  }
+  .pill-price { top: 12%; right: -5%; }
+  .pill-delivery { bottom: 20%; left: -8%; }
+  .pill-price strong, .pill-delivery strong { color: var(--accent); }
+
+  /* SECTION COMMONS */
+  section { padding: 6rem 5%; }
+  .container { max-width: 1100px; margin: 0 auto; }
+  .section-label {
+    font-size: 0.78rem; font-weight: 600; letter-spacing: 0.1em;
+    text-transform: uppercase; color: var(--sky);
+    margin-bottom: 0.75rem; display: block;
+  }
+  .section-title {
+    font-size: clamp(1.8rem, 3vw, 2.5rem); font-weight: 700;
+    color: var(--text-dark); letter-spacing: -0.03em; margin-bottom: 1rem;
+  }
+  .section-sub { font-size: 1.05rem; color: var(--text-mid); max-width: 560px; line-height: 1.7; }
+
+  /* WHAT IS */
+  .what-is { background: var(--off-white); }
+  .what-is-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+  .what-is-text p {
+    font-size: 1.05rem; color: var(--text-mid); line-height: 1.8;
+    margin-bottom: 1rem;
+  }
+  .price-highlight {
+    display: inline-flex; align-items: baseline; gap: 0.4rem;
+    background: var(--navy); color: var(--white);
+    padding: 0.8rem 1.5rem; border-radius: var(--radius);
+    margin-top: 1rem;
+  }
+  .price-highlight .amount { font-family: 'Sora', sans-serif; font-size: 1.8rem; font-weight: 700; color: var(--accent); }
+  .price-highlight .per { font-size: 0.9rem; color: rgba(255,255,255,0.6); }
+  .what-is-card {
+    background: var(--navy); border-radius: var(--radius-lg);
+    padding: 3rem 2.5rem; color: var(--white);
+    position: relative; overflow: hidden;
+  }
+  .what-is-card::before {
+    content: '💧';
+    position: absolute; right: -20px; bottom: -20px;
+    font-size: 9rem; opacity: 0.06;
+  }
+  .what-is-card h3 { font-size: 1.4rem; margin-bottom: 1rem; color: var(--accent); }
+  .what-is-card p { color: rgba(255,255,255,0.75); line-height: 1.8; }
+
+  /* WHY SUBSCRIBE */
+  .benefits-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem;
+    margin-top: 3rem;
+  }
+  .benefit-card {
+    background: var(--white); border: 1px solid var(--border);
+    border-radius: var(--radius-lg); padding: 2rem 1.75rem;
+    transition: all 0.25s; position: relative; overflow: hidden;
+  }
+  .benefit-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); border-color: rgba(0,180,216,0.3); }
+  .benefit-icon {
+    width: 52px; height: 52px; border-radius: var(--radius);
+    background: var(--pale); display: flex; align-items: center;
+    justify-content: center; font-size: 1.5rem; margin-bottom: 1.25rem;
+  }
+  .benefit-card h4 { font-size: 1rem; font-weight: 600; margin-bottom: 0.5rem; color: var(--navy); }
+  .benefit-card p { font-size: 0.9rem; color: var(--text-muted); line-height: 1.65; }
+
+  /* PACKAGES */
+  .packages { background: var(--navy); }
+  .packages .section-title { color: var(--white); }
+  .packages .section-sub { color: rgba(255,255,255,0.6); }
+  .packages .section-label { color: var(--accent); }
+
+  .tabs-nav {
+    display: flex; gap: 0.5rem; margin: 2.5rem 0 2rem; flex-wrap: wrap;
+  }
+  .tab-btn {
+    background: rgba(255,255,255,0.07); color: rgba(255,255,255,0.6);
+    border: 1px solid rgba(255,255,255,0.1); border-radius: 50px;
+    padding: 0.6rem 1.4rem; font-family: 'Sora', sans-serif;
+    font-size: 0.875rem; font-weight: 500; cursor: pointer; transition: all 0.2s;
+  }
+  .tab-btn:hover { background: rgba(255,255,255,0.12); color: var(--white); }
+  .tab-btn.active { background: var(--accent); color: var(--navy); border-color: var(--accent); font-weight: 700; }
+
+  .tab-panel { display: none; }
+  .tab-panel.active { display: block; }
+
+  .package-card {
+    background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.12);
+    border-radius: var(--radius-lg); padding: 2.5rem;
+    display: grid; grid-template-columns: 1fr auto; gap: 2rem; align-items: start;
+  }
+  .package-card h3 { font-size: 1.6rem; color: var(--white); margin-bottom: 1rem; }
+  .package-card > .pkg-left > p { color: rgba(255,255,255,0.65); line-height: 1.75; margin-bottom: 1.5rem; }
+  .pkg-list { list-style: none; display: flex; flex-direction: column; gap: 0.6rem; }
+  .pkg-list li {
+    display: flex; align-items: center; gap: 0.75rem;
+    font-size: 0.92rem; color: rgba(255,255,255,0.75);
+  }
+  .pkg-list li::before {
+    content: ''; width: 18px; height: 18px; border-radius: 50%;
+    background: rgba(0,180,216,0.2); border: 1px solid var(--accent);
+    flex-shrink: 0; display: flex; align-items: center; justify-content: center;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='8' viewBox='0 0 10 8'%3E%3Cpath d='M1 4l2.5 2.5L9 1' stroke='%2300B4D8' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat; background-position: center;
+  }
+  .pkg-right { display: flex; flex-direction: column; align-items: flex-end; gap: 1.5rem; min-width: 200px; }
+  .pkg-price-box {
+    background: rgba(0,180,216,0.12); border: 1px solid rgba(0,180,216,0.3);
+    border-radius: var(--radius); padding: 1.25rem 1.5rem; text-align: center;
+  }
+  .pkg-price-box .price { font-family: 'Sora', sans-serif; font-size: 2rem; font-weight: 700; color: var(--accent); }
+  .pkg-price-box .per { font-size: 0.82rem; color: rgba(255,255,255,0.5); display: block; margin-top: 0.2rem; }
+  .btn-pkg {
+    background: var(--accent); color: var(--navy); font-family: 'Sora', sans-serif;
+    font-weight: 700; font-size: 0.9rem; padding: 0.85rem 1.5rem;
+    border-radius: 50px; text-decoration: none; transition: all 0.2s;
+    white-space: nowrap; display: inline-block; text-align: center;
+  }
+  .btn-pkg:hover { background: var(--accent-bright); transform: translateY(-2px); }
+
+  /* CUSTOM BRANDING */
+  .branding { background: var(--navy-light); }
+  .branding-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+  .branding .section-title { color: var(--white); }
+  .branding .section-sub { color: rgba(255,255,255,0.65); margin-bottom: 1.5rem; }
+  .branding-note { font-size: 0.85rem; color: rgba(255,255,255,0.4); line-height: 1.65; margin-bottom: 2rem; }
+  .branding-visual {
+    background: rgba(0,180,216,0.08); border: 1px solid rgba(0,180,216,0.2);
+    border-radius: var(--radius-lg); padding: 3rem 2rem; text-align: center;
+    position: relative; overflow: hidden;
+  }
+  .branding-visual::before {
+    content: ''; position: absolute; inset: 0;
+    background: radial-gradient(ellipse at 50% 30%, rgba(0,180,216,0.12) 0%, transparent 60%);
+  }
+  .brand-bottle-icon { font-size: 5rem; margin-bottom: 1rem; position: relative; z-index: 1; }
+  .brand-tag {
+    display: inline-block; background: var(--accent); color: var(--navy);
+    font-family: 'Sora', sans-serif; font-weight: 700; font-size: 0.8rem;
+    padding: 0.4rem 1.2rem; border-radius: 50px; position: relative; z-index: 1;
+    letter-spacing: 0.05em;
+  }
+  .branding-visual p { color: rgba(255,255,255,0.5); font-size: 0.88rem; margin-top: 1rem; position: relative; z-index: 1; }
+
+  /* HOW IT WORKS */
+  .how { background: var(--off-white); }
+  .steps {
+    display: grid; grid-template-columns: repeat(5, 1fr); gap: 0;
+    margin-top: 3.5rem; position: relative;
+  }
+  .steps::before {
+    content: ''; position: absolute; top: 28px; left: 10%; right: 10%;
+    height: 1px; background: linear-gradient(90deg, transparent, var(--sky), var(--accent), var(--sky), transparent);
+    z-index: 0;
+  }
+  .step { text-align: center; position: relative; z-index: 1; padding: 0 0.5rem; }
+  .step-num {
+    width: 56px; height: 56px; border-radius: 50%;
+    background: var(--navy); color: var(--accent);
+    font-family: 'Sora', sans-serif; font-weight: 700; font-size: 1.1rem;
+    display: flex; align-items: center; justify-content: center;
+    margin: 0 auto 1.25rem; border: 2px solid rgba(0,180,216,0.4);
+  }
+  .step h4 { font-size: 0.9rem; font-weight: 600; color: var(--navy); margin-bottom: 0.5rem; }
+  .step p { font-size: 0.82rem; color: var(--text-muted); line-height: 1.6; }
+
+  /* PRICING */
+  .pricing-table-wrap { margin-top: 2.5rem; overflow-x: auto; }
+  table {
+    width: 100%; border-collapse: collapse;
+    font-size: 0.95rem; min-width: 560px;
+  }
+  thead tr { background: var(--navy); color: var(--white); }
+  thead th { padding: 1rem 1.25rem; text-align: left; font-family: 'Sora', sans-serif; font-weight: 600; font-size: 0.875rem; }
+  thead th:first-child { border-radius: var(--radius) 0 0 0; }
+  thead th:last-child { border-radius: 0 var(--radius) 0 0; }
+  tbody tr { border-bottom: 1px solid var(--border); transition: background 0.15s; }
+  tbody tr:hover { background: var(--pale); }
+  tbody td { padding: 1rem 1.25rem; color: var(--text-mid); }
+  tbody td:first-child { font-weight: 500; color: var(--navy); }
+  .price-cell { font-family: 'Sora', sans-serif; font-weight: 700; color: var(--sky); }
+  .pricing-note { margin-top: 1rem; font-size: 0.87rem; color: var(--text-muted); font-style: italic; }
+
+  /* FORM */
+  .form-section { background: var(--navy); }
+  .form-section .section-title { color: var(--white); }
+  .form-section .section-sub { color: rgba(255,255,255,0.6); margin-bottom: 2.5rem; }
+  .form-section .section-label { color: var(--accent); }
+
+  .form-card {
+    background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.1);
+    border-radius: var(--radius-lg); padding: 3rem; max-width: 720px; margin: 0 auto;
+  }
+  .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; }
+  .form-group { display: flex; flex-direction: column; gap: 0.4rem; }
+  .form-group.full { grid-column: 1 / -1; }
+  label { font-size: 0.84rem; color: rgba(255,255,255,0.6); font-weight: 500; }
+  input, select, textarea {
+    background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 8px; color: var(--white); font-family: 'DM Sans', sans-serif;
+    font-size: 0.95rem; padding: 0.75rem 1rem; transition: border 0.2s; width: 100%;
+  }
+  input::placeholder, textarea::placeholder { color: rgba(255,255,255,0.28); }
+  input:focus, select:focus, textarea:focus {
+    outline: none; border-color: var(--accent); background: rgba(0,180,216,0.05);
+  }
+  select option { background: var(--navy-mid); color: var(--white); }
+  .radio-group { display: flex; gap: 1rem; }
+  .radio-opt {
+    flex: 1; border: 1px solid rgba(255,255,255,0.12); border-radius: 8px;
+    padding: 0.75rem 1rem; cursor: pointer; transition: all 0.2s;
+    display: flex; align-items: center; gap: 0.5rem;
+    color: rgba(255,255,255,0.6); font-size: 0.92rem;
+  }
+  .radio-opt:hover { border-color: var(--accent); color: var(--white); }
+  .radio-opt input[type="radio"] { accent-color: var(--accent); width: auto; }
+  .radio-opt.selected { border-color: var(--accent); background: rgba(0,180,216,0.1); color: var(--white); }
+
+  .conditional-field { display: none; }
+  .conditional-field.visible { display: flex; flex-direction: column; gap: 0.4rem; }
+
+  .checkbox-wrap { display: flex; align-items: center; gap: 0.75rem; }
+  .checkbox-wrap input[type="checkbox"] { width: auto; accent-color: var(--accent); cursor: pointer; }
+  .checkbox-wrap label { font-size: 0.92rem; color: rgba(255,255,255,0.7); cursor: pointer; }
+
+  .btn-submit {
+    width: 100%; background: var(--accent); color: var(--navy);
+    font-family: 'Sora', sans-serif; font-weight: 700; font-size: 1.05rem;
+    padding: 1.1rem; border-radius: 50px; border: none; cursor: pointer;
+    transition: all 0.2s; margin-top: 0.75rem; letter-spacing: 0.01em;
+  }
+  .btn-submit:hover { background: var(--accent-bright); transform: translateY(-2px); box-shadow: 0 8px 28px rgba(0,180,216,0.4); }
+
+  .success-msg {
+    display: none; text-align: center; padding: 3rem 2rem;
+  }
+  .success-msg .checkmark { font-size: 3.5rem; margin-bottom: 1rem; }
+  .success-msg h3 { font-size: 1.5rem; color: var(--white); margin-bottom: 0.75rem; }
+  .success-msg p { color: rgba(255,255,255,0.6); font-size: 1rem; line-height: 1.7; }
+
+  /* FOOTER */
+  footer {
+    background: #061828; padding: 3.5rem 5% 2.5rem;
+    border-top: 1px solid rgba(255,255,255,0.06);
+  }
+  .footer-top {
+    display: flex; justify-content: space-between; align-items: flex-start;
+    margin-bottom: 2rem; flex-wrap: wrap; gap: 1.5rem;
+  }
+  .footer-logo { font-family: 'Sora', sans-serif; font-weight: 700; font-size: 1.5rem; color: var(--white); }
+  .footer-logo span { color: var(--accent); }
+  .footer-tagline { font-size: 0.9rem; color: rgba(255,255,255,0.4); margin-top: 0.4rem; }
+  .footer-info p { color: rgba(255,255,255,0.45); font-size: 0.875rem; line-height: 1.8; text-align: right; }
+  .footer-bottom {
+    border-top: 1px solid rgba(255,255,255,0.06); padding-top: 1.5rem;
+    font-size: 0.82rem; color: rgba(255,255,255,0.3); text-align: center;
+    line-height: 1.8;
+  }
+
+  /* RESPONSIVE */
+  @media (max-width: 900px) {
+    .hero-grid { grid-template-columns: 1fr; text-align: center; }
+    .hero-actions { justify-content: center; }
+    .hero-visual { display: none; }
+    .what-is-grid { grid-template-columns: 1fr; }
+    .benefits-grid { grid-template-columns: 1fr 1fr; }
+    .steps { grid-template-columns: 1fr 1fr; }
+    .steps::before { display: none; }
+    .step { margin-bottom: 2rem; }
+    .package-card { grid-template-columns: 1fr; }
+    .pkg-right { align-items: flex-start; }
+    .branding-grid { grid-template-columns: 1fr; }
+    .form-grid { grid-template-columns: 1fr; }
+    .form-group.full { grid-column: 1; }
+    .footer-top { flex-direction: column; }
+    .footer-info p { text-align: left; }
+  }
+  @media (max-width: 600px) {
+    section { padding: 4rem 5%; }
+    .benefits-grid { grid-template-columns: 1fr; }
+    .steps { grid-template-columns: 1fr; }
+    .tabs-nav { gap: 0.4rem; }
+    .tab-btn { font-size: 0.8rem; padding: 0.5rem 1rem; }
+    .hero-circle { width: 260px; height: 260px; }
+    .radio-group { flex-direction: column; }
+    .form-card { padding: 2rem 1.25rem; }
+  }
+
+  /* Scroll reveal */
+  .reveal { opacity: 0; transform: translateY(24px); transition: all 0.55s ease; }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">Marpay<span>+</span></div>
+  <a href="#subscribe" class="nav-cta">Subscribe Now →</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-grid">
+    <div class="hero-content">
+      <div class="hero-badge">Lagos Water Subscription</div>
+      <h1>Premium Water.<br><span>Delivered on</span><br>Your Terms.</h1>
+      <p class="hero-sub">Marpay Plus is Lagos's water subscription service for homes, offices, events, and retailers. Near-factory pricing. Reliable delivery. No stress.</p>
+      <div class="hero-actions">
+        <a href="#subscribe" class="btn-primary">Subscribe Now →</a>
+        <a href="#packages" class="btn-ghost">See Our Packages ↓</a>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="bottle-wrapper">
+        <div class="hero-circle">
+          <svg class="hero-bottle-svg" width="140" height="240" viewBox="0 0 140 240" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="50" y="8" width="40" height="18" rx="4" fill="#00B4D8" opacity="0.5"/>
+            <rect x="55" y="4" width="30" height="10" rx="3" fill="#00B4D8"/>
+            <path d="M30 50 Q25 80 25 120 Q25 180 30 210 Q35 230 70 232 Q105 230 110 210 Q115 180 115 120 Q115 80 110 50 Q105 28 70 26 Q35 28 30 50Z" fill="#144272"/>
+            <path d="M30 50 Q25 80 25 120 Q25 180 30 210 Q35 230 70 232 Q105 230 110 210 Q115 180 115 120 Q115 80 110 50 Q105 28 70 26 Q35 28 30 50Z" fill="url(#bottleGrad)" opacity="0.3"/>
+            <rect x="38" y="80" width="64" height="100" rx="4" fill="white" opacity="0.08"/>
+            <text x="70" y="115" text-anchor="middle" font-family="Sora, sans-serif" font-weight="700" font-size="11" fill="#00B4D8">MARPAY</text>
+            <text x="70" y="130" text-anchor="middle" font-family="Sora, sans-serif" font-weight="700" font-size="18" fill="white">PLUS</text>
+            <text x="70" y="148" text-anchor="middle" font-family="Sora, sans-serif" font-size="8" fill="rgba(255,255,255,0.5)">50cl Still Water</text>
+            <path d="M25 120 Q25 140 25 160 Q40 150 70 148 Q100 150 115 160 Q115 140 115 120 Q100 115 70 112 Q40 115 25 120Z" fill="#00B4D8" opacity="0.12"/>
+            <defs>
+              <linearGradient id="bottleGrad" x1="25" y1="0" x2="115" y2="0" gradientUnits="userSpaceOnUse">
+                <stop offset="0%" stop-color="white" stop-opacity="0.3"/>
+                <stop offset="50%" stop-color="white" stop-opacity="0"/>
+                <stop offset="100%" stop-color="white" stop-opacity="0.1"/>
+              </linearGradient>
+            </defs>
+          </svg>
+        </div>
+        <div class="hero-stat-pill pill-price"><strong>₦1,500</strong> / pack</div>
+        <div class="hero-stat-pill pill-delivery">🚚 Lagos-Wide Delivery</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT IS -->
+<section class="what-is" id="about">
+  <div class="container">
+    <div class="what-is-grid reveal">
+      <div class="what-is-text">
+        <span class="section-label">About</span>
+        <h2 class="section-title">What is Marpay Plus?</h2>
+        <p>Marpay Plus is a subscription-based water delivery service from Marpay Water. Subscribe once and receive quality 50cl bottled water delivered to your home, office, event venue, or store — on a schedule that works for you.</p>
+        <p>At ₦1,500 per pack, you get near-factory pricing without the factory run. Just subscribe, tell us your location, and your water comes to you.</p>
+        <div class="price-highlight">
+          <span class="per">From just</span>
+          <span class="amount">₦1,500</span>
+          <span class="per">per pack</span>
+        </div>
+      </div>
+      <div class="what-is-card">
+        <h3>Why Marpay Plus?</h3>
+        <p>Stop making weekly trips for water. Stop chasing suppliers. Stop running out. With Marpay Plus, your water supply is handled — on time, every time, at the price that makes sense.</p>
+        <br>
+        <p style="color:rgba(255,255,255,0.5);font-size:0.875rem;">✓ Homes &nbsp;✓ Offices &nbsp;✓ Events &nbsp;✓ Retailers &nbsp;✓ Estates</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY SUBSCRIBE -->
+<section id="why">
+  <div class="container">
+    <div class="reveal">
+      <span class="section-label">Benefits</span>
+      <h2 class="section-title">Why Marpay Plus?</h2>
+    </div>
+    <div class="benefits-grid reveal">
+      <div class="benefit-card">
+        <div class="benefit-icon">💰</div>
+        <h4>Near-Factory Price</h4>
+        <p>₦1,500 per pack. Pay less than standard retail every single month.</p>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon">🚚</div>
+        <h4>Reliable Delivery</h4>
+        <p>Your water arrives on your chosen date. No follow-up, no chasing.</p>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon">🔄</div>
+        <h4>Flexible Options</h4>
+        <p>Monthly subscription or per-event order — you choose what fits.</p>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon">🏷️</div>
+        <h4>Custom Branded Bottles</h4>
+        <p>Event planners can put their name or logo on every bottle. Min. 50 packs.</p>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon">🗺️</div>
+        <h4>Lagos-Wide Delivery</h4>
+        <p>We coordinate delivery by location zone so you're never out of reach.</p>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon">✅</div>
+        <h4>Easy Sign-Up</h4>
+        <p>Fill one form. A representative confirms your order. Done.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PACKAGES -->
+<section class="packages" id="packages">
+  <div class="container">
+    <div class="reveal">
+      <span class="section-label">Packages</span>
+      <h2 class="section-title">Find Your Package</h2>
+      <p class="section-sub">Marpay Plus is built for five types of subscribers. Pick the one that fits you.</p>
+    </div>
+    <div class="tabs-nav reveal">
+      <button class="tab-btn active" data-tab="events">Event Planners</button>
+      <button class="tab-btn" data-tab="residents">Residents</button>
+      <button class="tab-btn" data-tab="offices">Offices</button>
+      <button class="tab-btn" data-tab="retailers">Retailers</button>
+      <button class="tab-btn" data-tab="estates">Estates</button>
+    </div>
+
+    <div class="tab-panel active reveal" id="tab-events">
+      <div class="package-card">
+        <div class="pkg-left">
+          <h3>Water That Carries Your Brand</h3>
+          <p>From birthdays to weddings to corporate events — Marpay Plus ensures your guests are served with quality water that you can put your own name on. Custom labels available for orders of 50 packs and above.</p>
+          <ul class="pkg-list">
+            <li>50cl bottled water at ₦1,500/pack</li>
+            <li>Minimum: 50 packs per event</li>
+            <li>Custom label branding for 50 packs and above</li>
+            <li>Order per event or subscribe monthly</li>
+            <li>Delivery coordinated to your venue in Lagos</li>
+          </ul>
+        </div>
+        <div class="pkg-right">
+          <div class="pkg-price-box">
+            <div class="price">₦1,500</div>
+            <span class="per">per pack · min. 50 packs</span>
+          </div>
+          <a href="#subscribe" class="btn-pkg">Subscribe as an Event Planner</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="tab-panel" id="tab-residents">
+      <div class="package-card">
+        <div class="pkg-left">
+          <h3>Clean Water, Delivered Monthly</h3>
+          <p>Stop making weekly trips for water. With a monthly Marpay Plus subscription, your household supply is sorted — delivered to your door at near-factory price.</p>
+          <ul class="pkg-list">
+            <li>50cl bottled water at ₦1,500/pack</li>
+            <li>Minimum: 5 – 10 packs/month</li>
+            <li>Monthly delivery to your home in Lagos</li>
+            <li>Flexible pack quantity to suit your household</li>
+          </ul>
+        </div>
+        <div class="pkg-right">
+          <div class="pkg-price-box">
+            <div class="price">₦1,500</div>
+            <span class="per">per pack · min. 5 packs</span>
+          </div>
+          <a href="#subscribe" class="btn-pkg">Subscribe as a Resident</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="tab-panel" id="tab-offices">
+      <div class="package-card">
+        <div class="pkg-left">
+          <h3>Keep Your Team Hydrated Without the Hassle</h3>
+          <p>Office water supply should not require weekly logistics. Subscribe to Marpay Plus and your team drinks quality water every day, without anyone having to chase a supplier.</p>
+          <ul class="pkg-list">
+            <li>50cl bottled water at ₦1,500/pack</li>
+            <li>Minimum: 10 packs/month</li>
+            <li>Monthly delivery to your office in Lagos</li>
+            <li>Scalable quantity based on your team size</li>
+          </ul>
+        </div>
+        <div class="pkg-right">
+          <div class="pkg-price-box">
+            <div class="price">₦1,500</div>
+            <span class="per">per pack · min. 10 packs</span>
+          </div>
+          <a href="#subscribe" class="btn-pkg">Subscribe as an Office</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="tab-panel" id="tab-retailers">
+      <div class="package-card">
+        <div class="pkg-left">
+          <h3>Stock Smarter. Sell Better.</h3>
+          <p>Your margins depend on what you pay. With Marpay Plus, retailers access near-factory pricing on a reliable monthly schedule — so your shelf is always stocked and your margins stay protected.</p>
+          <ul class="pkg-list">
+            <li>50cl bottled water at ₦1,500/pack</li>
+            <li>Minimum: 10 packs/month</li>
+            <li>Monthly restocking delivery in Lagos</li>
+            <li>Consistent supply without the supplier run</li>
+          </ul>
+        </div>
+        <div class="pkg-right">
+          <div class="pkg-price-box">
+            <div class="price">₦1,500</div>
+            <span class="per">per pack · min. 10 packs</span>
+          </div>
+          <a href="#subscribe" class="btn-pkg">Subscribe as a Retailer</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="tab-panel" id="tab-estates">
+      <div class="package-card">
+        <div class="pkg-left">
+          <h3>One Subscription. Water for the Whole Estate.</h3>
+          <p>Estate managers and community associations can subscribe on behalf of multiple residents — one consolidated monthly delivery, managed centrally, priced fairly.</p>
+          <ul class="pkg-list">
+            <li>50cl bottled water at ₦1,500/pack</li>
+            <li>Quantity based on estate size</li>
+            <li>Monthly delivery to estate central point</li>
+            <li>Single subscription managed by facility team</li>
+          </ul>
+        </div>
+        <div class="pkg-right">
+          <div class="pkg-price-box">
+            <div class="price">₦1,500</div>
+            <span class="per">per pack · quantity flexible</span>
+          </div>
+          <a href="#subscribe" class="btn-pkg">Subscribe as an Estate</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CUSTOM BRANDING -->
+<section class="branding" id="branding">
+  <div class="container">
+    <div class="branding-grid reveal">
+      <div>
+        <span class="section-label" style="color:var(--accent);">Custom Branding</span>
+        <h2 class="section-title" style="color:white;">Put Your Name on Every Bottle</h2>
+        <p class="section-sub">Event planners ordering 50 packs and above can customise the labels on every bottle. Your event name, your brand, your logo — printed on Marpay's 50cl bottles and delivered to your venue.</p>
+        <p class="section-sub" style="margin-bottom:0.5rem;">Branded water is a detail your guests will notice.</p>
+        <p class="branding-note">Custom label pricing and artwork requirements will be confirmed at the time of order. Minimum order for custom labels: 50 packs.</p>
+        <a href="#subscribe" class="btn-primary">Order Branded Water →</a>
+      </div>
+      <div class="branding-visual">
+        <div class="brand-bottle-icon">🍶</div>
+        <div class="brand-tag">YOUR LOGO HERE</div>
+        <p>Custom-labelled 50cl bottles<br>delivered to your event venue</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="how" id="how">
+  <div class="container">
+    <div class="reveal" style="text-align:center;">
+      <span class="section-label">Process</span>
+      <h2 class="section-title">How It Works</h2>
+    </div>
+    <div class="steps reveal">
+      <div class="step">
+        <div class="step-num">01</div>
+        <h4>Fill the Form</h4>
+        <p>Fill out the Marpay Plus subscription form — it takes less than 2 minutes.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">02</div>
+        <h4>Share Your Location</h4>
+        <p>Tell us your location in Lagos so we can coordinate delivery to your area.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">03</div>
+        <h4>Choose Type</h4>
+        <p>Choose your subscription type: monthly or per event.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">04</div>
+        <h4>We Confirm</h4>
+        <p>A Marpay Plus representative will confirm your order and delivery schedule.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">05</div>
+        <h4>Water Delivered</h4>
+        <p>Your water is delivered. Your subscription renews automatically each month.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section id="pricing">
+  <div class="container">
+    <div class="reveal">
+      <span class="section-label">Pricing</span>
+      <h2 class="section-title">Simple, Transparent Pricing</h2>
+      <p class="section-sub">One price. Five packages. All delivered across Lagos.</p>
+    </div>
+    <div class="pricing-table-wrap reveal">
+      <table>
+        <thead>
+          <tr>
+            <th>Subscriber</th>
+            <th>Price Per Pack</th>
+            <th>Minimum Order</th>
+            <th>Subscription</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Event Planners</td>
+            <td class="price-cell">₦1,500</td>
+            <td>50 packs</td>
+            <td>Per event / Monthly</td>
+          </tr>
+          <tr>
+            <td>Residents & Homeowners</td>
+            <td class="price-cell">₦1,500</td>
+            <td>5 – 10 packs</td>
+            <td>Monthly</td>
+          </tr>
+          <tr>
+            <td>Offices & Businesses</td>
+            <td class="price-cell">₦1,500</td>
+            <td>10 packs+</td>
+            <td>Monthly</td>
+          </tr>
+          <tr>
+            <td>Retailers</td>
+            <td class="price-cell">₦1,500</td>
+            <td>10 packs+</td>
+            <td>Monthly</td>
+          </tr>
+          <tr>
+            <td>Estates & Communities</td>
+            <td class="price-cell">₦1,500</td>
+            <td>By estate size</td>
+            <td>Monthly</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="pricing-note reveal">* Custom label pricing for branded event orders is confirmed at the time of subscription.</p>
+  </div>
+</section>
+
+<!-- FORM -->
+<section class="form-section" id="subscribe">
+  <div class="container">
+    <div class="reveal" style="text-align:center;margin-bottom:0;">
+      <span class="section-label">Get Started</span>
+      <h2 class="section-title">Start Your Subscription</h2>
+      <p class="section-sub" style="margin:0 auto;">Fill in the form below and a Marpay Plus representative will be in touch within 24 hours to confirm your order and delivery schedule.</p>
+    </div>
+    <div class="form-card reveal">
+      <div id="form-content">
+        <form id="subscribe-form" novalidate>
+          <div class="form-grid">
+            <div class="form-group">
+              <label for="fullname">Full Name *</label>
+              <input type="text" id="fullname" placeholder="e.g. Adaeze Okonkwo" required>
+            </div>
+            <div class="form-group">
+              <label for="phone">Phone Number *</label>
+              <input type="tel" id="phone" placeholder="e.g. 0801 234 5678" required>
+            </div>
+            <div class="form-group full">
+              <label for="email">Email Address</label>
+              <input type="email" id="email" placeholder="e.g. adaeze@email.com">
+            </div>
+            <div class="form-group full">
+              <label for="sub-type">I am subscribing as *</label>
+              <select id="sub-type" required>
+                <option value="" disabled selected>Select subscriber type</option>
+                <option value="Event Planner">Event Planner</option>
+                <option value="Resident">Resident / Homeowner</option>
+                <option value="Office">Office / Business</option>
+                <option value="Retailer">Retailer</option>
+                <option value="Estate">Estate / Community</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="location">Location (Area/Estate) *</label>
+              <input type="text" id="location" placeholder="e.g. Lekki Phase 1, VI, Surulere" required>
+            </div>
+            <div class="form-group">
+              <label for="num-packs">Number of Packs *</label>
+              <input type="number" id="num-packs" placeholder="Minimum varies by package" min="1" required>
+            </div>
+            <div class="form-group full">
+              <label>Subscription Type *</label>
+              <div class="radio-group">
+                <label class="radio-opt" id="opt-monthly">
+                  <input type="radio" name="sub-freq" value="Monthly"> Monthly
+                </label>
+                <label class="radio-opt" id="opt-event">
+                  <input type="radio" name="sub-freq" value="Per Event"> Per Event
+                </label>
+              </div>
+            </div>
+            <div class="form-group full conditional-field" id="field-event-date">
+              <label for="event-date">Event Date</label>
+              <input type="date" id="event-date">
+            </div>
+            <div class="form-group full conditional-field" id="field-custom-label">
+              <div class="checkbox-wrap">
+                <input type="checkbox" id="custom-label">
+                <label for="custom-label">I want custom branded labels on my bottles (min. 50 packs)</label>
+              </div>
+            </div>
+            <div class="form-group full">
+              <label for="notes">Additional Notes</label>
+              <textarea id="notes" rows="3" placeholder="Any special requests or delivery details"></textarea>
+            </div>
+          </div>
+          <button type="submit" class="btn-submit">Send My Subscription Request →</button>
+        </form>
+      </div>
+      <div class="success-msg" id="success-msg">
+        <div class="checkmark">✅</div>
+        <h3>Thank you!</h3>
+        <p>We've received your subscription request. A Marpay Plus representative will contact you within 24 hours to confirm your order and delivery details.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top container">
+    <div>
+      <div class="footer-logo">Marpay<span>+</span></div>
+      <div class="footer-tagline">Premium Water. Delivered on Your Terms.</div>
+    </div>
+    <div class="footer-info">
+      <p>Marpay Plus is a service of Marpay Water, Lagos, Nigeria.</p>
+      <p>For enquiries, contact us via the subscription form above.</p>
+    </div>
+  </div>
+  <div class="footer-bottom container">
+    <p>© 2025 Marpay Water. All rights reserved. Delivery available within Lagos only. Custom label minimum order: 50 packs.</p>
+  </div>
+</footer>
+
+<script>
+  // Tabs
+  const tabBtns = document.querySelectorAll('.tab-btn');
+  const tabPanels = document.querySelectorAll('.tab-panel');
+  tabBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const tab = btn.dataset.tab;
+      tabBtns.forEach(b => b.classList.remove('active'));
+      tabPanels.forEach(p => p.classList.remove('active'));
+      btn.classList.add('active');
+      document.getElementById('tab-' + tab).classList.add('active');
+    });
+  });
+
+  // Conditional form fields
+  const subType = document.getElementById('sub-type');
+  const numPacks = document.getElementById('num-packs');
+  const eventDateField = document.getElementById('field-event-date');
+  const customLabelField = document.getElementById('field-custom-label');
+
+  function updateConditionals() {
+    const isEvent = subType.value === 'Event Planner';
+    if (isEvent) {
+      eventDateField.classList.add('visible');
+    } else {
+      eventDateField.classList.remove('visible');
+      customLabelField.classList.remove('visible');
+    }
+    if (isEvent && parseInt(numPacks.value) >= 50) {
+      customLabelField.classList.add('visible');
+    } else if (!isEvent) {
+      customLabelField.classList.remove('visible');
+    }
+  }
+
+  subType.addEventListener('change', updateConditionals);
+  numPacks.addEventListener('input', updateConditionals);
+
+  // Radio styling
+  document.querySelectorAll('.radio-opt input[type="radio"]').forEach(radio => {
+    radio.addEventListener('change', () => {
+      document.querySelectorAll('.radio-opt').forEach(opt => opt.classList.remove('selected'));
+      radio.parentElement.classList.add('selected');
+    });
+  });
+
+  // Form submit
+  document.getElementById('subscribe-form').addEventListener('submit', (e) => {
+    e.preventDefault();
+    document.getElementById('form-content').style.display = 'none';
+    document.getElementById('success-msg').style.display = 'block';
+  });
+
+  // Scroll reveal
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+  reveals.forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
