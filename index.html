@@ -6,357 +6,254 @@
 <title>Marpay Plus — Water Delivered to Your Door | Lagos Subscription Service</title>
 <meta name="description" content="Subscribe to Marpay Plus and get 50cl bottled water delivered to your home, office, or event in Lagos. From ₦1,500 per pack. No errands. No running out.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,400&display=swap" rel="stylesheet">
 <style>
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --navy:#07213D;--navy-mid:#0C2E55;--navy-light:#11406E;
+  --accent:#00BBDD;--accent2:#47CDE0;
+  --white:#fff;--off:#F2F8FD;--pale:#E3F2FA;
+  --text:#0A2540;--mid:#2D5070;--muted:#5C809A;
+  --border:rgba(26,92,154,.14);
+  --r:14px;--rlg:22px;
+  --sh:0 4px 28px rgba(7,33,61,.10);--shlg:0 14px 44px rgba(7,33,61,.16)
+}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',sans-serif;background:var(--white);color:var(--text);line-height:1.65;overflow-x:hidden}
+h1,h2,h3,h4{font-family:'Sora',sans-serif;line-height:1.16}
 
-  :root {
-    --navy:       #07213D;
-    --navy-mid:   #0C2E55;
-    --navy-light: #11406E;
-    --blue:       #1A5C9A;
-    --sky:        #2779C2;
-    --accent:     #00BBDD;
-    --accent2:    #47CDE0;
-    --white:      #ffffff;
-    --off-white:  #F2F8FD;
-    --pale:       #E5F3FA;
-    --text:       #0A2540;
-    --text-mid:   #2D5070;
-    --text-muted: #5C809A;
-    --border:     rgba(26,92,154,0.14);
-    --r:          14px;
-    --r-lg:       22px;
-    --shadow:     0 4px 28px rgba(7,33,61,0.10);
-    --shadow-lg:  0 14px 44px rgba(7,33,61,0.16);
-  }
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:center;justify-content:space-between;padding:1rem 6%;background:rgba(7,33,61,.96);backdrop-filter:blur(14px);border-bottom:1px solid rgba(255,255,255,.07)}
+.logo{font-family:'Sora',sans-serif;font-weight:800;font-size:1.25rem;color:var(--white);letter-spacing:-.03em}
+.logo span{color:var(--accent)}
+.nav-pill{background:var(--accent);color:var(--navy);font-family:'Sora',sans-serif;font-weight:700;font-size:.85rem;padding:.5rem 1.35rem;border-radius:50px;text-decoration:none;transition:all .2s}
+.nav-pill:hover{background:var(--accent2);transform:translateY(-1px)}
 
-  html { scroll-behavior: smooth; }
-  body { font-family: 'DM Sans', sans-serif; background: var(--white); color: var(--text); line-height: 1.65; overflow-x: hidden; }
-  h1,h2,h3,h4 { font-family: 'Sora', sans-serif; line-height: 1.18; }
+/* SHARED */
+section{padding:6rem 6%}
+.wrap{max-width:1100px;margin:0 auto}
+.eyebrow{display:inline-block;font-size:.72rem;font-weight:700;letter-spacing:.10em;text-transform:uppercase;color:var(--accent);margin-bottom:.75rem}
+.h2{font-size:clamp(1.7rem,2.8vw,2.35rem);font-weight:800;letter-spacing:-.03em;margin-bottom:1rem}
+.lead{font-size:1.05rem;color:var(--mid);line-height:1.75;max-width:580px}
+.btn{display:inline-flex;align-items:center;gap:.35rem;font-family:'Sora',sans-serif;font-weight:700;font-size:.95rem;padding:.9rem 2rem;border-radius:50px;text-decoration:none;transition:all .22s;cursor:pointer;border:none}
+.btn-cta{background:var(--accent);color:var(--navy)}
+.btn-cta:hover{background:var(--accent2);transform:translateY(-2px);box-shadow:0 8px 26px rgba(0,187,221,.35)}
+.btn-ghost{background:transparent;color:var(--white);border:1.5px solid rgba(255,255,255,.28)}
+.btn-ghost:hover{border-color:var(--accent);color:var(--accent)}
+.btn-outline{background:transparent;color:var(--navy);border:1.5px solid var(--navy)}
+.btn-outline:hover{background:var(--navy);color:var(--white)}
 
-  /* NAV */
-  nav {
-    position: fixed; top: 0; left: 0; right: 0; z-index: 200;
-    display: flex; align-items: center; justify-content: space-between;
-    padding: 1rem 6%; background: rgba(7,33,61,0.96);
-    backdrop-filter: blur(14px); border-bottom: 1px solid rgba(255,255,255,0.07);
-  }
-  .logo { font-family: 'Sora', sans-serif; font-weight: 800; font-size: 1.25rem; color: var(--white); letter-spacing: -0.03em; }
-  .logo span { color: var(--accent); }
-  .nav-pill {
-    background: var(--accent); color: var(--navy); font-family: 'Sora', sans-serif;
-    font-weight: 700; font-size: 0.85rem; padding: 0.5rem 1.35rem;
-    border-radius: 50px; text-decoration: none; transition: all .2s;
-  }
-  .nav-pill:hover { background: var(--accent2); transform: translateY(-1px); }
+/* scroll reveal */
+.r{opacity:0;transform:translateY(22px);transition:opacity .55s ease,transform .55s ease}
+.r.on{opacity:1;transform:translateY(0)}
 
-  /* SHARED */
-  section { padding: 6rem 6%; }
-  .wrap { max-width: 1100px; margin: 0 auto; }
-  .tag { display: inline-block; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.10em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.75rem; }
-  .h2 { font-size: clamp(1.75rem, 2.8vw, 2.4rem); font-weight: 800; letter-spacing: -0.03em; margin-bottom: 1rem; }
-  .lead { font-size: 1.05rem; color: var(--text-mid); line-height: 1.75; max-width: 560px; }
-  .btn {
-    display: inline-flex; align-items: center; gap: 0.35rem;
-    font-family: 'Sora', sans-serif; font-weight: 700; font-size: 0.95rem;
-    padding: 0.9rem 2rem; border-radius: 50px; text-decoration: none; transition: all .22s;
-    cursor: pointer; border: none;
-  }
-  .btn-cta { background: var(--accent); color: var(--navy); }
-  .btn-cta:hover { background: var(--accent2); transform: translateY(-2px); box-shadow: 0 8px 26px rgba(0,187,221,.35); }
-  .btn-ghost { background: transparent; color: var(--white); border: 1.5px solid rgba(255,255,255,.28); }
-  .btn-ghost:hover { border-color: var(--accent); color: var(--accent); }
+/* ── HERO ── */
+.hero{min-height:100vh;padding:8rem 6% 5rem;background:var(--navy);position:relative;overflow:hidden;display:flex;align-items:center}
+.hero::before{content:'';position:absolute;top:-20%;right:-5%;width:65%;height:130%;background:radial-gradient(ellipse at 60% 40%,rgba(0,187,221,.13) 0%,transparent 65%);pointer-events:none}
+.hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--accent),transparent)}
+.hero-inner{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;width:100%;max-width:1100px;margin:0 auto;position:relative;z-index:1}
+.hero-badge{display:inline-flex;align-items:center;gap:.5rem;background:rgba(0,187,221,.12);border:1px solid rgba(0,187,221,.3);color:var(--accent2);font-size:.75rem;font-weight:600;padding:.35rem 1rem;border-radius:50px;margin-bottom:1.5rem;text-transform:uppercase;letter-spacing:.07em}
+.hero-badge i{width:6px;height:6px;border-radius:50%;background:var(--accent);animation:blink 2s infinite;display:inline-block}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.3}}
+.hero h1{font-size:clamp(1.75rem,3.5vw,3rem);font-weight:800;color:var(--white);letter-spacing:-.04em;margin-bottom:1.5rem;text-transform:uppercase;line-height:1.1}
+.hero h1 em{color:var(--accent);font-style:normal}
+.hero-sub{font-size:1.05rem;color:rgba(255,255,255,.68);line-height:1.75;margin-bottom:1.25rem;max-width:480px}
+.hero-bullets{list-style:none;margin-bottom:2.25rem;display:flex;flex-direction:column;gap:.55rem}
+.hero-bullets li{display:flex;align-items:center;gap:.75rem;font-size:.95rem;color:rgba(255,255,255,.65)}
+.hero-bullets li::before{content:'';width:18px;height:18px;border-radius:50%;flex-shrink:0;background:rgba(0,187,221,.2);border:1px solid var(--accent);background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='8' viewBox='0 0 10 8'%3E%3Cpath d='M1 4l2.5 2.5L9 1' stroke='%2300BBDD' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:center}
+.hero-actions{display:flex;gap:1rem;flex-wrap:wrap}
+.hero-visual{display:flex;justify-content:center;align-items:center}
+.glow-ring{width:380px;height:380px;border-radius:50%;background:rgba(0,187,221,.05);border:1px solid rgba(0,187,221,.18);display:flex;align-items:center;justify-content:center;position:relative}
+.glow-ring::before{content:'';position:absolute;inset:28px;border-radius:50%;border:1px dashed rgba(0,187,221,.18);animation:rot 22s linear infinite}
+@keyframes rot{to{transform:rotate(360deg)}}
+.float-pill{position:absolute;background:rgba(255,255,255,.07);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.13);border-radius:50px;color:var(--white);font-size:.82rem;padding:.55rem 1.15rem;white-space:nowrap}
+.fp1{top:14%;right:-8%}
+.fp2{bottom:22%;left:-10%}
+.float-pill strong{color:var(--accent)}
 
-  /* scroll reveal */
-  .r { opacity: 0; transform: translateY(22px); transition: opacity .55s ease, transform .55s ease; }
-  .r.on { opacity: 1; transform: translateY(0); }
+/* ── PROBLEM ── */
+.problem{background:var(--off)}
+.problem-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:4rem;align-items:center}
+.problem h2{font-size:clamp(1.6rem,2.6vw,2.1rem);font-weight:800;letter-spacing:-.03em;margin-bottom:1.25rem;color:var(--navy);text-transform:uppercase}
+.problem p{font-size:1rem;color:var(--mid);line-height:1.85;margin-bottom:.9rem}
+.problem p:last-child{margin-bottom:0}
+.problem p strong{color:var(--navy)}
+.problem-visual{background:var(--navy);border-radius:var(--rlg);padding:2.75rem 2.25rem;position:relative;overflow:hidden;text-align:center}
+.problem-visual::before{content:'';position:absolute;top:-40%;left:-30%;width:160%;height:160%;background:radial-gradient(ellipse,rgba(0,187,221,.10) 0%,transparent 65%)}
+.problem-icon{font-size:4rem;position:relative;z-index:1;margin-bottom:1rem}
+.problem-visual p{color:rgba(255,255,255,.55);font-size:.9rem;line-height:1.75;position:relative;z-index:1}
+.problem-visual strong{color:var(--accent)}
 
-  /* HERO */
-  .hero {
-    min-height: 100vh; padding: 8rem 6% 5rem;
-    background: var(--navy); position: relative; overflow: hidden;
-    display: flex; align-items: center;
-  }
-  .hero::before {
-    content: ''; position: absolute; top: -20%; right: -5%; width: 65%; height: 130%;
-    background: radial-gradient(ellipse at 60% 40%, rgba(0,187,221,.13) 0%, transparent 65%);
-    pointer-events: none;
-  }
-  .hero::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 1px; background: linear-gradient(90deg, transparent, var(--accent), transparent); }
-  .hero-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; width: 100%; max-width: 1100px; margin: 0 auto; position: relative; z-index: 1; }
-  .hero-badge {
-    display: inline-flex; align-items: center; gap: .5rem;
-    background: rgba(0,187,221,.12); border: 1px solid rgba(0,187,221,.3);
-    color: var(--accent2); font-size: .75rem; font-weight: 600;
-    padding: .35rem 1rem; border-radius: 50px; margin-bottom: 1.5rem;
-    text-transform: uppercase; letter-spacing: .07em;
-  }
-  .hero-badge i { width: 6px; height: 6px; border-radius: 50%; background: var(--accent); animation: blink 2s infinite; display: inline-block; }
-  @keyframes blink { 0%,100%{opacity:1} 50%{opacity:.3} }
-  .hero h1 { font-size: clamp(2rem, 4vw, 3.4rem); font-weight: 800; color: var(--white); letter-spacing: -0.04em; margin-bottom: 1.25rem; }
-  .hero h1 em { color: var(--accent); font-style: normal; }
-  .hero-sub { font-size: 1.1rem; color: rgba(255,255,255,.68); line-height: 1.75; margin-bottom: 1rem; max-width: 480px; }
-  .hero-micro { font-size: .88rem; color: rgba(255,255,255,.38); margin-bottom: 2.25rem; }
-  .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
+/* ── SOLUTION ── */
+.solution{background:var(--white)}
+.solution-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:flex-start}
+.solution h2{text-transform:uppercase}
+.sol-bullets{list-style:none;margin-top:1.25rem 0 2rem;display:flex;flex-direction:column;gap:.75rem}
+.sol-bullets li{display:flex;align-items:flex-start;gap:.85rem;font-size:.97rem;color:var(--mid);line-height:1.65}
+.sol-bullets li::before{content:'';width:20px;height:20px;border-radius:50%;flex-shrink:0;margin-top:2px;background:var(--pale);border:1px solid rgba(0,187,221,.4);background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='8' viewBox='0 0 10 8'%3E%3Cpath d='M1 4l2.5 2.5L9 1' stroke='%2300BBDD' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:center}
+.benefit-row{display:flex;flex-direction:column;gap:1rem}
+.benefit-box{background:var(--off);border:1px solid var(--border);border-radius:var(--rlg);padding:1.75rem;display:flex;align-items:flex-start;gap:1.25rem;transition:all .25s}
+.benefit-box:hover{transform:translateY(-3px);box-shadow:var(--shlg);border-color:rgba(0,187,221,.3)}
+.benefit-icon{font-size:1.75rem;flex-shrink:0;width:52px;height:52px;background:var(--pale);border-radius:var(--r);display:flex;align-items:center;justify-content:center}
+.benefit-box h4{font-size:.97rem;font-weight:700;color:var(--navy);margin-bottom:.3rem}
+.benefit-box p{font-size:.87rem;color:var(--muted);line-height:1.6}
 
-  .hero-visual { display: flex; justify-content: center; align-items: center; }
-  .glow-ring {
-    width: 380px; height: 380px; border-radius: 50%;
-    background: rgba(0,187,221,.05); border: 1px solid rgba(0,187,221,.18);
-    display: flex; align-items: center; justify-content: center; position: relative;
-  }
-  .glow-ring::before {
-    content: ''; position: absolute; inset: 28px; border-radius: 50%;
-    border: 1px dashed rgba(0,187,221,.18); animation: rot 22s linear infinite;
-  }
-  @keyframes rot { to { transform: rotate(360deg); } }
-  .float-pill {
-    position: absolute; background: rgba(255,255,255,.07); backdrop-filter: blur(10px);
-    border: 1px solid rgba(255,255,255,.13); border-radius: 50px;
-    color: var(--white); font-size: .82rem; padding: .55rem 1.15rem; white-space: nowrap;
-  }
-  .fp1 { top: 14%; right: -8%; }
-  .fp2 { bottom: 22%; left: -10%; }
-  .float-pill strong { color: var(--accent); }
+/* ── PACKAGES ── */
+.packages{background:var(--navy)}
+.packages .h2{color:var(--white);text-align:center;text-transform:uppercase}
+.packages .eyebrow{display:block;text-align:center}
+.toggle-wrap{display:flex;justify-content:center;margin:2rem 0 2.5rem}
+.toggle{display:flex;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:50px;padding:5px;gap:4px}
+.toggle-btn{padding:.65rem 1.75rem;border-radius:50px;border:none;cursor:pointer;font-family:'Sora',sans-serif;font-weight:600;font-size:.9rem;color:rgba(255,255,255,.55);background:transparent;transition:all .22s}
+.toggle-btn.active{background:var(--accent);color:var(--navy)}
+.pkg-view{display:none}
+.pkg-view.active{display:block}
 
-  /* PROBLEM */
-  .problem { background: var(--off-white); }
-  .problem-inner { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 4rem; align-items: center; }
-  .problem h2 { font-size: clamp(1.6rem, 2.6vw, 2.2rem); font-weight: 800; letter-spacing: -.03em; margin-bottom: 1.25rem; color: var(--navy); }
-  .problem p { font-size: 1rem; color: var(--text-mid); line-height: 1.82; margin-bottom: 0.85rem; }
-  .problem p:last-child { margin-bottom: 0; }
-  .problem p strong { color: var(--navy); }
-  .problem-visual {
-    background: var(--navy); border-radius: var(--r-lg); padding: 2.75rem 2.25rem;
-    position: relative; overflow: hidden; text-align: center;
-  }
-  .problem-visual::before {
-    content: ''; position: absolute; top: -40%; left: -30%; width: 160%; height: 160%;
-    background: radial-gradient(ellipse, rgba(0,187,221,.10) 0%, transparent 65%);
-  }
-  .problem-icon { font-size: 4rem; position: relative; z-index: 1; margin-bottom: 1rem; }
-  .problem-visual p { color: rgba(255,255,255,.55); font-size: .92rem; line-height: 1.7; position: relative; z-index: 1; }
-  .problem-visual strong { color: var(--accent); }
+/* Household sub-tabs */
+.sub-tabs{display:flex;gap:.75rem;margin-bottom:2rem;max-width:760px;margin-left:auto;margin-right:auto}
+.sub-tab{flex:1;text-align:center;padding:.75rem 1rem;border-radius:var(--r);border:1px solid rgba(255,255,255,.12);cursor:pointer;font-family:'Sora',sans-serif;font-weight:600;font-size:.9rem;color:rgba(255,255,255,.5);background:transparent;transition:all .22s}
+.sub-tab:hover{border-color:rgba(0,187,221,.4);color:rgba(255,255,255,.8)}
+.sub-tab.active{background:rgba(0,187,221,.12);border-color:var(--accent);color:var(--white)}
+.sub-panel{display:none;max-width:760px;margin:0 auto}
+.sub-panel.active{display:block}
 
-  /* SOLUTION */
-  .solution { background: var(--white); }
-  .solution-top { text-align: center; max-width: 660px; margin: 0 auto 3rem; }
-  .benefit-row { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.5rem; }
-  .benefit-box {
-    background: var(--off-white); border: 1px solid var(--border);
-    border-radius: var(--r-lg); padding: 2rem 1.75rem; text-align: center; transition: all .25s;
-  }
-  .benefit-box:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); border-color: rgba(0,187,221,.3); }
-  .benefit-icon { font-size: 2.25rem; margin-bottom: 1rem; display: block; }
-  .benefit-box h4 { font-size: .97rem; font-weight: 700; color: var(--navy); margin-bottom: .4rem; }
-  .benefit-box p { font-size: .87rem; color: var(--text-muted); line-height: 1.6; }
+.hh-card{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);border-radius:var(--rlg);padding:2.75rem}
+.pkg-eyebrow{font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:.09em;color:var(--accent);margin-bottom:.6rem}
+.hh-card h3{font-size:1.6rem;color:var(--white);margin-bottom:.85rem}
+.hh-card>p{color:rgba(255,255,255,.62);line-height:1.8;margin-bottom:1.75rem}
+.price-block{display:flex;gap:1.5rem;flex-wrap:wrap;background:rgba(0,187,221,.07);border:1px solid rgba(0,187,221,.2);border-radius:var(--r);padding:1.5rem 2rem;margin-bottom:1.25rem;align-items:center}
+.pb-left{}
+.pb-price{font-family:'Sora',sans-serif;font-size:2rem;font-weight:800;color:var(--accent);line-height:1}
+.pb-detail{font-size:.82rem;color:rgba(255,255,255,.45);margin-top:.35rem;line-height:1.5}
+.pb-divider{width:1px;background:rgba(255,255,255,.1);align-self:stretch;flex-shrink:0}
+.pb-right{}
+.pb-from{font-family:'Sora',sans-serif;font-size:1.4rem;font-weight:800;color:var(--white);line-height:1;margin-bottom:.3rem}
+.pb-range{font-size:.82rem;color:rgba(255,255,255,.4)}
+.hh-benefit{font-size:.9rem;color:rgba(255,255,255,.5);line-height:1.65;margin-bottom:2rem}
+.hh-badge{display:inline-block;background:rgba(0,187,221,.15);border:1px solid rgba(0,187,221,.3);color:var(--accent2);font-size:.72rem;font-weight:700;letter-spacing:.07em;text-transform:uppercase;padding:.3rem .9rem;border-radius:50px;margin-bottom:1rem}
 
-  /* PACKAGES */
-  .packages { background: var(--navy); }
-  .packages .h2 { color: var(--white); text-align: center; }
-  .packages .tag { display: block; text-align: center; }
+/* Event tiers */
+.event-header{max-width:780px;margin:0 auto 2rem}
+.event-header h3{font-size:1.6rem;color:var(--white);margin-bottom:.75rem}
+.event-header p{color:rgba(255,255,255,.6);line-height:1.8}
+.tier-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;max-width:780px;margin:0 auto 2rem}
+.tier-card{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:var(--rlg);padding:2rem 1.5rem;position:relative}
+.tier-card.featured{border-color:var(--accent);border-width:2px}
+.tier-badge{position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:var(--accent);color:var(--navy);font-family:'Sora',sans-serif;font-weight:700;font-size:.72rem;padding:.3rem 1rem;border-radius:50px;white-space:nowrap}
+.tier-name{font-size:.75rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.45);margin-bottom:.6rem}
+.tier-range{font-family:'Sora',sans-serif;font-size:.95rem;font-weight:600;color:var(--white);margin-bottom:.5rem}
+.tier-price{font-family:'Sora',sans-serif;font-size:2rem;font-weight:800;color:var(--accent);margin-bottom:.25rem}
+.tier-price span{font-size:.85rem;font-weight:400;color:rgba(255,255,255,.4)}
+.tier-total{font-size:.82rem;color:rgba(255,255,255,.38);margin-bottom:1rem}
+.tier-label{display:flex;align-items:center;gap:.5rem;font-size:.82rem;color:rgba(255,255,255,.55)}
+.tick{width:16px;height:16px;border-radius:50%;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:.6rem}
+.tick.yes{background:rgba(0,187,221,.2);border:1px solid var(--accent);color:var(--accent)}
+.tick.no{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);color:rgba(255,255,255,.2)}
+.event-cta{text-align:center}
+.event-fine{font-size:.8rem;color:rgba(255,255,255,.3);margin-top:.85rem;line-height:1.6}
 
-  .toggle-wrap { display: flex; justify-content: center; margin: 2rem 0 2.5rem; }
-  .toggle {
-    display: flex; background: rgba(255,255,255,.07);
-    border: 1px solid rgba(255,255,255,.12); border-radius: 50px; padding: 5px; gap: 4px;
-  }
-  .toggle-btn {
-    padding: .65rem 1.75rem; border-radius: 50px; border: none; cursor: pointer;
-    font-family: 'Sora', sans-serif; font-weight: 600; font-size: .9rem;
-    color: rgba(255,255,255,.55); background: transparent; transition: all .22s;
-  }
-  .toggle-btn.active { background: var(--accent); color: var(--navy); }
+/* ── HOW IT WORKS ── */
+.how{background:var(--off)}
+.how h2{text-transform:uppercase}
+.how-steps{display:grid;grid-template-columns:1fr 1fr;gap:2rem;margin-top:3rem}
+.how-step{background:var(--white);border:1px solid var(--border);border-radius:var(--rlg);padding:2.5rem 2rem;display:flex;gap:1.5rem;align-items:flex-start}
+.step-num{font-family:'Sora',sans-serif;font-size:3rem;font-weight:800;color:var(--accent);line-height:1;flex-shrink:0;min-width:52px}
+.how-step h4{font-size:1.05rem;font-weight:700;color:var(--navy);margin-bottom:.5rem}
+.how-step p{font-size:.93rem;color:var(--muted);line-height:1.7}
 
-  .pkg-view { display: none; }
-  .pkg-view.active { display: block; }
+/* ── BRANDING ── */
+.branding-sec{background:var(--navy-light)}
+.branding-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
+.branding-sec .h2{color:var(--white);text-transform:uppercase}
+.branding-sec .lead{color:rgba(255,255,255,.62);margin-bottom:1rem}
+.brand-bullets{list-style:none;margin-bottom:1.75rem;display:flex;flex-direction:column;gap:.6rem}
+.brand-bullets li{display:flex;align-items:flex-start;gap:.75rem;font-size:.9rem;color:rgba(255,255,255,.6)}
+.brand-bullets li::before{content:'';width:18px;height:18px;border-radius:50%;flex-shrink:0;margin-top:1px;background:rgba(0,187,221,.2);border:1px solid var(--accent);background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='8' viewBox='0 0 10 8'%3E%3Cpath d='M1 4l2.5 2.5L9 1' stroke='%2300BBDD' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:center}
+.brand-note{font-size:.83rem;color:rgba(255,255,255,.3);margin-bottom:2rem;line-height:1.65}
+.brand-visual{background:rgba(0,187,221,.07);border:1px solid rgba(0,187,221,.2);border-radius:var(--rlg);padding:3rem 2rem;text-align:center;position:relative;overflow:hidden}
+.brand-visual::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 30%,rgba(0,187,221,.12) 0%,transparent 60%)}
+.bv-icon{font-size:5rem;margin-bottom:1.25rem;position:relative;z-index:1}
+.bv-tag{background:var(--accent);color:var(--navy);font-family:'Sora',sans-serif;font-weight:800;font-size:.78rem;padding:.4rem 1.3rem;border-radius:50px;letter-spacing:.05em;position:relative;z-index:1;display:inline-block;margin-bottom:.85rem}
+.brand-visual p{color:rgba(255,255,255,.42);font-size:.86rem;line-height:1.65;position:relative;z-index:1}
 
-  .prime-card {
-    background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.12);
-    border-radius: var(--r-lg); padding: 3rem; max-width: 780px; margin: 0 auto;
-  }
-  .prime-tagline { font-size: .78rem; font-weight: 700; text-transform: uppercase; letter-spacing: .09em; color: var(--accent); margin-bottom: .75rem; }
-  .prime-card h3 { font-size: 1.7rem; color: var(--white); margin-bottom: 1rem; }
-  .prime-card > p { color: rgba(255,255,255,.62); line-height: 1.8; margin-bottom: 1.75rem; }
-  .prime-numbers {
-    display: flex; gap: 1.5rem; flex-wrap: wrap; margin-bottom: 1.5rem;
-    background: rgba(0,187,221,.07); border: 1px solid rgba(0,187,221,.2);
-    border-radius: var(--r); padding: 1.5rem 2rem;
-  }
-  .pn-item { flex: 1; min-width: 130px; }
-  .pn-label { font-size: .78rem; color: rgba(255,255,255,.42); text-transform: uppercase; letter-spacing: .07em; margin-bottom: .35rem; }
-  .pn-val { font-family: 'Sora', sans-serif; font-size: 1.6rem; font-weight: 800; color: var(--accent); }
-  .pn-sub { font-size: .8rem; color: rgba(255,255,255,.45); margin-top: .15rem; }
-  .prime-start { font-family: 'Sora', sans-serif; font-size: 1rem; color: var(--white); margin-bottom: 1rem; font-weight: 600; }
-  .prime-start span { color: var(--accent); font-size: 1.5rem; }
-  .prime-benefit { font-size: .9rem; color: rgba(255,255,255,.5); margin-bottom: 2rem; line-height: 1.65; }
+/* ── STORAGE FAQ ── */
+.storage{background:var(--white)}
+.storage-inner{max-width:720px;margin:0 auto}
+.storage h2{text-transform:uppercase;font-size:clamp(1.4rem,2.2vw,1.9rem);margin-bottom:1.75rem}
+.faq-list{display:flex;flex-direction:column;gap:.75rem}
+.faq-item{}
+.faq-btn{width:100%;display:flex;align-items:center;justify-content:space-between;background:var(--off);border:1px solid var(--border);border-radius:var(--r);padding:1.1rem 1.5rem;font-family:'Sora',sans-serif;font-weight:600;font-size:.95rem;color:var(--navy);cursor:pointer;transition:all .2s;text-align:left;gap:1rem}
+.faq-btn:hover{border-color:rgba(0,187,221,.35);background:var(--pale)}
+.faq-btn.open{background:var(--navy);color:var(--white);border-color:var(--navy);border-radius:var(--r) var(--r) 0 0}
+.faq-arrow{transition:transform .25s;font-size:.8rem;flex-shrink:0}
+.faq-btn.open .faq-arrow{transform:rotate(180deg)}
+.faq-body{display:none;background:var(--off);border:1px solid var(--border);border-top:none;border-radius:0 0 var(--r) var(--r);padding:1.25rem 1.5rem;font-size:.95rem;color:var(--mid);line-height:1.75}
+.faq-body.open{display:block}
 
-  .event-header { max-width: 780px; margin: 0 auto 2rem; }
-  .event-header h3 { font-size: 1.7rem; color: var(--white); margin-bottom: .75rem; }
-  .event-header p { color: rgba(255,255,255,.6); line-height: 1.8; }
+/* ── FORM ── */
+.form-sec{background:var(--navy)}
+.form-sec .eyebrow{display:block;text-align:center}
+.form-sec .h2{color:var(--white);text-align:center;text-transform:uppercase}
+.form-sec .lead{color:rgba(255,255,255,.55);text-align:center;margin:0 auto 2.5rem;max-width:520px}
+.form-card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:var(--rlg);padding:3rem;max-width:700px;margin:0 auto}
+.fg{display:flex;flex-direction:column;gap:.4rem}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.25rem}
+.full{grid-column:1/-1}
+label{font-size:.82rem;color:rgba(255,255,255,.55);font-weight:500}
+input,select,textarea{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.11);border-radius:9px;color:var(--white);font-family:'DM Sans',sans-serif;font-size:.95rem;padding:.75rem 1rem;transition:border .2s;width:100%;-webkit-appearance:none;appearance:none}
+input::placeholder,textarea::placeholder{color:rgba(255,255,255,.25)}
+input:focus,select:focus,textarea:focus{outline:none;border-color:var(--accent);background:rgba(0,187,221,.05)}
+select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='rgba(255,255,255,.4)' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 1rem center;padding-right:2.5rem;cursor:pointer}
+select option{background:var(--navy-mid);color:var(--white)}
+.cond{display:none}
+.cond.show{display:flex;flex-direction:column;gap:.4rem}
+.yn-row{display:flex;gap:.75rem}
+.yn-opt{flex:1;border:1px solid rgba(255,255,255,.11);border-radius:9px;padding:.75rem 1rem;cursor:pointer;display:flex;align-items:center;gap:.5rem;color:rgba(255,255,255,.55);font-size:.92rem;transition:all .2s}
+.yn-opt input[type=radio]{accent-color:var(--accent);width:auto}
+.yn-opt:hover{border-color:var(--accent);color:var(--white)}
+.yn-opt.sel{border-color:var(--accent);background:rgba(0,187,221,.1);color:var(--white)}
+.submit-btn{width:100%;background:var(--accent);color:var(--navy);font-family:'Sora',sans-serif;font-weight:800;font-size:1.05rem;padding:1.1rem;border-radius:50px;border:none;cursor:pointer;transition:all .22s;margin-top:.5rem}
+.submit-btn:hover{background:var(--accent2);transform:translateY(-2px);box-shadow:0 10px 30px rgba(0,187,221,.38)}
+.success{display:none;text-align:center;padding:3.5rem 2rem}
+.success .ck{font-size:3.5rem;margin-bottom:1rem}
+.success h3{font-size:1.5rem;color:var(--white);margin-bottom:.75rem}
+.success p{color:rgba(255,255,255,.55);font-size:1rem;line-height:1.75}
 
-  .tier-cards { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.25rem; max-width: 780px; margin: 0 auto 2rem; }
-  .tier-card {
-    background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.1);
-    border-radius: var(--r-lg); padding: 2rem 1.5rem; position: relative; transition: all .22s;
-  }
-  .tier-card.featured { border-color: var(--accent); border-width: 2px; }
-  .tier-badge {
-    position: absolute; top: -13px; left: 50%; transform: translateX(-50%);
-    background: var(--accent); color: var(--navy); font-family: 'Sora', sans-serif;
-    font-weight: 700; font-size: .72rem; padding: .3rem 1rem; border-radius: 50px; white-space: nowrap;
-  }
-  .tier-name { font-size: .75rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: rgba(255,255,255,.45); margin-bottom: .6rem; }
-  .tier-range { font-family: 'Sora', sans-serif; font-size: .97rem; font-weight: 600; color: var(--white); margin-bottom: .5rem; }
-  .tier-price { font-family: 'Sora', sans-serif; font-size: 2rem; font-weight: 800; color: var(--accent); margin-bottom: .25rem; }
-  .tier-price span { font-size: .85rem; font-weight: 400; color: rgba(255,255,255,.4); }
-  .tier-total { font-size: .82rem; color: rgba(255,255,255,.38); margin-bottom: 1rem; }
-  .tier-label { display: flex; align-items: center; gap: .5rem; font-size: .82rem; color: rgba(255,255,255,.55); margin-bottom: .4rem; }
-  .tick { width: 16px; height: 16px; border-radius: 50%; flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-size: .6rem; }
-  .tick.yes { background: rgba(0,187,221,.2); border: 1px solid var(--accent); color: var(--accent); }
-  .tick.no  { background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.1); color: rgba(255,255,255,.2); }
-  .event-cta-wrap { text-align: center; }
-  .event-fine { font-size: .8rem; color: rgba(255,255,255,.3); margin-top: .85rem; line-height: 1.6; }
+/* FOOTER */
+footer{background:#050F1A;padding:3.5rem 6% 2.5rem;border-top:1px solid rgba(255,255,255,.06)}
+.footer-inner{max-width:1100px;margin:0 auto;display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:1.5rem;margin-bottom:2rem}
+.f-logo{font-family:'Sora',sans-serif;font-weight:800;font-size:1.4rem;color:var(--white)}
+.f-logo span{color:var(--accent)}
+.f-tagline{font-size:.88rem;color:rgba(255,255,255,.35);margin-top:.35rem}
+.f-right p{color:rgba(255,255,255,.35);font-size:.875rem;line-height:1.8;text-align:right}
+.footer-legal{max-width:1100px;margin:0 auto;border-top:1px solid rgba(255,255,255,.06);padding-top:1.5rem;font-size:.8rem;color:rgba(255,255,255,.25);text-align:center;line-height:1.8}
 
-  /* HOW IT WORKS */
-  .how { background: var(--off-white); }
-  .how-steps { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-top: 3rem; }
-  .how-step {
-    background: var(--white); border: 1px solid var(--border);
-    border-radius: var(--r-lg); padding: 2.5rem 2rem; display: flex; gap: 1.5rem; align-items: flex-start;
-  }
-  .step-num { font-family: 'Sora', sans-serif; font-size: 3rem; font-weight: 800; color: var(--accent); line-height: 1; flex-shrink: 0; min-width: 52px; }
-  .how-step h4 { font-size: 1.05rem; font-weight: 700; color: var(--navy); margin-bottom: .5rem; }
-  .how-step p { font-size: .93rem; color: var(--text-muted); line-height: 1.7; }
-
-  /* CUSTOM BRANDING */
-  .branding-sec { background: var(--navy-light); }
-  .branding-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
-  .branding-sec .h2 { color: var(--white); }
-  .branding-sec .lead { color: rgba(255,255,255,.62); margin-bottom: .5rem; }
-  .branding-note { font-size: .85rem; color: rgba(255,255,255,.35); margin-bottom: 2rem; line-height: 1.65; }
-  .branding-visual {
-    background: rgba(0,187,221,.07); border: 1px solid rgba(0,187,221,.2);
-    border-radius: var(--r-lg); padding: 3rem 2rem; text-align: center; position: relative; overflow: hidden;
-  }
-  .branding-visual::before {
-    content: ''; position: absolute; inset: 0;
-    background: radial-gradient(ellipse at 50% 30%, rgba(0,187,221,.12) 0%, transparent 60%);
-  }
-  .bv-icon { font-size: 5rem; margin-bottom: 1.25rem; position: relative; z-index: 1; }
-  .bv-tag {
-    background: var(--accent); color: var(--navy); font-family: 'Sora', sans-serif;
-    font-weight: 800; font-size: .78rem; padding: .4rem 1.3rem; border-radius: 50px;
-    letter-spacing: .05em; position: relative; z-index: 1; display: inline-block; margin-bottom: .85rem;
-  }
-  .branding-visual p { color: rgba(255,255,255,.42); font-size: .86rem; line-height: 1.65; position: relative; z-index: 1; }
-
-  /* STORAGE */
-  .storage { background: var(--white); }
-  .storage-inner { max-width: 720px; margin: 0 auto; }
-  .storage .h2 { font-size: clamp(1.4rem, 2.2vw, 1.8rem); margin-bottom: 1.5rem; }
-  .accordion-btn {
-    width: 100%; display: flex; align-items: center; justify-content: space-between;
-    background: var(--off-white); border: 1px solid var(--border); border-radius: var(--r);
-    padding: 1.1rem 1.5rem; font-family: 'Sora', sans-serif; font-weight: 600; font-size: 1rem;
-    color: var(--navy); cursor: pointer; transition: all .2s;
-  }
-  .accordion-btn:hover { border-color: rgba(0,187,221,.35); }
-  .accordion-btn.open { background: var(--navy); color: var(--white); border-color: var(--navy); border-radius: var(--r) var(--r) 0 0; }
-  .acc-arrow { transition: transform .25s; font-size: .85rem; }
-  .accordion-btn.open .acc-arrow { transform: rotate(180deg); }
-  .accordion-body {
-    display: none; background: var(--off-white); border: 1px solid var(--border);
-    border-top: none; border-radius: 0 0 var(--r) var(--r); padding: 1.5rem;
-  }
-  .accordion-body.open { display: block; }
-  .tip-list { list-style: none; display: flex; flex-direction: column; gap: 0.9rem; }
-  .tip-list li {
-    display: flex; align-items: flex-start; gap: .85rem;
-    font-size: .94rem; color: var(--text-mid); line-height: 1.65;
-  }
-  .tip-list li::before {
-    content: ''; width: 20px; height: 20px; border-radius: 50%; flex-shrink: 0; margin-top: 2px;
-    background: var(--pale); border: 1px solid rgba(0,187,221,.4);
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='8' viewBox='0 0 10 8'%3E%3Cpath d='M1 4l2.5 2.5L9 1' stroke='%2300BBDD' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
-    background-repeat: no-repeat; background-position: center;
-  }
-
-  /* FORM */
-  .form-sec { background: var(--navy); }
-  .form-sec .tag { display: block; text-align: center; }
-  .form-sec .h2 { color: var(--white); text-align: center; }
-  .form-sec .lead { color: rgba(255,255,255,.55); text-align: center; margin: 0 auto 2.5rem; max-width: 520px; }
-  .form-card {
-    background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.1);
-    border-radius: var(--r-lg); padding: 3rem; max-width: 700px; margin: 0 auto;
-  }
-  .fg { display: flex; flex-direction: column; gap: .4rem; }
-  .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; }
-  .full { grid-column: 1 / -1; }
-  label { font-size: .82rem; color: rgba(255,255,255,.55); font-weight: 500; }
-  input, select, textarea {
-    background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.11);
-    border-radius: 9px; color: var(--white); font-family: 'DM Sans', sans-serif;
-    font-size: .95rem; padding: .75rem 1rem; transition: border .2s; width: 100%;
-    -webkit-appearance: none; appearance: none;
-  }
-  input::placeholder, textarea::placeholder { color: rgba(255,255,255,.25); }
-  input:focus, select:focus, textarea:focus { outline: none; border-color: var(--accent); background: rgba(0,187,221,.05); }
-  select {
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='rgba(255,255,255,.4)' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
-    background-repeat: no-repeat; background-position: right 1rem center; padding-right: 2.5rem; cursor: pointer;
-  }
-  select option { background: var(--navy-mid); color: var(--white); }
-  .cond { display: none; }
-  .cond.show { display: flex; flex-direction: column; gap: .4rem; }
-  .cbx-wrap { display: flex; align-items: flex-start; gap: .75rem; }
-  .cbx-wrap input[type="checkbox"] { width: auto; margin-top: 3px; accent-color: var(--accent); cursor: pointer; }
-  .cbx-wrap label { font-size: .9rem; color: rgba(255,255,255,.65); cursor: pointer; }
-  .submit-btn {
-    width: 100%; background: var(--accent); color: var(--navy);
-    font-family: 'Sora', sans-serif; font-weight: 800; font-size: 1.05rem;
-    padding: 1.1rem; border-radius: 50px; border: none; cursor: pointer;
-    transition: all .22s; margin-top: 0.5rem;
-  }
-  .submit-btn:hover { background: var(--accent2); transform: translateY(-2px); box-shadow: 0 10px 30px rgba(0,187,221,.38); }
-  .success { display: none; text-align: center; padding: 3.5rem 2rem; }
-  .success .ck { font-size: 3.5rem; margin-bottom: 1rem; }
-  .success h3 { font-size: 1.5rem; color: var(--white); margin-bottom: .75rem; }
-  .success p { color: rgba(255,255,255,.55); font-size: 1rem; line-height: 1.75; }
-
-  /* FOOTER */
-  footer { background: #050F1A; padding: 3.5rem 6% 2.5rem; border-top: 1px solid rgba(255,255,255,.06); }
-  .footer-inner { max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 1.5rem; margin-bottom: 2rem; }
-  .f-logo { font-family: 'Sora', sans-serif; font-weight: 800; font-size: 1.4rem; color: var(--white); }
-  .f-logo span { color: var(--accent); }
-  .f-tagline { font-size: .88rem; color: rgba(255,255,255,.35); margin-top: .35rem; }
-  .f-right p { color: rgba(255,255,255,.35); font-size: .875rem; line-height: 1.8; text-align: right; }
-  .footer-legal { max-width: 1100px; margin: 0 auto; border-top: 1px solid rgba(255,255,255,.06); padding-top: 1.5rem; font-size: .8rem; color: rgba(255,255,255,.25); text-align: center; line-height: 1.8; }
-
-  /* RESPONSIVE */
-  @media (max-width: 900px) {
-    .hero-inner { grid-template-columns: 1fr; text-align: center; }
-    .hero-visual { display: none; }
-    .hero-sub, .hero-micro { margin-left: auto; margin-right: auto; }
-    .hero-actions { justify-content: center; }
-    .problem-inner { grid-template-columns: 1fr; }
-    .benefit-row { grid-template-columns: 1fr; }
-    .tier-cards { grid-template-columns: 1fr; max-width: 380px; }
-    .how-steps { grid-template-columns: 1fr; }
-    .branding-inner { grid-template-columns: 1fr; }
-    .form-grid { grid-template-columns: 1fr; }
-    .full { grid-column: 1; }
-    .f-right p { text-align: left; }
-    .footer-inner { flex-direction: column; }
-  }
-  @media (max-width: 580px) {
-    section { padding: 4rem 5%; }
-    .toggle-btn { font-size: .8rem; padding: .6rem 1.2rem; }
-    .prime-numbers { flex-direction: column; gap: 1rem; }
-    .form-card { padding: 2rem 1.25rem; }
-  }
+/* RESPONSIVE */
+@media(max-width:900px){
+  .hero-inner{grid-template-columns:1fr;text-align:center}
+  .hero-visual{display:none}
+  .hero-sub,.hero-bullets{margin-left:auto;margin-right:auto}
+  .hero-bullets{display:inline-flex;flex-direction:column;text-align:left}
+  .hero-actions{justify-content:center}
+  .problem-grid{grid-template-columns:1fr}
+  .solution-grid{grid-template-columns:1fr}
+  .tier-cards{grid-template-columns:1fr;max-width:380px}
+  .how-steps{grid-template-columns:1fr}
+  .branding-grid{grid-template-columns:1fr}
+  .form-grid{grid-template-columns:1fr}
+  .full{grid-column:1}
+  .f-right p{text-align:left}
+  .footer-inner{flex-direction:column}
+  .sub-tabs{flex-direction:column}
+}
+@media(max-width:580px){
+  section{padding:4rem 5%}
+  .toggle-btn{font-size:.8rem;padding:.6rem 1.1rem}
+  .price-block{flex-direction:column;gap:1rem}
+  .pb-divider{display:none}
+  .form-card{padding:2rem 1.25rem}
+  .yn-row{flex-direction:column}
+}
 </style>
 </head>
 <body>
@@ -371,16 +268,22 @@
 <section class="hero">
   <div class="hero-inner">
     <div>
-      <h1>Your water. <em>Sorted.</em><br>Without leaving<br>your house.</h1>
-      <p class="hero-sub">Marpay Plus delivers quality 50cl bottled water to your door on a schedule that works for you. No more last minute runs. No more running out.</p>
-      <p class="hero-micro">12 bottles per pack · From ₦1,500 · Delivered across Lagos.</p>
+      <div class="hero-badge"><i></i> Lagos Water Subscription</div>
+      <h1>Because in Lagos,<br>you're already doing<br><em>too much.</em><br>Water should be the<br>one thing you never<br>have to worry about.</h1>
+      <p class="hero-sub">Marpay Plus delivers quality 50cl bottled water to your door — on a schedule that works for you.</p>
+      <ul class="hero-bullets">
+        <li>12 bottles per pack</li>
+        <li>From ₦1,500 per pack</li>
+        <li>Delivered across Lagos</li>
+        <li>No last-minute runs. No running out.</li>
+      </ul>
       <div class="hero-actions">
         <a href="#subscribe" class="btn btn-cta">Subscribe Now →</a>
         <a href="#packages" class="btn btn-ghost">See Packages ↓</a>
       </div>
     </div>
     <div class="hero-visual">
-      <div class="glow-ring" style="position:relative;">
+      <div class="glow-ring" style="position:relative">
         <svg width="140" height="250" viewBox="0 0 140 250" fill="none" xmlns="http://www.w3.org/2000/svg">
           <rect x="52" y="8" width="36" height="16" rx="4" fill="#00BBDD" opacity="0.55"/>
           <rect x="57" y="3" width="26" height="10" rx="3" fill="#00BBDD"/>
@@ -391,14 +294,10 @@
           <text x="70" y="140" text-anchor="middle" font-family="Sora,sans-serif" font-weight="800" font-size="20" fill="white">PLUS</text>
           <text x="70" y="157" text-anchor="middle" font-family="Sora,sans-serif" font-size="8" fill="rgba(255,255,255,0.4)">12 × 50cl</text>
           <path d="M24 125 Q40 118 70 115 Q100 118 116 125 Q100 135 70 138 Q40 135 24 125Z" fill="#00BBDD" opacity="0.10"/>
-          <defs>
-            <linearGradient id="g1" x1="24" y1="0" x2="116" y2="0" gradientUnits="userSpaceOnUse">
-              <stop offset="0%" stop-color="white" stop-opacity="0.4"/>
-              <stop offset="45%" stop-color="white" stop-opacity="0"/>
-              <stop offset="100%" stop-color="white" stop-opacity="0.1"/>
-            </linearGradient>
-          </defs>
+          <defs><linearGradient id="g1" x1="24" y1="0" x2="116" y2="0" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="white" stop-opacity="0.4"/><stop offset="45%" stop-color="white" stop-opacity="0"/><stop offset="100%" stop-color="white" stop-opacity="0.1"/></linearGradient></defs>
         </svg>
+        <div class="float-pill fp1"><strong>₦1,500</strong> / pack</div>
+        <div class="float-pill fp2">🚚 Lagos-wide delivery</div>
       </div>
     </div>
   </div>
@@ -407,15 +306,19 @@
 <!-- 02 THE PROBLEM -->
 <section class="problem" id="problem">
   <div class="wrap">
-    <div class="problem-inner r">
+    <div class="problem-grid r">
       <div>
-        <span class="tag">The Problem</span>
-        <h2>Lagos does not slow down for water runs.</h2>
-        <p>You are in the middle of a busy week. Work is full. The house is full. Then someone asks for water and there is none. So you send someone out. Or you go yourself. Or a guest gets warm, unsealed bottle water at your event.</p>
-        <p>It happens more than it should. And every time it does, it costs you — time, money, or a little embarrassment.</p>
+        <span class="eyebrow">The Problem</span>
+        <h2>Lagos does not slow down<br>for water runs.</h2>
+        <p>Are you a busy Lagos professional, a business owner who barely sits down, or a family person juggling work, traffic, and a full house — so focused on keeping everything running that you don't notice you've run out of water until someone asks for a cup and there's none?</p>
+        <p>Maybe it's 8pm and you're too exhausted to make a run. Maybe it's the morning of your event and you're realising your water order never came. Maybe a guest gets handed a warm, unsealed bottle at a gathering you worked hard to make look right.</p>
+        <p>It happens more than it should. And every time it does, it costs you — time, money, or a little of that Lagos composure you work so hard to keep.</p>
         <p><strong>Marpay Plus was built to eliminate that problem entirely.</strong></p>
       </div>
       <div class="problem-visual">
+        <div class="problem-icon">💧</div>
+        <p>Running out of water in Lagos is not just an inconvenience. It's <strong>time lost, money wasted, and composure spent</strong> on something that should have been handled already.</p>
+      </div>
     </div>
   </div>
 </section>
@@ -423,27 +326,39 @@
 <!-- 03 THE SOLUTION -->
 <section class="solution" id="solution">
   <div class="wrap">
-    <div class="solution-top r">
-      <span class="tag">The Solution</span>
-      <h2 class="h2">Marpay Plus. Water at your door,<br>before you need it.</h2>
-      <p style="font-size:1.05rem;color:var(--text-mid);line-height:1.8;margin-bottom:1rem;">Marpay Plus is a water subscription service from Marpay Water. Subscribe once and we handle the rest 50cl bottles packed in 12s, delivered directly to your door on a schedule you choose.</p>
-      <p style="font-size:1.05rem;color:var(--text-mid);line-height:1.8;">No middleman. No retail markup. Straight from the factory to you. That is why the price makes sense. And that is why the water is good.</p>
-    </div>
-    <div class="benefit-row r">
-      <div class="benefit-box">
-        <span class="benefit-icon">🏭</span>
-        <h4>Factory-Direct Quality</h4>
-        <p>Straight from Marpay Water's factory. No middleman, no storage compromise.</p>
+    <div class="solution-grid r">
+      <div>
+        <span class="eyebrow">The Solution</span>
+        <h2 class="h2">Marpay Plus.<br>Water at your door,<br>before you need it.</h2>
+        <ul class="sol-bullets" style="margin-top:1.25rem">
+          <li>Subscribe once — we handle every delivery from there</li>
+          <li>50cl bottles packed in 12s, delivered to your door on a schedule you choose</li>
+          <li>No middleman. No retail markup. Straight from the factory to you.</li>
+          <li>That's why the price makes sense. And that's why the water is good.</li>
+        </ul>
       </div>
-      <div class="benefit-box">
-        <span class="benefit-icon">💰</span>
-        <h4>Near-Factory Price</h4>
-        <p>₦1,500 per pack. The price that makes sense when you cut out the retail chain.</p>
-      </div>
-      <div class="benefit-box">
-        <span class="benefit-icon">🚚</span>
-        <h4>Delivered to Your Door</h4>
-        <p>Coordinated delivery across Lagos on a schedule that works for you.</p>
+      <div class="benefit-row">
+        <div class="benefit-box">
+          <div class="benefit-icon">🏭</div>
+          <div>
+            <h4>Factory-Direct Quality</h4>
+            <p>Straight from Marpay Water's factory. No middleman, no storage compromise.</p>
+          </div>
+        </div>
+        <div class="benefit-box">
+          <div class="benefit-icon">💰</div>
+          <div>
+            <h4>Near-Factory Price</h4>
+            <p>₦1,500 per pack. The price that makes sense when you cut out the retail chain.</p>
+          </div>
+        </div>
+        <div class="benefit-box">
+          <div class="benefit-icon">🚚</div>
+          <div>
+            <h4>Delivered to Your Door</h4>
+            <p>Coordinated delivery across Lagos on a schedule that works for you.</p>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -453,43 +368,73 @@
 <section class="packages" id="packages">
   <div class="wrap">
     <div class="r">
-      <span class="tag">Packages & Pricing</span>
+      <span class="eyebrow">Packages & Pricing</span>
       <h2 class="h2">Find your package.</h2>
     </div>
     <div class="toggle-wrap r">
       <div class="toggle">
-        <button class="toggle-btn active" data-pkg="prime">The Prime Bundle</button>
-        <button class="toggle-btn" data-pkg="event">Event Planner Package</button>
+        <button class="toggle-btn active" data-pkg="household">Household Package</button>
+        <button class="toggle-btn" data-pkg="event">Event Package</button>
       </div>
     </div>
 
-    <!-- Prime Bundle -->
-    <div class="pkg-view active r" id="pkg-prime">
-      <div class="prime-card">
-        <p class="prime-tagline">The Prime Bundle</p>
-        <h3>Your monthly water. Handled.</h3>
-        <p>Subscribe to The Prime Bundle and receive packs of 12 × 50cl Marpay bottles delivered to your door every month. No weekly trips. No running out mid-week. Just water, when and where you need it.</p>
-        <div class="prime-numbers">
-          <div class="pn-item">
-            <div class="pn-label">Price per pack</div>
-            <div class="pn-val">₦1,500</div>
+    <!-- HOUSEHOLD -->
+    <div class="pkg-view active r" id="pkg-household">
+      <div class="sub-tabs">
+        <button class="sub-tab active" data-sub="essential">The Essential</button>
+        <button class="sub-tab" data-sub="unlimited">The Unlimited</button>
+      </div>
+
+      <!-- The Essential -->
+      <div class="sub-panel active" id="sub-essential">
+        <div class="hh-card">
+          <p class="pkg-eyebrow">The Essential</p>
+          <h3>Your monthly water. Handled.</h3>
+          <p>Subscribe to The Essential and receive packs of 12 × 50cl Marpay bottles delivered to your door every month. No weekly trips. No running out mid-week. Just water, when and where you need it.</p>
+          <div class="price-block">
+            <div class="pb-left">
+              <div class="pb-price">₦1,500<span style="font-size:.9rem;font-weight:400;color:rgba(255,255,255,.4)">/pack</span></div>
+              <div class="pb-detail">10 – 15 packs/month<br>120 – 180 bottles delivered</div>
+            </div>
+            <div class="pb-divider"></div>
+            <div class="pb-right">
+              <div class="pb-from">From ₦15,000<span style="font-size:.9rem;font-weight:400;color:rgba(255,255,255,.4)">/month</span></div>
+              <div class="pb-range">Up to ₦22,500/month</div>
+            </div>
           </div>
-          <div class="pn-item">
-            <div class="pn-label">Minimum</div>
-            <div class="pn-val">10 packs</div>
-            <div class="pn-sub">That's 120 bottles delivered</div>
-          </div>
+          <p class="hh-benefit">One subscription. Zero errands. Water sorted before you even think about it.</p>
+          <a href="#subscribe" class="btn btn-cta">Subscribe to The Essential →</a>
         </div>
-        <p class="prime-start">Start from <span>₦15,000</span>/month</p>
-        <p class="prime-benefit">The more packs you order, the more you save on delivery. One subscription. Zero errands.</p>
-        <a href="#subscribe" class="btn btn-cta">Subscribe to The Prime Bundle →</a>
+      </div>
+
+      <!-- The Unlimited -->
+      <div class="sub-panel" id="sub-unlimited">
+        <div class="hh-card">
+          <div class="hh-badge">Recommended for Offices</div>
+          <p class="pkg-eyebrow">The Unlimited</p>
+          <h3>More water. Better value. No interruptions.</h3>
+          <p>Subscribe to The Unlimited and receive packs of 12 × 50cl Marpay bottles delivered to your door every month — in larger volumes, at a better rate. Designed for homes and offices that run on water.</p>
+          <div class="price-block">
+            <div class="pb-left">
+              <div class="pb-price">₦1,500<span style="font-size:.9rem;font-weight:400;color:rgba(255,255,255,.4)">/pack</span></div>
+              <div class="pb-detail">20 – 30 packs/month<br>240 – 360 bottles delivered</div>
+            </div>
+            <div class="pb-divider"></div>
+            <div class="pb-right">
+              <div class="pb-from">From ₦30,000<span style="font-size:.9rem;font-weight:400;color:rgba(255,255,255,.4)">/month</span></div>
+              <div class="pb-range">Up to ₦45,000/month</div>
+            </div>
+          </div>
+          <p class="hh-benefit">The more packs you order, the more you save on delivery. Built for the homes and offices that never want to think about water again.</p>
+          <a href="#subscribe" class="btn btn-cta">Subscribe to The Unlimited →</a>
+        </div>
       </div>
     </div>
 
-    <!-- Event Planner -->
+    <!-- EVENT -->
     <div class="pkg-view r" id="pkg-event">
       <div class="event-header">
-        <p class="prime-tagline">Event Planner Package</p>
+        <p class="pkg-eyebrow">Event Package</p>
         <h3>Water for your event. Branded with your name.</h3>
         <p>Marpay Plus supplies event planners with bulk 50cl bottled water delivered to your venue. Order 50 packs or more and we add something no off-the-shelf water can offer: your event name or brand on every bottle.</p>
       </div>
@@ -517,7 +462,7 @@
           <div class="tier-label"><div class="tick yes">✓</div> Custom label included</div>
         </div>
       </div>
-      <div class="event-cta-wrap">
+      <div class="event-cta">
         <a href="#subscribe" class="btn btn-cta">Order Your Event Package →</a>
         <p class="event-fine">Custom label details and artwork requirements confirmed at order. Pricing subject to revision.</p>
       </div>
@@ -529,7 +474,7 @@
 <section class="how" id="how">
   <div class="wrap">
     <div class="r">
-      <span class="tag">Process</span>
+      <span class="eyebrow">Process</span>
       <h2 class="h2">Two steps to never running<br>out of water again.</h2>
     </div>
     <div class="how-steps r">
@@ -554,42 +499,61 @@
 <!-- 06 CUSTOM BRANDING -->
 <section class="branding-sec" id="branding">
   <div class="wrap">
-    <div class="branding-inner r">
+    <div class="branding-grid r">
       <div>
-        <span class="tag">Custom Branding</span>
+        <span class="eyebrow">Custom Branding</span>
         <h2 class="h2">Put your name on every bottle.</h2>
-        <p class="lead">Order 50 packs or more and every bottle at your event carries your name, your event title, or your brand. It is the detail guests notice and the one they remember.</p>
-        <p class="branding-note" style="margin-top:.75rem;">Available from 50 packs. Artwork requirements shared at the time of order.</p>
-        <a href="#subscribe" class="btn btn-cta" style="margin-top:1.25rem;">Order Branded Water →</a>
-      </div>
-  </div>
-</section>
-
-<!-- 07 STORAGE TIP -->
-<section class="storage" id="storage">
-  <div class="wrap">
-    <div class="storage-inner r">
-      <h2 class="h2">A quick word on storing your water.</h2>
-      <button class="accordion-btn" id="acc-btn">
-        Storage tips — tap to read
-        <span class="acc-arrow">▾</span>
-      </button>
-      <div class="accordion-body" id="acc-body">
-        <ul class="tip-list">
-          <li>Store packs upright in a cool, dry space — a pantry, store room, or kitchen corner works well.</li>
-          <li>Avoid direct sunlight and keep away from strong-smelling chemicals or cleaning products.</li>
-          <li>Sealed packs stay fresh. Once a pack is opened, finish it within the week.</li>
+        <p class="lead">Order 50 packs or more and every bottle at your event carries your name, your event title, or your brand. It is the detail guests notice — and the one they remember.</p>
+        <ul class="brand-bullets">
+          <li>Available from 50 packs and above</li>
+          <li>Your event name, brand name, or custom artwork on every bottle</li>
+          <li>Artwork requirements and file formats shared at the time of order</li>
+          <li>Included at no extra charge — built into the Growth and Premium tiers</li>
         </ul>
+        <p class="brand-note">Available from 50 packs. Artwork requirements shared at the time of order.</p>
+        <a href="#subscribe" class="btn btn-cta">Order Branded Water →</a>
+      </div>
+      <div class="brand-visual">
+        <div class="bv-icon">🍶</div>
+        <div class="bv-tag">YOUR BRAND HERE</div>
+        <p style="margin-top:.85rem">Custom-labelled 50cl Marpay bottles<br>delivered to your event venue in Lagos</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- 08 FORM -->
+<!-- 07 STORAGE FAQ -->
+<section class="storage" id="storage">
+  <div class="wrap">
+    <div class="storage-inner r">
+      <h2 class="h2">A quick word on storing your water.</h2>
+      <div class="faq-list">
+        <div class="faq-item">
+          <button class="faq-btn" data-faq="0">Where should I store my water packs? <span class="faq-arrow">▾</span></button>
+          <div class="faq-body" id="faq-0">Store packs upright in a cool, dry space — a pantry, store room, or kitchen corner works well.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-btn" data-faq="1">Can I leave them near a window or outside? <span class="faq-arrow">▾</span></button>
+          <div class="faq-body" id="faq-1">Avoid direct sunlight and keep away from strong-smelling chemicals or cleaning products.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-btn" data-faq="2">How long do the packs stay fresh? <span class="faq-arrow">▾</span></button>
+          <div class="faq-body" id="faq-2">Sealed packs stay fresh. Once a pack is opened, finish it within the week.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-btn" data-faq="3">How much space do I need for 10 packs? <span class="faq-arrow">▾</span></button>
+          <div class="faq-body" id="faq-3">Ten packs fit comfortably in a standard store room corner or large kitchen cabinet — roughly the size of a small shelf.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 08 SUBSCRIPTION FORM -->
 <section class="form-sec" id="subscribe">
   <div class="wrap">
     <div class="r">
-      <span class="tag">Get Started</span>
+      <span class="eyebrow">Get Started</span>
       <h2 class="h2">Start your subscription.</h2>
       <p class="lead">Fill in the form and we'll be in touch within 24 hours to confirm your delivery.</p>
     </div>
@@ -606,15 +570,16 @@
               <input type="tel" id="f-phone" placeholder="e.g. 0801 234 5678" required>
             </div>
             <div class="fg full">
-              <label for="f-email">Email Address <span style="opacity:.42;">(optional)</span></label>
+              <label for="f-email">Email Address <span style="opacity:.42">(optional)</span></label>
               <input type="email" id="f-email" placeholder="e.g. adaeze@email.com">
             </div>
             <div class="fg full">
               <label for="f-pkg">I am subscribing as *</label>
               <select id="f-pkg" required>
                 <option value="" disabled selected>Select a package</option>
-                <option value="prime">The Prime Bundle</option>
-                <option value="event">Event Planner Package</option>
+                <option value="essential">Household Package — The Essential</option>
+                <option value="unlimited">Household Package — The Unlimited</option>
+                <option value="event">Event Package</option>
               </select>
             </div>
             <div class="fg">
@@ -623,23 +588,22 @@
             </div>
             <div class="fg">
               <label for="f-packs">Number of Packs *</label>
-              <input type="number" id="f-packs" placeholder="Min 10 (Prime) / Min 30 (Event)" min="1" required>
+              <input type="number" id="f-packs" placeholder="Min 10 / 20 / 30 by package" min="1" required>
             </div>
-
-            <!-- Event-only conditionals -->
+            <!-- Event conditionals -->
             <div class="fg cond full" id="cond-date">
               <label for="f-edate">Event Date</label>
               <input type="date" id="f-edate">
             </div>
-            <div class="fg cond full" id="cond-label">
-              <div class="cbx-wrap">
-                <input type="checkbox" id="f-label">
-                <label for="f-label">I'd like custom branded labels on my bottles <span style="opacity:.45;">(included from 50 packs — Growth tier and above)</span></label>
+            <div class="fg cond full" id="cond-branded">
+              <label>Branded Bottles? <span style="opacity:.42">(optional)</span></label>
+              <div class="yn-row">
+                <label class="yn-opt" id="yn-yes"><input type="radio" name="branded" value="yes"> Yes, I'd like branded bottles</label>
+                <label class="yn-opt" id="yn-no"><input type="radio" name="branded" value="no"> No, standard bottles are fine</label>
               </div>
             </div>
-
             <div class="fg full">
-              <label for="f-notes">Additional Notes <span style="opacity:.42;">(optional)</span></label>
+              <label for="f-notes">Additional Notes <span style="opacity:.42">(optional)</span></label>
               <textarea id="f-notes" rows="3" placeholder="Delivery instructions, gate details, or any special requests"></textarea>
             </div>
           </div>
@@ -673,7 +637,7 @@
 </footer>
 
 <script>
-  // Package toggle
+  // Main toggle: Household vs Event
   document.querySelectorAll('.toggle-btn').forEach(btn => {
     btn.addEventListener('click', () => {
       document.querySelectorAll('.toggle-btn').forEach(b => b.classList.remove('active'));
@@ -683,19 +647,53 @@
     });
   });
 
-  // Conditional form fields
+  // Household sub-tabs
+  document.querySelectorAll('.sub-tab').forEach(tab => {
+    tab.addEventListener('click', () => {
+      document.querySelectorAll('.sub-tab').forEach(t => t.classList.remove('active'));
+      document.querySelectorAll('.sub-panel').forEach(p => p.classList.remove('active'));
+      tab.classList.add('active');
+      document.getElementById('sub-' + tab.dataset.sub).classList.add('active');
+    });
+  });
+
+  // Form conditionals
   const fPkg   = document.getElementById('f-pkg');
   const fPacks = document.getElementById('f-packs');
-  const cdDate  = document.getElementById('cond-date');
-  const cdLabel = document.getElementById('cond-label');
+  const cdDate     = document.getElementById('cond-date');
+  const cdBranded  = document.getElementById('cond-branded');
 
   function updateConds() {
     const isEvent = fPkg.value === 'event';
     cdDate.classList.toggle('show', isEvent);
-    cdLabel.classList.toggle('show', isEvent && parseInt(fPacks.value) >= 50);
+    cdBranded.classList.toggle('show', isEvent && parseInt(fPacks.value) >= 50);
   }
   fPkg.addEventListener('change', updateConds);
   fPacks.addEventListener('input', updateConds);
+
+  // Radio styling
+  document.querySelectorAll('.yn-opt input[type=radio]').forEach(r => {
+    r.addEventListener('change', () => {
+      document.querySelectorAll('.yn-opt').forEach(o => o.classList.remove('sel'));
+      r.parentElement.classList.add('sel');
+    });
+  });
+
+  // FAQ accordion
+  document.querySelectorAll('.faq-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const id = btn.dataset.faq;
+      const body = document.getElementById('faq-' + id);
+      const isOpen = btn.classList.contains('open');
+      // close all
+      document.querySelectorAll('.faq-btn').forEach(b => b.classList.remove('open'));
+      document.querySelectorAll('.faq-body').forEach(b => b.classList.remove('open'));
+      if (!isOpen) {
+        btn.classList.add('open');
+        body.classList.add('open');
+      }
+    });
+  });
 
   // Form submit
   document.getElementById('sub-form').addEventListener('submit', e => {
@@ -704,21 +702,12 @@
     document.getElementById('success').style.display = 'block';
   });
 
-  // Accordion
-  const accBtn  = document.getElementById('acc-btn');
-  const accBody = document.getElementById('acc-body');
-  accBtn.addEventListener('click', () => {
-    accBtn.classList.toggle('open');
-    accBody.classList.toggle('open');
-  });
-
   // Scroll reveal
   const obs = new IntersectionObserver(entries => {
-    entries.forEach(e => {
-      if (e.isIntersecting) { e.target.classList.add('on'); obs.unobserve(e.target); }
-    });
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('on'); obs.unobserve(e.target); } });
   }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
   document.querySelectorAll('.r').forEach(el => obs.observe(el));
 </script>
 </body>
 </html>
+Done
