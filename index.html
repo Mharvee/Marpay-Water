@@ -3,711 +3,1721 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Marpay Plus — Water Delivered to Your Door | Lagos Subscription Service</title>
-<meta name="description" content="Subscribe to Marpay Plus and get 50cl bottled water delivered to your home, office, or event in Lagos. From ₦1,500 per pack. No errands. No running out.">
+<title>Marpay Plus — Factory-Direct Water at Your Door in 24 Hours | Lagos</title>
+<meta name="description" content="Stop running out of water. Get 75cl bottled water delivered to your door in Lekki, Ikoyi, VI, Gbagada, Magodo, Surulere & more. Min 10 packs. Pay online & save ₦1,000.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Sora:wght@400;500;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<script src="https://js.paystack.co/v1/inline.js"></script>
+
 <style>
+/* ======== RESET & BASE ======== */
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-:root{
-  --navy:#07213D;--navy-mid:#0C2E55;--navy-light:#11406E;
-  --accent:#00BBDD;--accent2:#47CDE0;
-  --white:#fff;--off:#F2F8FD;--pale:#E3F2FA;
-  --text:#0A2540;--mid:#2D5070;--muted:#5C809A;
-  --border:rgba(26,92,154,.14);
-  --r:14px;--rlg:22px;
-  --sh:0 4px 28px rgba(7,33,61,.10);--shlg:0 14px 44px rgba(7,33,61,.16)
-}
 html{scroll-behavior:smooth}
-body{font-family:'DM Sans',sans-serif;background:var(--white);color:var(--text);line-height:1.65;overflow-x:hidden}
-h1,h2,h3,h4{font-family:'Sora',sans-serif;line-height:1.16}
+::-webkit-scrollbar{width:4px}
+::-webkit-scrollbar-track{background:#051929}
+::-webkit-scrollbar-thumb{background:#007A8C;border-radius:2px}
 
-/* NAV */
-nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:center;justify-content:space-between;padding:1rem 6%;background:rgba(7,33,61,.96);backdrop-filter:blur(14px);border-bottom:1px solid rgba(255,255,255,.07)}
-.logo{font-family:'Sora',sans-serif;font-weight:800;font-size:1.25rem;color:var(--white);letter-spacing:-.03em}
-.logo span{color:var(--accent)}
-.nav-pill{background:var(--accent);color:var(--navy);font-family:'Sora',sans-serif;font-weight:700;font-size:.85rem;padding:.5rem 1.35rem;border-radius:50px;text-decoration:none;transition:all .2s}
-.nav-pill:hover{background:var(--accent2);transform:translateY(-1px)}
+:root{
+  --navy:#051929;
+  --navy-mid:#0A2840;
+  --navy-light:#0F3860;
+  --cyan:#00D4F5;
+  --cyan-dim:#007A8C;
+  --cyan-glow:rgba(0,212,245,0.15);
+  --gold:#F5A623;
+  --gold-dim:rgba(245,166,35,0.2);
+  --green:#00C896;
+  --red:#FF4757;
+  --white:#FFFFFF;
+  --text:rgba(255,255,255,0.88);
+  --muted:#7BA7C2;
+  --border:rgba(0,212,245,0.12);
+  --r:12px;--rlg:20px;
+  --sh:0 4px 30px rgba(0,0,0,0.35);
+  --sh-cyan:0 0 40px rgba(0,212,245,0.2)
+}
 
-/* SHARED */
-section{padding:6rem 6%}
-.wrap{max-width:1100px;margin:0 auto}
-.eyebrow{display:inline-block;font-size:.72rem;font-weight:700;letter-spacing:.10em;text-transform:uppercase;color:var(--accent);margin-bottom:.75rem}
-.h2{font-size:clamp(1.7rem,2.8vw,2.35rem);font-weight:800;letter-spacing:-.03em;margin-bottom:1rem}
-.lead{font-size:1.05rem;color:var(--mid);line-height:1.75;max-width:580px}
-.btn{display:inline-flex;align-items:center;gap:.35rem;font-family:'Sora',sans-serif;font-weight:700;font-size:.95rem;padding:.9rem 2rem;border-radius:50px;text-decoration:none;transition:all .22s;cursor:pointer;border:none}
-.btn-cta{background:var(--accent);color:var(--navy)}
-.btn-cta:hover{background:var(--accent2);transform:translateY(-2px);box-shadow:0 8px 26px rgba(0,187,221,.35)}
-.btn-ghost{background:transparent;color:var(--white);border:1.5px solid rgba(255,255,255,.28)}
-.btn-ghost:hover{border-color:var(--accent);color:var(--accent)}
-.btn-outline{background:transparent;color:var(--navy);border:1.5px solid var(--navy)}
-.btn-outline:hover{background:var(--navy);color:var(--white)}
+body{font-family:'DM Sans',sans-serif;background:var(--navy);color:var(--text);line-height:1.65;overflow-x:hidden}
+h1,h2,h3,h4,h5{font-family:'Sora',sans-serif;line-height:1.15}
+img{display:block;width:100%;height:100%;object-fit:cover}
+
+/* ======== FLOATING WHATSAPP ======== */
+.wa-float{
+  position:fixed;bottom:28px;right:22px;z-index:999;
+  display:flex;align-items:center;gap:10px;
+  background:#25D366;color:#fff;
+  font-family:'Sora',sans-serif;font-weight:700;font-size:0.85rem;
+  padding:12px 18px 12px 14px;border-radius:50px;text-decoration:none;
+  box-shadow:0 6px 24px rgba(37,211,102,0.45);
+  transition:all .25s;
+  animation:wa-glow 3s ease infinite;
+}
+.wa-float:hover{transform:translateY(-3px);box-shadow:0 10px 36px rgba(37,211,102,0.6);background:#1dba58}
+.wa-float svg{width:24px;height:24px;fill:#fff;flex-shrink:0}
+.wa-label{display:block}
+@keyframes wa-glow{0%,100%{box-shadow:0 6px 24px rgba(37,211,102,0.45)}50%{box-shadow:0 6px 36px rgba(37,211,102,0.7)}}
+@media(max-width:480px){.wa-label{display:none}.wa-float{padding:14px;border-radius:50%}}
+
+/* ======== URGENCY BAR ======== */
+.urgency-bar{
+  position:fixed;top:0;left:0;right:0;z-index:600;
+  background:linear-gradient(90deg,#F5A623,#FF6B00);
+  color:#1A0700;font-family:'Sora',sans-serif;font-weight:700;font-size:0.82rem;
+  padding:0.6rem 1rem;text-align:center;
+  display:flex;align-items:center;justify-content:center;gap:0.6rem;
+  flex-wrap:wrap;
+}
+.urgency-bar .pulse{width:7px;height:7px;border-radius:50%;background:#c0392b;animation:blink 1.4s infinite;flex-shrink:0}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:0.2}}
+
+/* ======== NAV ======== */
+nav{
+  position:fixed;top:36px;left:0;right:0;z-index:500;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:1rem 5%;
+  background:rgba(5,25,41,0.96);
+  backdrop-filter:blur(20px);
+  border-bottom:1px solid var(--border);
+  transition:all .3s;
+}
+nav.scrolled{top:0;padding:.7rem 5%;background:rgba(5,25,41,0.99)}
+.logo{font-family:'Sora',sans-serif;font-weight:800;font-size:1.3rem;color:#fff;text-decoration:none;letter-spacing:-0.04em}
+.logo span{color:var(--cyan)}
+.nav-links{display:flex;align-items:center;gap:2rem}
+.nav-link{color:var(--muted);text-decoration:none;font-size:.87rem;font-weight:500;transition:color .2s}
+.nav-link:hover{color:#fff}
+.nav-cta{
+  background:var(--cyan);color:var(--navy);
+  font-family:'Sora',sans-serif;font-weight:700;font-size:.85rem;
+  padding:.6rem 1.4rem;border-radius:50px;text-decoration:none;transition:all .22s;
+}
+.nav-cta:hover{background:#33E0FF;transform:translateY(-1px)}
+@media(max-width:768px){.nav-links{display:none}}
+
+/* ======== SHARED UTILS ======== */
+section{padding:5.5rem 5%}
+.wrap{max-width:1140px;margin:0 auto}
+.eyebrow{display:inline-block;font-size:.7rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--cyan);margin-bottom:.75rem}
+.section-tag{display:inline-block;font-size:.7rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--cyan);margin-bottom:.75rem;text-align:center;width:100%}
+.section-title{font-size:clamp(1.8rem,3vw,2.6rem);font-weight:800;color:#fff;letter-spacing:-0.03em;margin-bottom:1rem}
+.section-title .hl{color:var(--cyan)}
+.section-title .gld{color:var(--gold)}
+
+.btn{display:inline-flex;align-items:center;gap:.4rem;font-family:'Sora',sans-serif;font-weight:700;font-size:.93rem;padding:.88rem 2rem;border-radius:50px;text-decoration:none;transition:all .22s;cursor:pointer;border:none}
+.btn-primary{background:var(--cyan);color:var(--navy)}
+.btn-primary:hover{background:#33E0FF;transform:translateY(-2px);box-shadow:0 10px 30px rgba(0,212,245,0.4)}
+.btn-gold{background:var(--gold);color:#1A0700}
+.btn-gold:hover{background:#FFB833;transform:translateY(-2px);box-shadow:0 10px 30px rgba(245,166,35,0.4)}
+.btn-outline{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,0.28)}
+.btn-outline:hover{border-color:var(--cyan);color:var(--cyan)}
+.btn-lg{font-size:1.05rem;padding:1.1rem 2.5rem}
+.btn-full{width:100%;justify-content:center}
 
 /* scroll reveal */
-.r{opacity:0;transform:translateY(22px);transition:opacity .55s ease,transform .55s ease}
+.r{opacity:0;transform:translateY(24px);transition:opacity .65s ease,transform .65s ease}
 .r.on{opacity:1;transform:translateY(0)}
+.r2{opacity:0;transform:translateY(24px);transition:opacity .65s ease .15s,transform .65s ease .15s}
+.r2.on{opacity:1;transform:translateY(0)}
+.r3{opacity:0;transform:translateY(24px);transition:opacity .65s ease .28s,transform .65s ease .28s}
+.r3.on{opacity:1;transform:translateY(0)}
 
-/* ── HERO ── */
-.hero{min-height:100vh;padding:8rem 6% 5rem;background:var(--navy);position:relative;overflow:hidden;display:flex;align-items:center}
-.hero::before{content:'';position:absolute;top:-20%;right:-5%;width:65%;height:130%;background:radial-gradient(ellipse at 60% 40%,rgba(0,187,221,.13) 0%,transparent 65%);pointer-events:none}
-.hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--accent),transparent)}
-.hero-inner{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;width:100%;max-width:1100px;margin:0 auto;position:relative;z-index:1}
-.hero-badge{display:inline-flex;align-items:center;gap:.5rem;background:rgba(0,187,221,.12);border:1px solid rgba(0,187,221,.3);color:var(--accent2);font-size:.75rem;font-weight:600;padding:.35rem 1rem;border-radius:50px;margin-bottom:1.5rem;text-transform:uppercase;letter-spacing:.07em}
-.hero-badge i{width:6px;height:6px;border-radius:50%;background:var(--accent);animation:blink 2s infinite;display:inline-block}
-@keyframes blink{0%,100%{opacity:1}50%{opacity:.3}}
-.hero h1{font-size:clamp(1.75rem,3.5vw,3rem);font-weight:800;color:var(--white);letter-spacing:-.04em;margin-bottom:1.5rem;text-transform:uppercase;line-height:1.1}
-.hero h1 em{color:var(--accent);font-style:normal}
-.hero-sub{font-size:1.05rem;color:rgba(255,255,255,.68);line-height:1.75;margin-bottom:1.25rem;max-width:480px}
-.hero-bullets{list-style:none;margin-bottom:2.25rem;display:flex;flex-direction:column;gap:.55rem}
-.hero-bullets li{display:flex;align-items:center;gap:.75rem;font-size:.95rem;color:rgba(255,255,255,.65)}
-.hero-bullets li::before{content:'';width:18px;height:18px;border-radius:50%;flex-shrink:0;background:rgba(0,187,221,.2);border:1px solid var(--accent);background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='8' viewBox='0 0 10 8'%3E%3Cpath d='M1 4l2.5 2.5L9 1' stroke='%2300BBDD' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:center}
+/* grid divider */
+.divider{height:1px;background:linear-gradient(90deg,transparent,var(--cyan-dim),transparent);margin:0}
+
+/* ======== HERO ======== */
+.hero{
+  min-height:100vh;display:flex;align-items:center;
+  padding:8rem 5% 4.5rem;background:var(--navy);
+  position:relative;overflow:hidden;
+}
+.hero-bg-grid{
+  position:absolute;inset:0;
+  background-image:linear-gradient(rgba(0,212,245,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(0,212,245,.025) 1px,transparent 1px);
+  background-size:64px 64px;pointer-events:none;
+}
+.hero-bg-glow{
+  position:absolute;top:-15%;right:-8%;width:65%;height:140%;
+  background:radial-gradient(ellipse at 60% 40%,rgba(0,212,245,.07) 0%,transparent 62%);
+  pointer-events:none;
+}
+.hero-bottom-line{position:absolute;bottom:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--cyan),transparent)}
+
+.hero-inner{
+  max-width:1140px;margin:0 auto;
+  display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center;
+  width:100%;position:relative;z-index:1;
+}
+
+.hero-live{display:inline-flex;align-items:center;gap:.5rem;background:rgba(0,200,150,.09);border:1px solid rgba(0,200,150,.3);color:var(--green);font-size:.75rem;font-weight:600;padding:.35rem 1rem;border-radius:50px;margin-bottom:1.5rem;text-transform:uppercase;letter-spacing:.07em}
+.hero-live i{width:7px;height:7px;border-radius:50%;background:var(--green);animation:blink 2s infinite;flex-shrink:0}
+
+.hero-headline{
+  font-family:'Bebas Neue',cursive;
+  font-size:clamp(3.5rem,5.5vw,5.5rem);
+  color:#fff;line-height:.95;letter-spacing:.03em;margin-bottom:1.5rem;
+}
+.hero-headline .cyan{color:var(--cyan)}
+.hero-headline .gold{color:var(--gold)}
+.hero-headline .red{color:var(--red)}
+
+.hero-sub{font-size:1.05rem;color:var(--muted);line-height:1.8;margin-bottom:1.5rem;max-width:500px}
+.hero-sub strong{color:#fff}
+
+.hero-proof{display:flex;align-items:center;gap:.85rem;margin-bottom:2.25rem;font-size:.87rem;color:var(--muted);flex-wrap:wrap}
+.proof-avs{display:flex}
+.proof-av{width:32px;height:32px;border-radius:50%;border:2px solid var(--navy);margin-left:-9px;font-size:.8rem;display:flex;align-items:center;justify-content:center;font-weight:700;color:#fff;flex-shrink:0}
+.proof-av:first-child{margin-left:0}
+.proof-av:nth-child(1){background:linear-gradient(135deg,#007A8C,#0F3860)}
+.proof-av:nth-child(2){background:linear-gradient(135deg,#0F3860,#00D4F5)}
+.proof-av:nth-child(3){background:linear-gradient(135deg,#00C896,#007A8C)}
+.proof-av:nth-child(4){background:linear-gradient(135deg,#F5A623,#FF6B00)}
+.hero-proof strong{color:#fff}
+
 .hero-actions{display:flex;gap:1rem;flex-wrap:wrap}
-.hero-visual{display:flex;justify-content:center;align-items:center}
-.glow-ring{width:380px;height:380px;border-radius:50%;background:rgba(0,187,221,.05);border:1px solid rgba(0,187,221,.18);display:flex;align-items:center;justify-content:center;position:relative}
-.glow-ring::before{content:'';position:absolute;inset:28px;border-radius:50%;border:1px dashed rgba(0,187,221,.18);animation:rot 22s linear infinite}
-@keyframes rot{to{transform:rotate(360deg)}}
-.float-pill{position:absolute;background:rgba(255,255,255,.07);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.13);border-radius:50px;color:var(--white);font-size:.82rem;padding:.55rem 1.15rem;white-space:nowrap}
-.fp1{top:14%;right:-8%}
-.fp2{bottom:22%;left:-10%}
-.float-pill strong{color:var(--accent)}
 
-/* ── PROBLEM ── */
-.problem{background:var(--off)}
-.problem-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:4rem;align-items:center}
-.problem h2{font-size:clamp(1.6rem,2.6vw,2.1rem);font-weight:800;letter-spacing:-.03em;margin-bottom:1.25rem;color:var(--navy);text-transform:uppercase}
-.problem p{font-size:1rem;color:var(--mid);line-height:1.85;margin-bottom:.9rem}
-.problem p:last-child{margin-bottom:0}
-.problem p strong{color:var(--navy)}
-.problem-visual{background:var(--navy);border-radius:var(--rlg);padding:2.75rem 2.25rem;position:relative;overflow:hidden;text-align:center}
-.problem-visual::before{content:'';position:absolute;top:-40%;left:-30%;width:160%;height:160%;background:radial-gradient(ellipse,rgba(0,187,221,.10) 0%,transparent 65%)}
-.problem-icon{font-size:4rem;position:relative;z-index:1;margin-bottom:1rem}
-.problem-visual p{color:rgba(255,255,255,.55);font-size:.9rem;line-height:1.75;position:relative;z-index:1}
-.problem-visual strong{color:var(--accent)}
+/* hero visual */
+.hero-visual{display:flex;justify-content:center;align-items:center;position:relative}
+.hero-product-wrap{position:relative;width:100%;max-width:460px}
+.hero-main-img{
+  width:100%;aspect-ratio:4/5;
+  background:linear-gradient(135deg,var(--navy-mid) 0%,var(--navy-light) 100%);
+  border:1px solid var(--border);border-radius:var(--rlg);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  position:relative;overflow:hidden;
+}
+.hero-main-img::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 25%,rgba(0,212,245,.1) 0%,transparent 65%)}
+.hero-img-icon{font-size:5rem;position:relative;z-index:1;margin-bottom:.75rem}
+.hero-img-label{font-size:.72rem;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:.1em;position:relative;z-index:1;text-align:center;padding:0 1rem}
+.hero-img-sublabel{font-size:0.65rem;color:var(--cyan-dim);text-transform:uppercase;letter-spacing:.08em;position:relative;z-index:1;margin-top:.25rem;text-align:center}
 
-/* ── SOLUTION ── */
-.solution{background:var(--white)}
-.solution-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:flex-start}
-.solution h2{text-transform:uppercase}
-.sol-bullets{list-style:none;margin-top:1.25rem 0 2rem;display:flex;flex-direction:column;gap:.75rem}
-.sol-bullets li{display:flex;align-items:flex-start;gap:.85rem;font-size:.97rem;color:var(--mid);line-height:1.65}
-.sol-bullets li::before{content:'';width:20px;height:20px;border-radius:50%;flex-shrink:0;margin-top:2px;background:var(--pale);border:1px solid rgba(0,187,221,.4);background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='8' viewBox='0 0 10 8'%3E%3Cpath d='M1 4l2.5 2.5L9 1' stroke='%2300BBDD' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:center}
-.benefit-row{display:flex;flex-direction:column;gap:1rem}
-.benefit-box{background:var(--off);border:1px solid var(--border);border-radius:var(--rlg);padding:1.75rem;display:flex;align-items:flex-start;gap:1.25rem;transition:all .25s}
-.benefit-box:hover{transform:translateY(-3px);box-shadow:var(--shlg);border-color:rgba(0,187,221,.3)}
-.benefit-icon{font-size:1.75rem;flex-shrink:0;width:52px;height:52px;background:var(--pale);border-radius:var(--r);display:flex;align-items:center;justify-content:center}
-.benefit-box h4{font-size:.97rem;font-weight:700;color:var(--navy);margin-bottom:.3rem}
-.benefit-box p{font-size:.87rem;color:var(--muted);line-height:1.6}
+/* floating stat cards */
+.fsc{position:absolute;background:rgba(10,40,64,.88);backdrop-filter:blur(16px);border:1px solid var(--border);border-radius:var(--r);padding:.7rem 1.15rem;white-space:nowrap;z-index:2}
+.fsc .fn{font-family:'Sora',sans-serif;font-weight:800;font-size:1.2rem;color:var(--cyan);line-height:1}
+.fsc .fl{font-size:.7rem;color:var(--muted);margin-top:.2rem}
+.fsc-1{top:-3%;right:-10%;animation:f1 4s ease-in-out infinite}
+.fsc-2{bottom:8%;left:-12%;animation:f2 5s ease-in-out infinite}
+.fsc-3{top:42%;right:-14%;animation:f1 6s ease-in-out infinite 1s}
+@keyframes f1{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+@keyframes f2{0%,100%{transform:translateY(0)}50%{transform:translateY(8px)}}
 
-/* ── PACKAGES ── */
-.packages{background:var(--navy)}
-.packages .h2{color:var(--white);text-align:center;text-transform:uppercase}
-.packages .eyebrow{display:block;text-align:center}
-.toggle-wrap{display:flex;justify-content:center;margin:2rem 0 2.5rem}
-.toggle{display:flex;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:50px;padding:5px;gap:4px}
-.toggle-btn{padding:.65rem 1.75rem;border-radius:50px;border:none;cursor:pointer;font-family:'Sora',sans-serif;font-weight:600;font-size:.9rem;color:rgba(255,255,255,.55);background:transparent;transition:all .22s}
-.toggle-btn.active{background:var(--accent);color:var(--navy)}
-.pkg-view{display:none}
-.pkg-view.active{display:block}
-
-/* Household sub-tabs */
-.sub-tabs{display:flex;gap:.75rem;margin-bottom:2rem;max-width:760px;margin-left:auto;margin-right:auto}
-.sub-tab{flex:1;text-align:center;padding:.75rem 1rem;border-radius:var(--r);border:1px solid rgba(255,255,255,.12);cursor:pointer;font-family:'Sora',sans-serif;font-weight:600;font-size:.9rem;color:rgba(255,255,255,.5);background:transparent;transition:all .22s}
-.sub-tab:hover{border-color:rgba(0,187,221,.4);color:rgba(255,255,255,.8)}
-.sub-tab.active{background:rgba(0,187,221,.12);border-color:var(--accent);color:var(--white)}
-.sub-panel{display:none;max-width:760px;margin:0 auto}
-.sub-panel.active{display:block}
-
-.hh-card{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);border-radius:var(--rlg);padding:2.75rem}
-.pkg-eyebrow{font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:.09em;color:var(--accent);margin-bottom:.6rem}
-.hh-card h3{font-size:1.6rem;color:var(--white);margin-bottom:.85rem}
-.hh-card>p{color:rgba(255,255,255,.62);line-height:1.8;margin-bottom:1.75rem}
-.price-block{display:flex;gap:1.5rem;flex-wrap:wrap;background:rgba(0,187,221,.07);border:1px solid rgba(0,187,221,.2);border-radius:var(--r);padding:1.5rem 2rem;margin-bottom:1.25rem;align-items:center}
-.pb-left{}
-.pb-price{font-family:'Sora',sans-serif;font-size:2rem;font-weight:800;color:var(--accent);line-height:1}
-.pb-detail{font-size:.82rem;color:rgba(255,255,255,.45);margin-top:.35rem;line-height:1.5}
-.pb-divider{width:1px;background:rgba(255,255,255,.1);align-self:stretch;flex-shrink:0}
-.pb-right{}
-.pb-from{font-family:'Sora',sans-serif;font-size:1.4rem;font-weight:800;color:var(--white);line-height:1;margin-bottom:.3rem}
-.pb-range{font-size:.82rem;color:rgba(255,255,255,.4)}
-.hh-benefit{font-size:.9rem;color:rgba(255,255,255,.5);line-height:1.65;margin-bottom:2rem}
-.hh-badge{display:inline-block;background:rgba(0,187,221,.15);border:1px solid rgba(0,187,221,.3);color:var(--accent2);font-size:.72rem;font-weight:700;letter-spacing:.07em;text-transform:uppercase;padding:.3rem .9rem;border-radius:50px;margin-bottom:1rem}
-
-/* Event tiers */
-.event-header{max-width:780px;margin:0 auto 2rem}
-.event-header h3{font-size:1.6rem;color:var(--white);margin-bottom:.75rem}
-.event-header p{color:rgba(255,255,255,.6);line-height:1.8}
-.tier-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;max-width:780px;margin:0 auto 2rem}
-.tier-card{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:var(--rlg);padding:2rem 1.5rem;position:relative}
-.tier-card.featured{border-color:var(--accent);border-width:2px}
-.tier-badge{position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:var(--accent);color:var(--navy);font-family:'Sora',sans-serif;font-weight:700;font-size:.72rem;padding:.3rem 1rem;border-radius:50px;white-space:nowrap}
-.tier-name{font-size:.75rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.45);margin-bottom:.6rem}
-.tier-range{font-family:'Sora',sans-serif;font-size:.95rem;font-weight:600;color:var(--white);margin-bottom:.5rem}
-.tier-price{font-family:'Sora',sans-serif;font-size:2rem;font-weight:800;color:var(--accent);margin-bottom:.25rem}
-.tier-price span{font-size:.85rem;font-weight:400;color:rgba(255,255,255,.4)}
-.tier-total{font-size:.82rem;color:rgba(255,255,255,.38);margin-bottom:1rem}
-.tier-label{display:flex;align-items:center;gap:.5rem;font-size:.82rem;color:rgba(255,255,255,.55)}
-.tick{width:16px;height:16px;border-radius:50%;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:.6rem}
-.tick.yes{background:rgba(0,187,221,.2);border:1px solid var(--accent);color:var(--accent)}
-.tick.no{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);color:rgba(255,255,255,.2)}
-.event-cta{text-align:center}
-.event-fine{font-size:.8rem;color:rgba(255,255,255,.3);margin-top:.85rem;line-height:1.6}
-
-/* ── HOW IT WORKS ── */
-.how{background:var(--off)}
-.how h2{text-transform:uppercase}
-.how-steps{display:grid;grid-template-columns:1fr 1fr;gap:2rem;margin-top:3rem}
-.how-step{background:var(--white);border:1px solid var(--border);border-radius:var(--rlg);padding:2.5rem 2rem;display:flex;gap:1.5rem;align-items:flex-start}
-.step-num{font-family:'Sora',sans-serif;font-size:3rem;font-weight:800;color:var(--accent);line-height:1;flex-shrink:0;min-width:52px}
-.how-step h4{font-size:1.05rem;font-weight:700;color:var(--navy);margin-bottom:.5rem}
-.how-step p{font-size:.93rem;color:var(--muted);line-height:1.7}
-
-/* ── BRANDING ── */
-.branding-sec{background:var(--navy-light)}
-.branding-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
-.branding-sec .h2{color:var(--white);text-transform:uppercase}
-.branding-sec .lead{color:rgba(255,255,255,.62);margin-bottom:1rem}
-.brand-bullets{list-style:none;margin-bottom:1.75rem;display:flex;flex-direction:column;gap:.6rem}
-.brand-bullets li{display:flex;align-items:flex-start;gap:.75rem;font-size:.9rem;color:rgba(255,255,255,.6)}
-.brand-bullets li::before{content:'';width:18px;height:18px;border-radius:50%;flex-shrink:0;margin-top:1px;background:rgba(0,187,221,.2);border:1px solid var(--accent);background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='8' viewBox='0 0 10 8'%3E%3Cpath d='M1 4l2.5 2.5L9 1' stroke='%2300BBDD' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:center}
-.brand-note{font-size:.83rem;color:rgba(255,255,255,.3);margin-bottom:2rem;line-height:1.65}
-.brand-visual{background:rgba(0,187,221,.07);border:1px solid rgba(0,187,221,.2);border-radius:var(--rlg);padding:3rem 2rem;text-align:center;position:relative;overflow:hidden}
-.brand-visual::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 30%,rgba(0,187,221,.12) 0%,transparent 60%)}
-.bv-icon{font-size:5rem;margin-bottom:1.25rem;position:relative;z-index:1}
-.bv-tag{background:var(--accent);color:var(--navy);font-family:'Sora',sans-serif;font-weight:800;font-size:.78rem;padding:.4rem 1.3rem;border-radius:50px;letter-spacing:.05em;position:relative;z-index:1;display:inline-block;margin-bottom:.85rem}
-.brand-visual p{color:rgba(255,255,255,.42);font-size:.86rem;line-height:1.65;position:relative;z-index:1}
-
-/* ── STORAGE FAQ ── */
-.storage{background:var(--white)}
-.storage-inner{max-width:720px;margin:0 auto}
-.storage h2{text-transform:uppercase;font-size:clamp(1.4rem,2.2vw,1.9rem);margin-bottom:1.75rem}
-.faq-list{display:flex;flex-direction:column;gap:.75rem}
-.faq-item{}
-.faq-btn{width:100%;display:flex;align-items:center;justify-content:space-between;background:var(--off);border:1px solid var(--border);border-radius:var(--r);padding:1.1rem 1.5rem;font-family:'Sora',sans-serif;font-weight:600;font-size:.95rem;color:var(--navy);cursor:pointer;transition:all .2s;text-align:left;gap:1rem}
-.faq-btn:hover{border-color:rgba(0,187,221,.35);background:var(--pale)}
-.faq-btn.open{background:var(--navy);color:var(--white);border-color:var(--navy);border-radius:var(--r) var(--r) 0 0}
-.faq-arrow{transition:transform .25s;font-size:.8rem;flex-shrink:0}
-.faq-btn.open .faq-arrow{transform:rotate(180deg)}
-.faq-body{display:none;background:var(--off);border:1px solid var(--border);border-top:none;border-radius:0 0 var(--r) var(--r);padding:1.25rem 1.5rem;font-size:.95rem;color:var(--mid);line-height:1.75}
-.faq-body.open{display:block}
-
-/* ── FORM ── */
-.form-sec{background:var(--navy)}
-.form-sec .eyebrow{display:block;text-align:center}
-.form-sec .h2{color:var(--white);text-align:center;text-transform:uppercase}
-.form-sec .lead{color:rgba(255,255,255,.55);text-align:center;margin:0 auto 2.5rem;max-width:520px}
-.form-card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:var(--rlg);padding:3rem;max-width:700px;margin:0 auto}
-.fg{display:flex;flex-direction:column;gap:.4rem}
-.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.25rem}
-.full{grid-column:1/-1}
-label{font-size:.82rem;color:rgba(255,255,255,.55);font-weight:500}
-input,select,textarea{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.11);border-radius:9px;color:var(--white);font-family:'DM Sans',sans-serif;font-size:.95rem;padding:.75rem 1rem;transition:border .2s;width:100%;-webkit-appearance:none;appearance:none}
-input::placeholder,textarea::placeholder{color:rgba(255,255,255,.25)}
-input:focus,select:focus,textarea:focus{outline:none;border-color:var(--accent);background:rgba(0,187,221,.05)}
-select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='rgba(255,255,255,.4)' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 1rem center;padding-right:2.5rem;cursor:pointer}
-select option{background:var(--navy-mid);color:var(--white)}
-.cond{display:none}
-.cond.show{display:flex;flex-direction:column;gap:.4rem}
-.yn-row{display:flex;gap:.75rem}
-.yn-opt{flex:1;border:1px solid rgba(255,255,255,.11);border-radius:9px;padding:.75rem 1rem;cursor:pointer;display:flex;align-items:center;gap:.5rem;color:rgba(255,255,255,.55);font-size:.92rem;transition:all .2s}
-.yn-opt input[type=radio]{accent-color:var(--accent);width:auto}
-.yn-opt:hover{border-color:var(--accent);color:var(--white)}
-.yn-opt.sel{border-color:var(--accent);background:rgba(0,187,221,.1);color:var(--white)}
-.submit-btn{width:100%;background:var(--accent);color:var(--navy);font-family:'Sora',sans-serif;font-weight:800;font-size:1.05rem;padding:1.1rem;border-radius:50px;border:none;cursor:pointer;transition:all .22s;margin-top:.5rem}
-.submit-btn:hover{background:var(--accent2);transform:translateY(-2px);box-shadow:0 10px 30px rgba(0,187,221,.38)}
-.success{display:none;text-align:center;padding:3.5rem 2rem}
-.success .ck{font-size:3.5rem;margin-bottom:1rem}
-.success h3{font-size:1.5rem;color:var(--white);margin-bottom:.75rem}
-.success p{color:rgba(255,255,255,.55);font-size:1rem;line-height:1.75}
-
-/* FOOTER */
-footer{background:#050F1A;padding:3.5rem 6% 2.5rem;border-top:1px solid rgba(255,255,255,.06)}
-.footer-inner{max-width:1100px;margin:0 auto;display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:1.5rem;margin-bottom:2rem}
-.f-logo{font-family:'Sora',sans-serif;font-weight:800;font-size:1.4rem;color:var(--white)}
-.f-logo span{color:var(--accent)}
-.f-tagline{font-size:.88rem;color:rgba(255,255,255,.35);margin-top:.35rem}
-.f-right p{color:rgba(255,255,255,.35);font-size:.875rem;line-height:1.8;text-align:right}
-.footer-legal{max-width:1100px;margin:0 auto;border-top:1px solid rgba(255,255,255,.06);padding-top:1.5rem;font-size:.8rem;color:rgba(255,255,255,.25);text-align:center;line-height:1.8}
-
-/* RESPONSIVE */
 @media(max-width:900px){
   .hero-inner{grid-template-columns:1fr;text-align:center}
   .hero-visual{display:none}
-  .hero-sub,.hero-bullets{margin-left:auto;margin-right:auto}
-  .hero-bullets{display:inline-flex;flex-direction:column;text-align:left}
+  .hero-sub,.hero-proof{margin-left:auto;margin-right:auto}
   .hero-actions{justify-content:center}
-  .problem-grid{grid-template-columns:1fr}
-  .solution-grid{grid-template-columns:1fr}
-  .tier-cards{grid-template-columns:1fr;max-width:380px}
-  .how-steps{grid-template-columns:1fr}
-  .branding-grid{grid-template-columns:1fr}
-  .form-grid{grid-template-columns:1fr}
-  .full{grid-column:1}
-  .f-right p{text-align:left}
-  .footer-inner{flex-direction:column}
-  .sub-tabs{flex-direction:column}
 }
-@media(max-width:580px){
-  section{padding:4rem 5%}
-  .toggle-btn{font-size:.8rem;padding:.6rem 1.1rem}
-  .price-block{flex-direction:column;gap:1rem}
-  .pb-divider{display:none}
-  .form-card{padding:2rem 1.25rem}
-  .yn-row{flex-direction:column}
+
+/* ======== LOCATIONS MARQUEE ======== */
+.locations-strip{
+  background:var(--navy-mid);
+  border-top:1px solid var(--border);
+  border-bottom:1px solid var(--border);
+  overflow:hidden;padding:0;
 }
+.loc-prefix{
+  padding:.82rem 2rem;
+  font-size:.75rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--gold);
+  border-right:1px solid var(--border);
+  white-space:nowrap;flex-shrink:0;
+  display:flex;align-items:center;background:var(--navy-mid);
+}
+.marquee-wrapper{display:flex;overflow:hidden}
+.marquee-track{display:flex;animation:marquee 28s linear infinite;white-space:nowrap;flex-shrink:0}
+.marquee-track:hover{animation-play-state:paused}
+.loc-item{display:inline-flex;align-items:center;gap:.5rem;padding:.82rem 2rem;border-right:1px solid var(--border);font-size:.82rem;font-weight:600;color:var(--muted);flex-shrink:0}
+.loc-dot{width:6px;height:6px;border-radius:50%;background:var(--green);flex-shrink:0;animation:blink 2s infinite}
+.loc-name{color:#fff}
+@keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* ======== STATS BAR ======== */
+.stats-bar{padding:3.5rem 5%;background:var(--navy-mid);border-bottom:1px solid var(--border)}
+.stats-inner{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem}
+.stat-box{text-align:center;padding:1.5rem 1rem;border:1px solid var(--border);border-radius:var(--r);background:rgba(0,212,245,.02);transition:all .25s}
+.stat-box:hover{border-color:rgba(0,212,245,.3);background:rgba(0,212,245,.05);transform:translateY(-2px)}
+.stat-big{font-family:'Bebas Neue',cursive;font-size:3rem;color:var(--cyan);line-height:1;letter-spacing:.03em}
+.stat-lbl{font-size:.82rem;color:var(--muted);margin-top:.3rem;line-height:1.5}
+@media(max-width:768px){.stats-inner{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:400px){.stats-inner{grid-template-columns:1fr}}
+
+/* ======== PROBLEM ======== */
+.problem-sec{background:linear-gradient(180deg,var(--navy-mid) 0%,var(--navy) 100%)}
+.problem-grid{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center}
+.prob-heading{font-size:clamp(1.9rem,3.2vw,2.75rem);font-weight:800;color:#fff;letter-spacing:-0.03em;margin-bottom:1.5rem;line-height:1.1}
+.prob-heading .red{color:var(--red)}
+.problem-body p{color:var(--muted);line-height:1.85;margin-bottom:1rem;font-size:1rem}
+.problem-body strong{color:#fff}
+.prob-callout{background:rgba(255,71,87,.07);border:1px solid rgba(255,71,87,.2);border-left:3px solid var(--red);border-radius:0 var(--r) var(--r) 0;padding:1.25rem 1.5rem;margin-top:1.5rem;font-size:.97rem;color:#FFB3BA;line-height:1.7;font-style:italic}
+.prob-visual{background:rgba(255,71,87,.04);border:1px solid rgba(255,71,87,.14);border-radius:var(--rlg);padding:2.5rem 2rem;position:relative;overflow:hidden}
+.prob-visual::before{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:radial-gradient(ellipse,rgba(255,71,87,.05) 0%,transparent 60%)}
+.scenario-list{list-style:none;display:flex;flex-direction:column;gap:1.1rem;position:relative;z-index:1}
+.scenario-list li{display:flex;align-items:flex-start;gap:.85rem;font-size:.93rem;color:rgba(255,255,255,.72);line-height:1.6}
+.sc-icon{font-size:1.3rem;flex-shrink:0;margin-top:1px}
+@media(max-width:900px){.problem-grid{grid-template-columns:1fr}}
+
+/* ======== SOLUTION & BENEFITS ======== */
+.solution-sec{background:var(--navy)}
+.sol-grid{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:flex-start}
+.sol-heading{font-size:clamp(1.8rem,3vw,2.5rem);font-weight:800;color:#fff;letter-spacing:-0.03em;margin-bottom:1.1rem}
+.sol-sub{color:var(--muted);font-size:1rem;line-height:1.8;margin-bottom:2rem}
+.benefit-list{list-style:none;display:flex;flex-direction:column;gap:1rem}
+.benefit-item{display:flex;align-items:flex-start;gap:1rem;background:rgba(0,212,245,.03);border:1px solid var(--border);border-radius:var(--r);padding:1.25rem;transition:all .25s}
+.benefit-item:hover{border-color:rgba(0,212,245,.3);background:rgba(0,212,245,.07);transform:translateX(4px)}
+.bi-icon{font-size:1.4rem;width:44px;height:44px;background:rgba(0,212,245,.09);border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.bi-txt h4{font-size:.97rem;font-weight:700;color:#fff;margin-bottom:.25rem}
+.bi-txt p{font-size:.87rem;color:var(--muted);line-height:1.6}
+
+/* product image grid */
+.product-img-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.pimg-card{
+  aspect-ratio:1;
+  background:linear-gradient(135deg,var(--navy-mid),var(--navy-light));
+  border:1px solid var(--border);border-radius:var(--r);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  transition:all .25s;position:relative;overflow:hidden;
+  cursor:pointer;
+}
+.pimg-card::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 30%,rgba(0,212,245,.08) 0%,transparent 65%)}
+.pimg-card:hover{border-color:rgba(0,212,245,.35);transform:translateY(-3px);box-shadow:0 12px 35px rgba(0,0,0,.35)}
+.pimg-icon{font-size:2.5rem;position:relative;z-index:1}
+.pimg-label{font-size:.68rem;font-weight:600;color:var(--cyan);text-transform:uppercase;letter-spacing:.1em;margin-top:.5rem;position:relative;z-index:1;text-align:center;padding:0 .5rem}
+.pimg-note{font-size:.6rem;color:var(--muted);margin-top:.2rem;position:relative;z-index:1;text-align:center;padding:0 .5rem}
+@media(max-width:900px){.sol-grid{grid-template-columns:1fr}}
+
+/* ======== PRODUCT SHOWCASE ======== */
+.showcase-sec{background:var(--navy-mid);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.showcase-hdr{text-align:center;margin-bottom:3rem}
+.showcase-hdr .section-title{margin-bottom:.75rem}
+.showcase-hdr p{color:var(--muted);font-size:1rem;max-width:540px;margin:0 auto}
+.showcase-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+.showcase-card{background:var(--navy);border:1px solid var(--border);border-radius:var(--rlg);overflow:hidden;transition:all .3s}
+.showcase-card:hover{border-color:rgba(0,212,245,.3);transform:translateY(-5px);box-shadow:var(--sh-cyan)}
+.sc-img{
+  aspect-ratio:3/2;
+  background:linear-gradient(135deg,var(--navy-mid),var(--navy-light));
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  position:relative;overflow:hidden;
+}
+.sc-img::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 30%,rgba(0,212,245,.1) 0%,transparent 65%)}
+.sc-img .sc-ico{font-size:3.5rem;position:relative;z-index:1}
+.sc-img .sc-ph{font-size:.7rem;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;margin-top:.5rem;position:relative;z-index:1;text-align:center;padding:0 1rem}
+.sc-body{padding:1.5rem}
+.sc-body h3{font-size:1rem;font-weight:700;color:#fff;margin-bottom:.4rem}
+.sc-body p{font-size:.85rem;color:var(--muted);line-height:1.6}
+@media(max-width:900px){.showcase-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:580px){.showcase-grid{grid-template-columns:1fr}}
+
+/* ======== PRICING ======== */
+.pricing-sec{background:var(--navy)}
+.pricing-hdr{text-align:center;margin-bottom:1rem}
+.pricing-hdr .section-title{margin-bottom:.75rem}
+.pricing-hdr p{color:var(--muted);font-size:1rem;max-width:580px;margin:0 auto 1.5rem}
+.online-badge{
+  display:inline-flex;align-items:center;gap:.5rem;
+  background:rgba(245,166,35,.1);border:1px solid rgba(245,166,35,.3);
+  color:var(--gold);font-size:.85rem;font-weight:700;
+  padding:.5rem 1.25rem;border-radius:50px;margin-bottom:3rem;
+}
+.pricing-tabs{display:flex;justify-content:center;gap:.5rem;margin-bottom:2.5rem}
+.ptab{padding:.65rem 1.75rem;border-radius:50px;border:1px solid rgba(255,255,255,.15);font-family:'Sora',sans-serif;font-weight:600;font-size:.9rem;color:var(--muted);background:transparent;cursor:pointer;transition:all .22s}
+.ptab:hover{border-color:var(--cyan);color:#fff}
+.ptab.active{background:var(--cyan);color:var(--navy);border-color:var(--cyan)}
+.ptab-view{display:none}.ptab-view.active{display:block}
+
+/* Household pricing cards */
+.pricing-cards{display:grid;grid-template-columns:repeat(4,1fr);gap:1.25rem}
+@media(max-width:1000px){.pricing-cards{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.pricing-cards{grid-template-columns:1fr}}
+
+.pc{background:rgba(255,255,255,.03);border:1.5px solid rgba(255,255,255,.09);border-radius:var(--rlg);padding:2rem 1.75rem;position:relative;transition:all .3s}
+.pc.featured{background:rgba(0,212,245,.05);border-color:var(--cyan);border-width:2px}
+.pc:hover{border-color:rgba(0,212,245,.4);transform:translateY(-4px);box-shadow:0 20px 50px rgba(0,0,0,.3)}
+.pc.featured:hover{box-shadow:0 20px 50px rgba(0,0,0,.3),var(--sh-cyan)}
+.pc-badge{position:absolute;top:-14px;left:50%;transform:translateX(-50%);background:var(--cyan);color:var(--navy);font-family:'Sora',sans-serif;font-weight:700;font-size:.72rem;padding:.3rem 1rem;border-radius:50px;white-space:nowrap;letter-spacing:.04em}
+.pc-name{font-size:.68rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:.4rem}
+.pc-title{font-size:1.05rem;font-weight:700;color:#fff;margin-bottom:.3rem}
+.pc-vol{font-size:.82rem;color:var(--muted);margin-bottom:1.25rem;line-height:1.5}
+.pc-price-big{font-family:'Sora',sans-serif;font-size:2.1rem;font-weight:800;color:var(--cyan);line-height:1}
+.pc-price-big .cur{font-size:1.1rem;vertical-align:top;margin-top:.3rem;display:inline-block}
+.pc-price-big .ppu{font-size:.82rem;font-weight:400;color:var(--muted)}
+.pc-total{font-size:.82rem;color:var(--muted);margin-top:.3rem;margin-bottom:.85rem}
+.pc-online{background:rgba(245,166,35,.07);border:1px solid rgba(245,166,35,.2);border-radius:8px;padding:.65rem 1rem;margin-bottom:1.25rem}
+.pc-online .ol-lbl{font-size:.68rem;font-weight:700;color:var(--gold);text-transform:uppercase;letter-spacing:.07em;margin-bottom:.2rem}
+.pc-online .ol-price{font-family:'Sora',sans-serif;font-size:1.05rem;font-weight:800;color:var(--gold)}
+.pc-online .ol-save{font-size:.72rem;color:rgba(245,166,35,.65);margin-top:.1rem}
+.pc-divider{height:1px;background:rgba(255,255,255,.07);margin:1.1rem 0}
+.pc-feats{list-style:none;display:flex;flex-direction:column;gap:.55rem}
+.pc-feats li{display:flex;align-items:flex-start;gap:.55rem;font-size:.83rem;color:rgba(255,255,255,.58);line-height:1.5}
+.pc-feats li .ck{width:15px;height:15px;border-radius:50%;border:1px solid var(--cyan);background:rgba(0,212,245,.1);color:var(--cyan);font-size:.55rem;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px}
+.pc-feats li .ck.no{border-color:rgba(255,255,255,.15);background:transparent;color:rgba(255,255,255,.2)}
+.pc-cta-btn{width:100%;margin-top:1.5rem;display:block;text-align:center;padding:.82rem 1rem;border-radius:50px;font-family:'Sora',sans-serif;font-weight:700;font-size:.87rem;text-decoration:none;transition:all .22s;cursor:pointer;border:none}
+.pc-cta-btn.primary{background:var(--cyan);color:var(--navy)}
+.pc-cta-btn.primary:hover{background:#33E0FF;transform:translateY(-2px);box-shadow:0 8px 25px rgba(0,212,245,.35)}
+.pc-cta-btn.outline{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.2)}
+.pc-cta-btn.outline:hover{border-color:var(--cyan);color:var(--cyan)}
+
+/* Event pricing */
+.event-pricing{max-width:920px;margin:0 auto}
+.ep-intro{text-align:center;margin-bottom:2.5rem}
+.ep-intro h3{font-size:1.5rem;font-weight:800;color:#fff;margin-bottom:.75rem;letter-spacing:-0.02em}
+.ep-intro p{color:var(--muted);font-size:1rem;line-height:1.75;max-width:600px;margin:0 auto}
+.ep-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;margin-bottom:2rem}
+@media(max-width:768px){.ep-cards{grid-template-columns:1fr;max-width:420px;margin-left:auto;margin-right:auto}}
+.ep-card{background:rgba(255,255,255,.03);border:1.5px solid rgba(255,255,255,.09);border-radius:var(--rlg);padding:2rem 1.5rem;text-align:center;position:relative;transition:all .3s}
+.ep-card.featured{background:rgba(0,212,245,.05);border-color:var(--cyan);border-width:2px}
+.ep-card:hover{border-color:rgba(0,212,245,.4);transform:translateY(-4px)}
+.ep-card .tier-badge{position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:var(--cyan);color:var(--navy);font-family:'Sora',sans-serif;font-weight:700;font-size:.72rem;padding:.3rem 1rem;border-radius:50px;white-space:nowrap}
+.ep-tier{font-size:.68rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:.4rem}
+.ep-range{font-size:.95rem;font-weight:700;color:#fff;margin-bottom:.35rem}
+.ep-price{font-family:'Sora',sans-serif;font-size:2.1rem;font-weight:800;color:var(--cyan);line-height:1;margin-bottom:.25rem}
+.ep-price span{font-size:.85rem;font-weight:400;color:var(--muted)}
+.ep-total{font-size:.8rem;color:var(--muted);margin-bottom:.5rem}
+.ep-online{font-size:.82rem;color:var(--gold);font-weight:700;margin-bottom:1rem}
+.ep-feature{display:flex;align-items:center;justify-content:center;gap:.45rem;font-size:.82rem;color:rgba(255,255,255,.55);margin-top:.4rem}
+.ep-ck{width:14px;height:14px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.55rem;flex-shrink:0}
+.ep-ck.yes{border:1px solid var(--cyan);background:rgba(0,212,245,.1);color:var(--cyan)}
+.ep-ck.no{border:1px solid rgba(255,255,255,.15);background:transparent;color:rgba(255,255,255,.2)}
+.ep-cta{text-align:center}
+.ep-fine{font-size:.78rem;color:rgba(255,255,255,.28);margin-top:.85rem;line-height:1.6}
+
+/* ======== HOW IT WORKS ======== */
+.how-sec{background:var(--navy-mid);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.how-hdr{text-align:center;margin-bottom:3rem}
+.how-hdr .section-title{margin-bottom:.75rem}
+.how-hdr p{color:var(--muted);font-size:1rem}
+.how-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:2rem;position:relative}
+.how-steps::before{content:'';position:absolute;top:2.75rem;left:11%;right:11%;height:1px;background:linear-gradient(90deg,var(--cyan),rgba(0,212,245,.15));pointer-events:none}
+.how-step{text-align:center;position:relative}
+.step-num{width:56px;height:56px;border-radius:50%;border:2px solid var(--cyan);background:rgba(0,212,245,.08);font-family:'Sora',sans-serif;font-weight:800;font-size:1.2rem;color:var(--cyan);display:flex;align-items:center;justify-content:center;margin:0 auto 1.25rem;position:relative;z-index:1}
+.how-step h4{font-size:1rem;font-weight:700;color:#fff;margin-bottom:.5rem}
+.how-step p{font-size:.87rem;color:var(--muted);line-height:1.65}
+@media(max-width:768px){.how-steps{grid-template-columns:repeat(2,1fr)}.how-steps::before{display:none}}
+@media(max-width:480px){.how-steps{grid-template-columns:1fr}}
+
+/* ======== TESTIMONIALS ======== */
+.testimonials-sec{background:var(--navy)}
+.t-hdr{text-align:center;margin-bottom:3rem}
+.t-hdr .section-title{margin-bottom:.75rem}
+.t-hdr p{color:var(--muted);font-size:1rem}
+.testimonial-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+.testimonial-card{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:var(--rlg);padding:2rem;transition:all .25s;position:relative}
+.testimonial-card:hover{border-color:rgba(0,212,245,.2);transform:translateY(-3px)}
+.tc-stars{color:var(--gold);font-size:.88rem;margin-bottom:.7rem;letter-spacing:.1em}
+.tc-text{font-size:.95rem;color:rgba(255,255,255,.73);line-height:1.78;margin-bottom:1.5rem;font-style:italic}
+.tc-author{display:flex;align-items:center;gap:.85rem}
+.tc-av{width:42px;height:42px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.95rem;color:#fff;flex-shrink:0;border:2px solid var(--border)}
+.tc-av.av1{background:linear-gradient(135deg,#007A8C,#0F3860)}
+.tc-av.av2{background:linear-gradient(135deg,#0F3860,#00D4F5)}
+.tc-av.av3{background:linear-gradient(135deg,#00C896,#007A8C)}
+.tc-av.av4{background:linear-gradient(135deg,#F5A623,#FF6B00)}
+.tc-av.av5{background:linear-gradient(135deg,#FF4757,#c0392b)}
+.tc-av.av6{background:linear-gradient(135deg,#9B59B6,#6C3483)}
+.tc-name{font-weight:700;font-size:.9rem;color:#fff}
+.tc-loc{font-size:.78rem;color:var(--muted);margin-top:.12rem}
+@media(max-width:900px){.testimonial-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:580px){.testimonial-grid{grid-template-columns:1fr}}
+
+/* ======== BRANDING ======== */
+.branding-sec{background:var(--navy-mid);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.branding-inner{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center}
+.branding-heading{font-size:clamp(1.8rem,3vw,2.5rem);font-weight:800;color:#fff;letter-spacing:-0.03em;margin-bottom:1rem}
+.branding-sub{color:var(--muted);font-size:1rem;line-height:1.8;margin-bottom:1.5rem}
+.branding-list{list-style:none;display:flex;flex-direction:column;gap:.75rem;margin-bottom:2rem}
+.branding-list li{display:flex;align-items:flex-start;gap:.75rem;font-size:.93rem;color:rgba(255,255,255,.7);line-height:1.5}
+.bl-dot{width:18px;height:18px;border-radius:50%;border:1px solid var(--cyan);background:rgba(0,212,245,.08);display:flex;align-items:center;justify-content:center;font-size:.6rem;color:var(--cyan);flex-shrink:0;margin-top:1px}
+.bv-card{background:var(--navy);border:1px solid var(--border);border-radius:var(--rlg);overflow:hidden}
+.bv-img{
+  aspect-ratio:4/3;
+  background:linear-gradient(135deg,var(--navy-mid),var(--navy-light));
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  position:relative;overflow:hidden;
+}
+.bv-img::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 30%,rgba(0,212,245,.12) 0%,transparent 65%)}
+.bv-img-icon{font-size:4rem;position:relative;z-index:1}
+.bv-img-ph{font-size:.72rem;color:var(--muted);text-transform:uppercase;letter-spacing:.1em;position:relative;z-index:1;margin-top:.5rem;text-align:center;padding:0 1rem}
+.bv-img-tag{position:absolute;bottom:1rem;left:50%;transform:translateX(-50%);background:var(--cyan);color:var(--navy);font-family:'Sora',sans-serif;font-weight:800;font-size:.75rem;padding:.35rem 1rem;border-radius:50px;letter-spacing:.06em;white-space:nowrap;z-index:2}
+.bv-body{padding:1.5rem;display:flex;align-items:center;justify-content:space-between;gap:1rem}
+.bv-body p{font-size:.85rem;color:var(--muted);line-height:1.6}
+.bv-badge{background:rgba(0,200,150,.1);border:1px solid rgba(0,200,150,.3);color:var(--green);font-size:.75rem;font-weight:700;padding:.3rem .85rem;border-radius:50px;white-space:nowrap;flex-shrink:0}
+@media(max-width:900px){.branding-inner{grid-template-columns:1fr}}
+
+/* ======== GUARANTEE ======== */
+.guarantee-sec{background:var(--navy);text-align:center}
+.guarantee-card{max-width:760px;margin:0 auto;background:rgba(0,200,150,.04);border:1px solid rgba(0,200,150,.18);border-radius:var(--rlg);padding:4rem 3rem;position:relative;overflow:hidden}
+.guarantee-card::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 0%,rgba(0,200,150,.08) 0%,transparent 65%)}
+.g-icon{font-size:3.5rem;margin-bottom:1rem;position:relative}
+.g-title{font-size:clamp(1.5rem,2.5vw,2rem);font-weight:800;color:#fff;margin-bottom:1rem;letter-spacing:-0.03em;position:relative}
+.g-text{color:var(--muted);font-size:1rem;line-height:1.8;max-width:560px;margin:0 auto 2rem;position:relative}
+.g-text strong{color:#fff}
+@media(max-width:600px){.guarantee-card{padding:3rem 1.75rem}}
+
+/* ======== FAQ ======== */
+.faq-sec{background:var(--navy-mid);border-top:1px solid var(--border)}
+.faq-hdr{text-align:center;margin-bottom:3rem}
+.faq-hdr .section-title{margin-bottom:.75rem}
+.faq-hdr p{color:var(--muted);font-size:1rem}
+.faq-list{max-width:800px;margin:0 auto;display:flex;flex-direction:column;gap:.75rem}
+.faq-item{border:1px solid rgba(255,255,255,.08);border-radius:var(--r);overflow:hidden;transition:border-color .2s}
+.faq-item:hover{border-color:rgba(0,212,245,.2)}
+.faq-q{width:100%;display:flex;align-items:center;justify-content:space-between;background:rgba(255,255,255,.03);border:none;padding:1.15rem 1.5rem;font-family:'Sora',sans-serif;font-weight:600;font-size:.95rem;color:#fff;cursor:pointer;text-align:left;gap:1rem;transition:all .2s}
+.faq-q:hover{background:rgba(255,255,255,.05)}
+.faq-q.open{background:rgba(0,212,245,.05);color:var(--cyan)}
+.faq-arrow{font-size:.8rem;transition:transform .25s;flex-shrink:0;color:var(--muted)}
+.faq-q.open .faq-arrow{transform:rotate(180deg);color:var(--cyan)}
+.faq-ans{display:none;padding:1.25rem 1.5rem;font-size:.93rem;color:var(--muted);line-height:1.8;background:rgba(0,212,245,.02);border-top:1px solid rgba(255,255,255,.05)}
+.faq-ans.open{display:block}
+.faq-ans strong{color:#fff}
+
+/* ======== ORDER FORM ======== */
+.form-sec{background:var(--navy);border-top:1px solid var(--border)}
+.form-hdr{text-align:center;margin-bottom:3rem}
+.form-hdr .section-title{margin-bottom:.75rem}
+.form-hdr p{color:var(--muted);font-size:1rem;line-height:1.7;max-width:560px;margin:0 auto}
+.form-wrap{max-width:800px;margin:0 auto}
+.form-card{background:rgba(255,255,255,.025);border:1px solid rgba(255,255,255,.09);border-radius:var(--rlg);padding:3rem}
+@media(max-width:600px){.form-card{padding:2rem 1.5rem}}
+
+/* payment method */
+.pm-select{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1.5rem}
+@media(max-width:560px){.pm-select{grid-template-columns:1fr}}
+.pm-opt{border:2px solid rgba(255,255,255,.1);border-radius:var(--r);padding:1.25rem;cursor:pointer;transition:all .22s;position:relative;background:transparent}
+.pm-opt:hover{border-color:rgba(0,212,245,.3)}
+.pm-opt.sel{border-color:var(--cyan);background:rgba(0,212,245,.04)}
+.pm-opt.pm-online.sel{border-color:var(--gold);background:rgba(245,166,35,.04)}
+.pm-opt input[type=radio]{position:absolute;opacity:0;width:0;height:0}
+.pm-save-tag{position:absolute;top:-10px;right:10px;background:var(--gold);color:#1A0700;font-family:'Sora',sans-serif;font-weight:700;font-size:.65rem;padding:.2rem .65rem;border-radius:50px}
+.pm-top{display:flex;align-items:center;gap:.5rem;margin-bottom:.3rem}
+.pm-ico{font-size:1.2rem}
+.pm-title{font-family:'Sora',sans-serif;font-weight:700;font-size:.88rem;color:#fff}
+.pm-desc{font-size:.78rem;color:var(--muted);line-height:1.5}
+
+/* order summary */
+.order-summary{background:rgba(0,212,245,.04);border:1px solid var(--border);border-radius:var(--r);padding:1.25rem 1.5rem;margin-bottom:1.5rem;display:none}
+.order-summary.vis{display:block}
+.os-title{font-family:'Sora',sans-serif;font-weight:700;font-size:.78rem;color:var(--muted);text-transform:uppercase;letter-spacing:.12em;margin-bottom:1rem}
+.os-row{display:flex;justify-content:space-between;align-items:center;font-size:.9rem;padding:.3rem 0}
+.os-row .osl{color:var(--muted)}
+.os-row .osv{color:#fff;font-weight:600}
+.os-row.os-total{border-top:1px solid rgba(255,255,255,.08);margin-top:.5rem;padding-top:.85rem}
+.os-row.os-total .osl{font-family:'Sora',sans-serif;font-weight:700;color:#fff;font-size:.97rem}
+.os-row.os-total .osv{font-family:'Sora',sans-serif;font-size:1.25rem;color:var(--cyan)}
+.os-dis .osl{color:var(--gold)}.os-dis .osv{color:var(--gold)}
+.os-row.os-final-online .osv{color:var(--gold)}
+
+/* form fields */
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.25rem;margin-bottom:1.25rem}
+@media(max-width:600px){.form-grid{grid-template-columns:1fr}}
+.fg{display:flex;flex-direction:column;gap:.4rem}
+.fg.full{grid-column:1/-1}
+@media(max-width:600px){.fg.full{grid-column:1}}
+label{font-size:.82rem;font-weight:500;color:rgba(255,255,255,.48)}
+label .req{color:var(--cyan)}
+input,select,textarea{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:10px;color:#fff;font-family:'DM Sans',sans-serif;font-size:.95rem;padding:.82rem 1rem;transition:border-color .2s,background .2s;width:100%;-webkit-appearance:none;appearance:none}
+input::placeholder,textarea::placeholder{color:rgba(255,255,255,.2)}
+input:focus,select:focus,textarea:focus{outline:none;border-color:var(--cyan);background:rgba(0,212,245,.04)}
+select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='rgba(255,255,255,.35)' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 1rem center;padding-right:2.5rem;cursor:pointer}
+select option{background:var(--navy-mid);color:#fff}
+.field-cond{display:none}.field-cond.show{display:flex;flex-direction:column;gap:.4rem}
+
+/* submit */
+.submit-area{display:flex;flex-direction:column;gap:.85rem;margin-top:1.5rem}
+.sbtn-delivery{width:100%;background:rgba(255,255,255,.07);border:1.5px solid rgba(255,255,255,.15);color:#fff;font-family:'Sora',sans-serif;font-weight:700;font-size:1rem;padding:1.1rem;border-radius:50px;cursor:pointer;transition:all .22s;display:flex;align-items:center;justify-content:center;gap:.5rem}
+.sbtn-delivery:hover{background:rgba(255,255,255,.12);transform:translateY(-1px)}
+.sbtn-online{width:100%;background:linear-gradient(90deg,var(--gold),#FF8C00);color:#1A0700;font-family:'Sora',sans-serif;font-weight:800;font-size:1.05rem;padding:1.1rem;border-radius:50px;border:none;cursor:pointer;transition:all .22s;display:flex;align-items:center;justify-content:center;gap:.5rem}
+.sbtn-online:hover{transform:translateY(-2px);box-shadow:0 10px 30px rgba(245,166,35,.4)}
+.form-note{font-size:.78rem;color:rgba(255,255,255,.28);text-align:center;line-height:1.65}
+
+/* success */
+.form-success{display:none;text-align:center;padding:4rem 2rem}
+.form-success .suc-icon{font-size:4rem;margin-bottom:1rem}
+.form-success h3{font-size:1.6rem;font-weight:800;color:#fff;margin-bottom:.75rem}
+.form-success p{color:var(--muted);font-size:1rem;line-height:1.75;margin-bottom:2rem}
+.wa-btn-confirm{display:inline-flex;align-items:center;gap:.6rem;background:#25D366;color:#fff;font-family:'Sora',sans-serif;font-weight:700;font-size:.95rem;padding:.9rem 2rem;border-radius:50px;text-decoration:none;transition:all .22s}
+.wa-btn-confirm:hover{background:#1dba58;transform:translateY(-2px)}
+.wa-btn-confirm svg{width:20px;height:20px;fill:#fff}
+
+/* ======== FOOTER ======== */
+footer{background:#020E19;border-top:1px solid rgba(255,255,255,.05);padding:4rem 5% 2.5rem}
+.footer-inner{max-width:1140px;margin:0 auto;display:grid;grid-template-columns:1.6fr 1fr 1fr;gap:3rem;margin-bottom:3rem}
+.f-logo{font-family:'Sora',sans-serif;font-weight:800;font-size:1.35rem;color:#fff;margin-bottom:.75rem}
+.f-logo span{color:var(--cyan)}
+.f-desc{font-size:.87rem;color:rgba(255,255,255,.33);line-height:1.75;margin-bottom:1.5rem}
+.f-wa-link{display:inline-flex;align-items:center;gap:.5rem;background:#25D366;color:#fff;font-family:'Sora',sans-serif;font-weight:700;font-size:.83rem;padding:.6rem 1.2rem;border-radius:50px;text-decoration:none;transition:all .22s}
+.f-wa-link:hover{background:#1dba58;transform:translateY(-1px)}
+.f-wa-link svg{width:18px;height:18px;fill:#fff}
+.fcol h5{font-size:.72rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.35);margin-bottom:1rem}
+.fcol ul{list-style:none}
+.fcol ul li{margin-bottom:.5rem}
+.fcol ul li a{font-size:.87rem;color:rgba(255,255,255,.38);text-decoration:none;transition:color .2s}
+.fcol ul li a:hover{color:#fff}
+.fcol ul li span{font-size:.87rem;color:rgba(255,255,255,.38)}
+.footer-bottom{max-width:1140px;margin:0 auto;border-top:1px solid rgba(255,255,255,.05);padding-top:2rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem}
+.footer-bottom p{font-size:.78rem;color:rgba(255,255,255,.2)}
+.fd-delivery{background:rgba(0,200,150,.07);border:1px solid rgba(0,200,150,.2);color:var(--green);font-size:.75rem;font-weight:600;padding:.3rem .85rem;border-radius:50px}
+@media(max-width:768px){.footer-inner{grid-template-columns:1fr;gap:2rem}.footer-bottom{flex-direction:column;text-align:center}}
+
+/* ======== LOCATION NOTICE SECTION ======== */
+.location-sec{background:rgba(0,200,150,.03);border-top:1px solid rgba(0,200,150,.15);border-bottom:1px solid rgba(0,200,150,.15);padding:3.5rem 5%}
+.loc-notice-inner{max-width:900px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center}
+.loc-notice-text h3{font-size:1.5rem;font-weight:800;color:#fff;margin-bottom:.75rem;letter-spacing:-0.02em}
+.loc-notice-text p{color:var(--muted);font-size:.95rem;line-height:1.75}
+.loc-notice-text p strong{color:var(--green)}
+.loc-areas{display:flex;flex-wrap:wrap;gap:.65rem}
+.loc-area-pill{display:inline-flex;align-items:center;gap:.4rem;background:rgba(0,200,150,.08);border:1px solid rgba(0,200,150,.22);color:var(--green);font-size:.78rem;font-weight:600;padding:.35rem .85rem;border-radius:50px}
+.loc-area-pill .ldot{width:5px;height:5px;border-radius:50%;background:var(--green);flex-shrink:0}
+@media(max-width:760px){.loc-notice-inner{grid-template-columns:1fr}}
+
+/* ======== MINI BANNER ======== */
+.mini-banner{background:linear-gradient(135deg,var(--navy-light),var(--navy-mid));border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:2.5rem 5%;text-align:center}
+.mb-inner{max-width:760px;margin:0 auto}
+.mb-inner h3{font-family:'Bebas Neue',cursive;font-size:clamp(1.8rem,3.5vw,2.8rem);color:#fff;letter-spacing:.04em;margin-bottom:.65rem}
+.mb-inner h3 .cyan{color:var(--cyan)}
+.mb-inner h3 .gold{color:var(--gold)}
+.mb-inner p{color:var(--muted);font-size:.95rem;margin-bottom:1.75rem}
 </style>
 </head>
 <body>
 
-<!-- NAV -->
-<nav>
-  <div class="logo">Marpay<span>+</span></div>
-  <a href="#subscribe" class="nav-pill">Subscribe Now →</a>
+<!-- ======== FLOATING WHATSAPP ======== -->
+<a class="wa-float" href="https://wa.me/2348124266524?text=Hello%20Marpay%20Plus%2C%20I%20want%20to%20place%20a%20water%20order.%20Please%20assist%20me." target="_blank" rel="noopener">
+  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  <span class="wa-label">Chat with Us</span>
+</a>
+
+<!-- ======== URGENCY BAR ======== -->
+<div class="urgency-bar">
+  <span class="pulse"></span>
+  🔥 LIMITED SLOTS TODAY — Pay online and SAVE ₦1,000 instantly. Available in select Lagos estates only.
+  <span class="pulse"></span>
+</div>
+
+<!-- ======== NAV ======== -->
+<nav id="main-nav">
+  <a href="#" class="logo">Marpay<span>+</span></a>
+  <div class="nav-links">
+    <a href="#solution" class="nav-link">Why Us</a>
+    <a href="#pricing" class="nav-link">Pricing</a>
+    <a href="#how" class="nav-link">How It Works</a>
+    <a href="#faq" class="nav-link">FAQ</a>
+  </div>
+  <a href="#subscribe" class="nav-cta">Order Now →</a>
 </nav>
 
-<!-- 01 HERO -->
-<section class="hero">
+<!-- ======== HERO ======== -->
+<section class="hero" id="home">
+  <div class="hero-bg-grid"></div>
+  <div class="hero-bg-glow"></div>
+  <div class="hero-bottom-line"></div>
+
   <div class="hero-inner">
-    <div>
-      <div class="hero-badge"><i></i> Lagos Water Subscription</div>
-      <h1>Because in Lagos,<br>you're already doing<br><em>too much.</em><br>Water should be the<br>one thing you never<br>have to worry about.</h1>
-      <p class="hero-sub">Marpay Plus delivers quality 50cl bottled water to your door — on a schedule that works for you.</p>
-      <ul class="hero-bullets">
-        <li>12 bottles per pack</li>
-        <li>From ₦1,500 per pack</li>
-        <li>Delivered across Lagos</li>
-        <li>No last-minute runs. No running out.</li>
-      </ul>
+    <div class="hero-left">
+      <div class="hero-live"><i></i> Delivering Across Lagos Today</div>
+      <h1 class="hero-headline">
+        STOP RUNNING<br>
+        OUT OF
+        <span class="cyan">WATER</span><br>
+        <span style="font-size:70%">IN <span class="gold">YOUR OWN HOUSE.</span></span>
+      </h1>
+      <p class="hero-sub">
+        Factory-direct 75cl bottled water delivered to your door in <strong>24 hours</strong>. No traffic. No middleman. No excuses. From <strong>₦1,700/pack</strong> — straight from the source to your home.
+      </p>
+      <div class="hero-proof">
+        <div class="proof-avs">
+          <div class="proof-av">AO</div>
+          <div class="proof-av">TK</div>
+          <div class="proof-av">BB</div>
+          <div class="proof-av">CM</div>
+        </div>
+        <span><strong>200+ families</strong> across Lagos trust Marpay Plus</span>
+      </div>
       <div class="hero-actions">
-        <a href="#subscribe" class="btn btn-cta">Subscribe Now →</a>
-        <a href="#packages" class="btn btn-ghost">See Packages ↓</a>
+        <a href="#subscribe" class="btn btn-primary btn-lg">Order My Water →</a>
+        <a href="#pricing" class="btn btn-outline btn-lg">See Pricing</a>
       </div>
     </div>
+
     <div class="hero-visual">
-      <div class="glow-ring" style="position:relative">
-        <svg width="140" height="250" viewBox="0 0 140 250" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <rect x="52" y="8" width="36" height="16" rx="4" fill="#00BBDD" opacity="0.55"/>
-          <rect x="57" y="3" width="26" height="10" rx="3" fill="#00BBDD"/>
-          <path d="M30 55 Q24 88 24 125 Q24 185 30 215 Q36 235 70 237 Q104 235 110 215 Q116 185 116 125 Q116 88 110 55 Q104 32 70 30 Q36 32 30 55Z" fill="#0C2E55"/>
-          <path d="M30 55 Q24 88 24 125 Q24 185 30 215 Q36 235 70 237 Q104 235 110 215 Q116 185 116 125 Q116 88 110 55 Q104 32 70 30 Q36 32 30 55Z" fill="url(#g1)" opacity="0.25"/>
-          <rect x="40" y="85" width="60" height="105" rx="5" fill="white" opacity="0.06"/>
-          <text x="70" y="122" text-anchor="middle" font-family="Sora,sans-serif" font-weight="700" font-size="10" fill="#00BBDD">MARPAY</text>
-          <text x="70" y="140" text-anchor="middle" font-family="Sora,sans-serif" font-weight="800" font-size="20" fill="white">PLUS</text>
-          <text x="70" y="157" text-anchor="middle" font-family="Sora,sans-serif" font-size="8" fill="rgba(255,255,255,0.4)">12 × 50cl</text>
-          <path d="M24 125 Q40 118 70 115 Q100 118 116 125 Q100 135 70 138 Q40 135 24 125Z" fill="#00BBDD" opacity="0.10"/>
-          <defs><linearGradient id="g1" x1="24" y1="0" x2="116" y2="0" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="white" stop-opacity="0.4"/><stop offset="45%" stop-color="white" stop-opacity="0"/><stop offset="100%" stop-color="white" stop-opacity="0.1"/></linearGradient></defs>
-        </svg>
-        <div class="float-pill fp1"><strong>₦1,500</strong> / pack</div>
-        <div class="float-pill fp2">🚚 Lagos-wide delivery</div>
+      <div class="hero-product-wrap">
+        <div class="hero-main-img">
+          <img src="hero.png">
+          <div class="hero-img-label"></div>
+        </div>
+        <div class="fsc fsc-1"><div class="fn">24hrs</div><div class="fl">Delivery Guaranteed</div></div>
+        <div class="fsc fsc-2"><div class="fn">₦142</div><div class="fl">Per bottle — Factory Price</div></div>
+        <div class="fsc fsc-3"><div class="fn">⭐ 4.9</div><div class="fl">Customer Satisfaction</div></div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- 02 THE PROBLEM -->
-<section class="problem" id="problem">
-  <div class="wrap">
-    <div class="problem-grid r">
-      <div>
-        <span class="eyebrow">The Problem</span>
-        <h2>Lagos does not slow down<br>for water runs.</h2>
-        <p>Are you a busy Lagos professional, a business owner who barely sits down, or a family person juggling work, traffic, and a full house — so focused on keeping everything running that you don't notice you've run out of water until someone asks for a cup and there's none?</p>
-        <p>Maybe it's 8pm and you're too exhausted to make a run. Maybe it's the morning of your event and you're realising your water order never came. Maybe a guest gets handed a warm, unsealed bottle at a gathering you worked hard to make look right.</p>
-        <p>It happens more than it should. And every time it does, it costs you — time, money, or a little of that Lagos composure you work so hard to keep.</p>
-        <p><strong>Marpay Plus was built to eliminate that problem entirely.</strong></p>
+<!-- ======== LOCATIONS MARQUEE ======== -->
+<div class="locations-strip">
+  <div style="display:flex;overflow:hidden;align-items:center">
+    <div class="loc-prefix">🚚 We Deliver To →</div>
+    <div class="marquee-wrapper" style="flex:1;overflow:hidden">
+      <div class="marquee-track" id="marq">
+        <div class="loc-item"><span class="loc-dot"></span><span class="loc-name">Gbagada Estate</span></div>
+        <div class="loc-item"><span class="loc-dot"></span><span class="loc-name">Millennium Estate</span></div>
+        <div class="loc-item"><span class="loc-dot"></span><span class="loc-name">Ogudu GRA</span></div>
+        <div class="loc-item"><span class="loc-dot"></span><span class="loc-name">Magodo Phase 1</span></div>
+        <div class="loc-item"><span class="loc-dot"></span><span class="loc-name">Magodo Phase 2</span></div>
+        <div class="loc-item"><span class="loc-dot"></span><span class="loc-name">Lekki Phase 1</span></div>
+        <div class="loc-item"><span class="loc-dot"></span><span class="loc-name">Victoria Island</span></div>
+        <div class="loc-item"><span class="loc-dot"></span><span class="loc-name">Ikoyi</span></div>
+        <div class="loc-item"><span class="loc-dot"></span><span class="loc-name">Surulere</span></div>
+        <!-- duplicate for seamless loop -->
+        <div class="loc-item"><span class="loc-dot"></span><span class="loc-name">Gbagada Estate</span></div>
+        <div class="loc-item"><span class="loc-dot"></span><span class="loc-name">Millennium Estate</span></div>
+        <div class="loc-item"><span class="loc-dot"></span><span class="loc-name">Ogudu GRA</span></div>
+        <div class="loc-item"><span class="loc-dot"></span><span class="loc-name">Magodo Phase 1</span></div>
+        <div class="loc-item"><span class="loc-dot"></span><span class="loc-name">Magodo Phase 2</span></div>
+        <div class="loc-item"><span class="loc-dot"></span><span class="loc-name">Lekki Phase 1</span></div>
+        <div class="loc-item"><span class="loc-dot"></span><span class="loc-name">Victoria Island</span></div>
+        <div class="loc-item"><span class="loc-dot"></span><span class="loc-name">Ikoyi</span></div>
+        <div class="loc-item"><span class="loc-dot"></span><span class="loc-name">Surulere</span></div>
       </div>
-      <div class="problem-visual">
-        <div class="problem-icon">💧</div>
-        <p>Running out of water in Lagos is not just an inconvenience. It's <strong>time lost, money wasted, and composure spent</strong> on something that should have been handled already.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ======== STATS BAR ======== -->
+<div class="stats-bar r">
+  <div class="wrap">
+    <div class="stats-inner">
+      <div class="stat-box">
+        <div class="stat-big">200+</div>
+        <div class="stat-lbl">Happy Lagos Families & Businesses</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-big">24H</div>
+        <div class="stat-lbl">Delivery After Confirmation — Always</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-big">₦142</div>
+        <div class="stat-lbl">Per Bottle. Less Than What You Pay in the Market.</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-big">9</div>
+        <div class="stat-lbl">Select Lagos Estates. Quality Requires Limits.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ======== LOCATION NOTICE ======== -->
+<div class="location-sec" id="locations">
+  <div class="loc-notice-inner r">
+    <div class="loc-notice-text">
+      <h3>⚠️ This Delivery Is Not For Everyone</h3>
+      <p>Marpay Plus currently serves <strong>9 select estates</strong> in Lagos — and that is intentional. We would rather serve fewer people excellently than serve everyone poorly. If your estate is on the list, you are in luck. Place your order today before slots fill up.</p>
+      <br>
+      <p style="font-size:.82rem;color:rgba(255,255,255,.3)">Not on the list? Join our waitlist via WhatsApp — we're expanding soon.</p>
+    </div>
+    <div>
+      <div class="loc-areas">
+        <div class="loc-area-pill"><span class="ldot"></span> Gbagada Estate</div>
+        <div class="loc-area-pill"><span class="ldot"></span> Millennium Estate</div>
+        <div class="loc-area-pill"><span class="ldot"></span> Ogudu GRA</div>
+        <div class="loc-area-pill"><span class="ldot"></span> Magodo Phase 1</div>
+        <div class="loc-area-pill"><span class="ldot"></span> Magodo Phase 2</div>
+        <div class="loc-area-pill"><span class="ldot"></span> Lekki Phase 1</div>
+        <div class="loc-area-pill"><span class="ldot"></span> Victoria Island</div>
+        <div class="loc-area-pill"><span class="ldot"></span> Ikoyi</div>
+        <div class="loc-area-pill"><span class="ldot"></span> Surulere</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ======== PROBLEM ======== -->
+<section class="problem-sec" id="problem">
+  <div class="wrap">
+    <div class="problem-grid">
+      <div class="r">
+        <span class="eyebrow">The Real Problem</span>
+        <h2 class="prob-heading">Lagos Doesn't Slow Down.<br><span class="red">Neither Should Your Water Supply.</span></h2>
+        <div class="problem-body">
+          <p>You are a busy Lagos professional — juggling traffic, work, family, and a hundred other things. You don't have time to make a water run. But one day, you reach for a bottle and there's nothing. Or worse, a guest arrives.</p>
+          <p>Maybe it's 10pm and everywhere is closed. Maybe it's the morning of your event. Maybe you sent the housekeeper and they came back with warm, unsealed water from God-knows-where. <strong>It has happened to you before. We both know it.</strong></p>
+          <p>And every time it happens, you spend money on substandard alternatives, waste time, and lose just a little bit of that Lagos composure you work so hard to maintain.</p>
+        </div>
+        <div class="prob-callout">
+          "Running out of water in Lekki, Ikoyi, or VI is not just an inconvenience. In these neighborhoods, it is simply unacceptable — and you know it."
+        </div>
+      </div>
+      <div class="r2">
+        <ul class="scenario-list" style="margin-bottom:2rem">
+          <li><span class="sc-icon">😰</span><span>Your guest asks for cold water and your house help says "there is nothing." You want to disappear.</span></li>
+          <li><span class="sc-icon">🏃</span><span>You're sending someone to buy water from a roadside vendor at 9pm because you ran out — and you're not sure it's sealed properly.</span></li>
+          <li><span class="sc-icon">💸</span><span>You're spending ₦250–₦300 per bottle in the supermarket when you could be paying ₦142.</span></li>
+          <li><span class="sc-icon">🎉</span><span>Your event day arrives and your water order never came. The caterer is panicking. You're making calls.</span></li>
+          <li><span class="sc-icon">🤔</span><span>You wonder how people in these same estates never seem to have this problem — and who they're using.</span></li>
+        </ul>
+        <div style="background:rgba(0,212,245,.04);border:1px solid var(--border);border-radius:var(--r);padding:1.5rem;text-align:center">
+          <div style="font-size:2rem;margin-bottom:.5rem">💧</div>
+          <p style="color:rgba(255,255,255,.65);font-size:.9rem;line-height:1.7">They're using <strong style="color:#fff">Marpay Plus</strong>. And once you start, you'll never run out of water again.</p>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- 03 THE SOLUTION -->
-<section class="solution" id="solution">
+<div class="divider"></div>
+
+<!-- ======== SOLUTION & BENEFITS ======== -->
+<section class="solution-sec" id="solution">
   <div class="wrap">
-    <div class="solution-grid r">
-      <div>
+    <div class="sol-grid">
+      <div class="r">
         <span class="eyebrow">The Solution</span>
-        <h2 class="h2">Marpay Plus.<br>Water at your door,<br>before you need it.</h2>
-        <ul class="sol-bullets" style="margin-top:1.25rem">
-          <li>Subscribe once — we handle every delivery from there</li>
-          <li>50cl bottles packed in 12s, delivered to your door on a schedule you choose</li>
-          <li>No middleman. No retail markup. Straight from the factory to you.</li>
-          <li>That's why the price makes sense. And that's why the water is good.</li>
+        <h2 class="sol-heading">Marpay Plus.<br>Water at Your Door,<br><span style="color:var(--cyan)">Before You Need It.</span></h2>
+        <p class="sol-sub">We go straight from our factory to your door. No retail chain. No middleman markup. Just clean, sealed, factory-fresh 75cl water — delivered to your estate within 24 hours of confirmation. Minimum 10 packs per order.</p>
+        <ul class="benefit-list">
+          <li class="benefit-item">
+            <div class="bi-icon">🏭</div>
+            <div class="bi-txt"><h4>Factory-Direct Freshness</h4><p>Straight from Marpay Water's production line. Sealed, tested, and delivered. Not stored in someone's hot warehouse for months.</p></div>
+          </li>
+          <li class="benefit-item">
+            <div class="bi-icon">💰</div>
+            <div class="bi-txt"><h4>₦142 Per Bottle — Retail Is Robbing You</h4><p>The market charges you ₦200–₦300 per bottle for the same water. We charge ₦142 and deliver it to your gate.</p></div>
+          </li>
+          <li class="benefit-item">
+            <div class="bi-icon">⚡</div>
+            <div class="bi-txt"><h4>24-Hour Delivery After Confirmation</h4><p>Order before 5pm, receive by tomorrow. We confirm your order and you get your water. It's that simple. No chasing, no calling back.</p></div>
+          </li>
+          <li class="benefit-item">
+            <div class="bi-icon">🛡️</div>
+            <div class="bi-txt"><h4>NAFDAC Compliant. Zero Compromise.</h4><p>Every pack is NAFDAC-certified. Sealed properly. Stored correctly. We don't joke with what goes into your family's body.</p></div>
+          </li>
         </ul>
       </div>
-      <div class="benefit-row">
-        <div class="benefit-box">
-          <div class="benefit-icon">🏭</div>
-          <div>
-            <h4>Factory-Direct Quality</h4>
-            <p>Straight from Marpay Water's factory. No middleman, no storage compromise.</p>
+      <div class="r2">
+        <div class="product-img-grid">
+          <!-- REPLACE: Add your product images below -->
+          <div class="pimg-card">
+            <div class="pimg-icon">🍶</div>
+            <div class="pimg-label">[ Product Image 1 ]</div>
+            <div class="pimg-note">Replace with your photo</div>
+          </div>
+          <div class="pimg-card">
+            <div class="pimg-icon">📦</div>
+            <div class="pimg-label">[ Product Image 2 ]</div>
+            <div class="pimg-note">Replace with your photo</div>
+          </div>
+          <div class="pimg-card">
+            <div class="pimg-icon">💧</div>
+            <div class="pimg-label">[ Product Image 3 ]</div>
+            <div class="pimg-note">Replace with your photo</div>
+          </div>
+          <div class="pimg-card">
+            <div class="pimg-icon">✨</div>
+            <div class="pimg-label">[ Branded Bottle ]</div>
+            <div class="pimg-note">Replace with your photo</div>
           </div>
         </div>
-        <div class="benefit-box">
-          <div class="benefit-icon">💰</div>
-          <div>
-            <h4>Near-Factory Price</h4>
-            <p>₦1,500 per pack. The price that makes sense when you cut out the retail chain.</p>
-          </div>
-        </div>
-        <div class="benefit-box">
-          <div class="benefit-icon">🚚</div>
-          <div>
-            <h4>Delivered to Your Door</h4>
-            <p>Coordinated delivery across Lagos on a schedule that works for you.</p>
-          </div>
+        <div style="margin-top:1.25rem;background:rgba(245,166,35,.07);border:1px solid rgba(245,166,35,.2);border-radius:var(--r);padding:1.25rem;text-align:center">
+          <div style="font-size:.8rem;font-weight:700;color:var(--gold);text-transform:uppercase;letter-spacing:.1em;margin-bottom:.3rem">💳 Pay Online & Save</div>
+          <div style="font-size:1.05rem;font-weight:700;color:#fff">Get ₦1,000 OFF your total order</div>
+          <div style="font-size:.82rem;color:rgba(255,255,255,.45);margin-top:.2rem">when you pay via card or transfer on checkout</div>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- 04 PACKAGES & PRICING -->
-<section class="packages" id="packages">
+<!-- ======== PRODUCT SHOWCASE ======== -->
+<section class="showcase-sec" id="products">
   <div class="wrap">
-    <div class="r">
-      <span class="eyebrow">Packages & Pricing</span>
-      <h2 class="h2">Find your package.</h2>
+    <div class="showcase-hdr r">
+      <div class="section-tag">Our Products</div>
+      <h2 class="section-title" style="text-align:center">What You're <span class="hl">Actually Getting</span></h2>
+      <p>Every pack contains 12 × 75cl Marpay water bottles. Sealed. Fresh. Ready to chill and serve.</p>
     </div>
-    <div class="toggle-wrap r">
-      <div class="toggle">
-        <button class="toggle-btn active" data-pkg="household">Household Package</button>
-        <button class="toggle-btn" data-pkg="event">Event Package</button>
-      </div>
-    </div>
-
-    <!-- HOUSEHOLD -->
-    <div class="pkg-view active r" id="pkg-household">
-      <div class="sub-tabs">
-        <button class="sub-tab active" data-sub="essential">The Essential</button>
-        <button class="sub-tab" data-sub="unlimited">The Unlimited</button>
-      </div>
-
-      <!-- The Essential -->
-      <div class="sub-panel active" id="sub-essential">
-        <div class="hh-card">
-          <p class="pkg-eyebrow">The Essential</p>
-          <h3>Your monthly water. Handled.</h3>
-          <p>Subscribe to The Essential and receive packs of 12 × 50cl Marpay bottles delivered to your door every month. No weekly trips. No running out mid-week. Just water, when and where you need it.</p>
-          <div class="price-block">
-            <div class="pb-left">
-              <div class="pb-price">₦1,500<span style="font-size:.9rem;font-weight:400;color:rgba(255,255,255,.4)">/pack</span></div>
-              <div class="pb-detail">10 – 15 packs/month<br>120 – 180 bottles delivered</div>
-            </div>
-            <div class="pb-divider"></div>
-            <div class="pb-right">
-              <div class="pb-from">From ₦15,000<span style="font-size:.9rem;font-weight:400;color:rgba(255,255,255,.4)">/month</span></div>
-              <div class="pb-range">Up to ₦22,500/month</div>
-            </div>
-          </div>
-          <p class="hh-benefit">One subscription. Zero errands. Water sorted before you even think about it.</p>
-          <a href="#subscribe" class="btn btn-cta">Subscribe to The Essential →</a>
+    <div class="showcase-grid r2">
+      <!-- REPLACE: Add your showcase images below -->
+      <div class="showcase-card">
+        <div class="sc-img">
+          <div class="sc-ico">💧</div>
+          <div class="sc-ph">[ INSERT: Single Bottle Photo ]<br>Replace this placeholder with your product image</div>
+        </div>
+        <div class="sc-body">
+          <h3>Marpay Plus 75cl Bottle</h3>
+          <p>Clean, sealed, factory-direct. The everyday water your household runs on. 12 per pack.</p>
         </div>
       </div>
-
-      <!-- The Unlimited -->
-      <div class="sub-panel" id="sub-unlimited">
-        <div class="hh-card">
-          <div class="hh-badge">Recommended for Offices</div>
-          <p class="pkg-eyebrow">The Unlimited</p>
-          <h3>More water. Better value. No interruptions.</h3>
-          <p>Subscribe to The Unlimited and receive packs of 12 × 50cl Marpay bottles delivered to your door every month — in larger volumes, at a better rate. Designed for homes and offices that run on water.</p>
-          <div class="price-block">
-            <div class="pb-left">
-              <div class="pb-price">₦1,500<span style="font-size:.9rem;font-weight:400;color:rgba(255,255,255,.4)">/pack</span></div>
-              <div class="pb-detail">20 – 30 packs/month<br>240 – 360 bottles delivered</div>
-            </div>
-            <div class="pb-divider"></div>
-            <div class="pb-right">
-              <div class="pb-from">From ₦30,000<span style="font-size:.9rem;font-weight:400;color:rgba(255,255,255,.4)">/month</span></div>
-              <div class="pb-range">Up to ₦45,000/month</div>
-            </div>
-          </div>
-          <p class="hh-benefit">The more packs you order, the more you save on delivery. Built for the homes and offices that never want to think about water again.</p>
-          <a href="#subscribe" class="btn btn-cta">Subscribe to The Unlimited →</a>
+      <div class="showcase-card">
+        <div class="sc-img">
+          <div class="sc-ico">📦</div>
+          <div class="sc-ph">[ INSERT: Pack / Case Photo ]<br>Replace this placeholder with your product image</div>
+        </div>
+        <div class="sc-body">
+          <h3>Standard Water Pack</h3>
+          <p>12 bottles neatly packed. Easy to store, easy to stack. Your entire family's week sorted in one pack.</p>
         </div>
       </div>
-    </div>
-
-    <!-- EVENT -->
-    <div class="pkg-view r" id="pkg-event">
-      <div class="event-header">
-        <p class="pkg-eyebrow">Event Package</p>
-        <h3>Water for your event. Branded with your name.</h3>
-        <p>Marpay Plus supplies event planners with bulk 50cl bottled water delivered to your venue. Order 50 packs or more and we add something no off-the-shelf water can offer: your event name or brand on every bottle.</p>
-      </div>
-      <div class="tier-cards">
-        <div class="tier-card">
-          <div class="tier-name">Starter</div>
-          <div class="tier-range">30 – 49 packs</div>
-          <div class="tier-price">₦1,500<span>/pack</span></div>
-          <div class="tier-total">Total from ₦45,000</div>
-          <div class="tier-label"><div class="tick no">✕</div> No custom label</div>
+      <div class="showcase-card">
+        <div class="sc-img">
+          <div class="sc-ico">🏷️</div>
+          <div class="sc-ph">[ INSERT: Branded Bottle Photo ]<br>Replace this placeholder with your product image</div>
         </div>
-        <div class="tier-card featured">
-          <div class="tier-badge">Most Popular</div>
-          <div class="tier-name">Growth</div>
-          <div class="tier-range">50 – 99 packs</div>
-          <div class="tier-price">₦1,455<span>/pack</span></div>
-          <div class="tier-total">From ₦72,750 · Save ₦2,250</div>
-          <div class="tier-label"><div class="tick yes">✓</div> Custom label included</div>
+        <div class="sc-body">
+          <h3>Custom Branded Bottles</h3>
+          <p>Your event name or brand on every bottle. Available from 50 packs. The detail people actually notice.</p>
         </div>
-        <div class="tier-card">
-          <div class="tier-name">Premium</div>
-          <div class="tier-range">100 packs+</div>
-          <div class="tier-price">₦1,425<span>/pack</span></div>
-          <div class="tier-total">From ₦142,500 · Save ₦7,500</div>
-          <div class="tier-label"><div class="tick yes">✓</div> Custom label included</div>
-        </div>
-      </div>
-      <div class="event-cta">
-        <a href="#subscribe" class="btn btn-cta">Order Your Event Package →</a>
-        <p class="event-fine">Custom label details and artwork requirements confirmed at order. Pricing subject to revision.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- 05 HOW IT WORKS -->
-<section class="how" id="how">
+<!-- ======== PRICING ======== -->
+<section class="pricing-sec" id="pricing">
   <div class="wrap">
-    <div class="r">
-      <span class="eyebrow">Process</span>
-      <h2 class="h2">Two steps to never running<br>out of water again.</h2>
+    <div class="pricing-hdr r">
+      <div class="section-tag">Pricing That Makes Sense</div>
+      <h2 class="section-title" style="text-align:center">The Price Is Already <span class="gld">Ridiculously Fair.</span><br>Pay Online & Make It <span class="hl">Even Better.</span></h2>
+      <p>Compare this to what you're paying in Shoprite, everyday. We're giving you factory-direct water + free delivery for LESS. Minimum order: 10 packs.</p>
+      <div class="online-badge">⚡ PAY ONLINE → SAVE AN EXTRA ₦1,000 OFF YOUR TOTAL ORDER</div>
     </div>
-    <div class="how-steps r">
+
+    <!-- TABS -->
+    <div class="pricing-tabs r">
+      <button class="ptab active" data-tab="household">For Households & Offices</button>
+      <button class="ptab" data-tab="event">For Events</button>
+    </div>
+
+    <!-- HOUSEHOLD PRICING -->
+    <div class="ptab-view active r2" id="tab-household">
+      <div class="pricing-cards">
+
+        <!-- Starter -->
+        <div class="pc r">
+          <div class="pc-name">Starter Pack</div>
+          <div class="pc-title">For Small Households</div>
+          <div class="pc-vol">10 packs · 120 bottles<br>Perfect for 2–4 people</div>
+          <div>
+            <div class="pc-price-big"><span class="cur">₦</span>1,700<span class="ppu">/pack</span></div>
+            <div class="pc-total">Total: ₦17,000</div>
+            <div class="pc-online">
+              <div class="ol-lbl">💳 Pay Online Price</div>
+              <div class="ol-price">₦16,000 total</div>
+              <div class="ol-save">You save ₦1,000 instantly</div>
+            </div>
+          </div>
+          <div class="pc-divider"></div>
+          <ul class="pc-feats">
+            <li><span class="ck">✓</span> 10 packs (120 × 75cl bottles)</li>
+            <li><span class="ck">✓</span> Delivered to your estate in 24hrs</li>
+            <li><span class="ck">✓</span> Factory sealed & NAFDAC-certified</li>
+            <li><span class="ck no">✕</span> Custom branding not included</li>
+          </ul>
+          <a href="#subscribe" class="pc-cta-btn outline">Order Starter Pack →</a>
+        </div>
+
+        <!-- Family (MOST POPULAR) -->
+        <div class="pc featured r2">
+          <div class="pc-badge">⭐ Most Popular</div>
+          <div class="pc-name">Family Pack</div>
+          <div class="pc-title">For Busy Households</div>
+          <div class="pc-vol">20 packs · 240 bottles<br>Perfect for 4–8 people</div>
+          <div>
+            <div class="pc-price-big"><span class="cur">₦</span>1,680<span class="ppu">/pack</span></div>
+            <div class="pc-total">Total: ₦33,600 · Save ₦400 vs Starter</div>
+            <div class="pc-online">
+              <div class="ol-lbl">💳 Pay Online Price</div>
+              <div class="ol-price">₦32,600 total</div>
+              <div class="ol-save">Save ₦1,000 + bonus ₦400 vs starter rate</div>
+            </div>
+          </div>
+          <div class="pc-divider"></div>
+          <ul class="pc-feats">
+            <li><span class="ck">✓</span> 20 packs (240 × 75cl bottles)</li>
+            <li><span class="ck">✓</span> Delivered to your estate in 24hrs</li>
+            <li><span class="ck">✓</span> Factory sealed & NAFDAC-certified</li>
+            <li><span class="ck">✓</span> Priority processing & support</li>
+          </ul>
+          <a href="#subscribe" class="pc-cta-btn primary">Order Family Pack →</a>
+        </div>
+
+        <!-- Premium/Office -->
+        <div class="pc r3">
+          <div class="pc-name">Premium Pack</div>
+          <div class="pc-title">For Offices & Large Homes</div>
+          <div class="pc-vol">30 packs · 360 bottles<br>Homes with 8+ or small offices</div>
+          <div>
+            <div class="pc-price-big"><span class="cur">₦</span>1,650<span class="ppu">/pack</span></div>
+            <div class="pc-total">Total: ₦49,500 · Save ₦1,500 vs Starter</div>
+            <div class="pc-online">
+              <div class="ol-lbl">💳 Pay Online Price</div>
+              <div class="ol-price">₦48,500 total</div>
+              <div class="ol-save">Best per-bottle value for households</div>
+            </div>
+          </div>
+          <div class="pc-divider"></div>
+          <ul class="pc-feats">
+            <li><span class="ck">✓</span> 30 packs (360 × 75cl bottles)</li>
+            <li><span class="ck">✓</span> Delivered to your estate in 24hrs</li>
+            <li><span class="ck">✓</span> Factory sealed & NAFDAC-certified</li>
+            <li><span class="ck">✓</span> Dedicated order coordinator</li>
+          </ul>
+          <a href="#subscribe" class="pc-cta-btn outline">Order Premium Pack →</a>
+        </div>
+
+        <!-- Awoof Banner Card -->
+        <div class="pc r3" style="background:rgba(245,166,35,.04);border-color:rgba(245,166,35,.25);display:flex;flex-direction:column;justify-content:center;text-align:center;align-items:center;gap:1rem">
+          <div style="font-size:2.5rem">🧮</div>
+          <div style="font-size:.75rem;font-weight:700;color:var(--gold);text-transform:uppercase;letter-spacing:.12em">Quick Maths</div>
+          <div style="font-size:1rem;font-weight:700;color:#fff;line-height:1.5">Supermarket: <span style="color:var(--red)">₦250/bottle</span><br>Marpay: <span style="color:var(--green)">₦142/bottle</span></div>
+          <div style="font-size:.85rem;color:var(--muted);line-height:1.6">On 20 packs (240 bottles), you save over <strong style="color:#fff">₦25,920</strong> compared to buying retail. That's almost <strong style="color:var(--gold)">a free pack.</strong></div>
+          <a href="#subscribe" class="btn btn-gold" style="font-size:.85rem;padding:.75rem 1.5rem;width:100%;justify-content:center;margin-top:.5rem">I Want This Deal →</a>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- EVENT PRICING -->
+    <div class="ptab-view r2" id="tab-event">
+      <div class="event-pricing">
+        <div class="ep-intro">
+          <h3>Water For Your Event — Branded With Your Name</h3>
+          <p>Hosting an event in Lagos? We deliver bulk water to your venue in Gbagada, Millennium, Ogudu GRA, Magodo, Lekki, VI, Ikoyi, or Surulere. Order 50 packs or more and your brand goes on every bottle — at no extra charge.</p>
+        </div>
+        <div class="ep-cards">
+          <div class="ep-card">
+            <div class="ep-tier">Event Starter</div>
+            <div class="ep-range">10 – 29 packs</div>
+            <div class="ep-price">₦1,700<span>/pack</span></div>
+            <div class="ep-total">From ₦17,000 total</div>
+            <div class="ep-online">💳 Online: ₦1,000 off total</div>
+            <div class="ep-feature"><div class="ep-ck no">✕</div> No custom label</div>
+            <div class="ep-feature"><div class="ep-ck yes">✓</div> 24hr delivery</div>
+          </div>
+          <div class="ep-card featured">
+            <div class="tier-badge">Best for Events</div>
+            <div class="ep-tier">Event Premium</div>
+            <div class="ep-range">50 – 99 packs</div>
+            <div class="ep-price">₦1,620<span>/pack</span></div>
+            <div class="ep-total">From ₦81,000 · Save ₦4,000 vs entry</div>
+            <div class="ep-online">💳 Online: ₦80,000 (save ₦1,000 more)</div>
+            <div class="ep-feature"><div class="ep-ck yes">✓</div> FREE Custom Label on Every Bottle</div>
+            <div class="ep-feature"><div class="ep-ck yes">✓</div> Priority Event Delivery</div>
+          </div>
+          <div class="ep-card">
+            <div class="ep-tier">Grand Event</div>
+            <div class="ep-range">100+ packs</div>
+            <div class="ep-price">₦1,600<span>/pack</span></div>
+            <div class="ep-total">From ₦160,000 · Max savings</div>
+            <div class="ep-online">💳 Online: ₦1,000 off + best rate</div>
+            <div class="ep-feature"><div class="ep-ck yes">✓</div> FREE Custom Label Included</div>
+            <div class="ep-feature"><div class="ep-ck yes">✓</div> Dedicated Event Coordinator</div>
+          </div>
+        </div>
+        <div class="ep-cta">
+          <a href="#subscribe" class="btn btn-primary btn-lg">Order Event Pack →</a>
+          <p class="ep-fine">Custom label artwork requirements shared at time of order. Delivery within 24hrs of confirmation in select Lagos estates.</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ======== HOW IT WORKS ======== -->
+<section class="how-sec" id="how">
+  <div class="wrap">
+    <div class="how-hdr r">
+      <div class="section-tag">How It Works</div>
+      <h2 class="section-title" style="text-align:center">You'll Have Water <span class="hl">Before Tomorrow Ends.</span></h2>
+      <p>Four simple steps. No stress. No chasing. No wahala.</p>
+    </div>
+    <div class="how-steps r2">
       <div class="how-step">
         <div class="step-num">01</div>
-        <div>
-          <h4>Fill the form.</h4>
-          <p>Tell us your package, your location, and how many packs you need. It takes less than 2 minutes.</p>
-        </div>
+        <h4>Fill the Order Form</h4>
+        <p>Choose your package, tell us your estate, and select how many packs. It takes less than 90 seconds.</p>
       </div>
       <div class="how-step">
         <div class="step-num">02</div>
-        <div>
-          <h4>We confirm and deliver.</h4>
-          <p>Your water arrives. Your subscription runs itself every month. No chasing, no follow-up.</p>
-        </div>
+        <h4>Choose How You Pay</h4>
+        <p>Pay online (save ₦1,000 instantly) or choose to pay on delivery. Both work. Paying online gives you priority processing.</p>
+      </div>
+      <div class="how-step">
+        <div class="step-num">03</div>
+        <h4>We Confirm Your Order</h4>
+        <p>Our team calls or WhatsApps you to confirm details and delivery time. Usually within a few hours of your order.</p>
+      </div>
+      <div class="how-step">
+        <div class="step-num">04</div>
+        <h4>Your Water Arrives in 24hrs</h4>
+        <p>Within 24 hours of confirmation, your water is at your gate. You just have to be home to receive it.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- 06 CUSTOM BRANDING -->
+<!-- ======== TESTIMONIALS ======== -->
+<section class="testimonials-sec" id="reviews">
+  <div class="wrap">
+    <div class="t-hdr r">
+      <div class="section-tag">Real People. Real Results.</div>
+      <h2 class="section-title" style="text-align:center">The Residents of Lagos' Finest Estates<br><span class="hl">Already Know About Us.</span></h2>
+      <p>These are the people your neighbors are trusting with their water supply.</p>
+    </div>
+    <div class="testimonial-grid r2">
+      <div class="testimonial-card">
+        <div class="tc-stars">★★★★★</div>
+        <p class="tc-text">"I was skeptical at first. Then I realized I hadn't sent anyone to buy water in 3 months. That alone is worth 10 times the subscription price. These guys are serious."</p>
+        <div class="tc-author"><div class="tc-av av1">AO</div><div><div class="tc-name">Adaeze Okafor</div><div class="tc-loc">Lekki Phase 1 · Family Pack</div></div></div>
+      </div>
+      <div class="testimonial-card">
+        <div class="tc-stars">★★★★★</div>
+        <p class="tc-text">"My event in Ikoyi was supposed to have 200 guests and I ordered 60 packs. Everything came the day before, branded with my company name. My clients were impressed. The water even looked premium."</p>
+        <div class="tc-author"><div class="tc-av av2">TK</div><div><div class="tc-name">Tokunbo Kalesanwo</div><div class="tc-loc">Ikoyi · Event Premium Pack</div></div></div>
+      </div>
+      <div class="testimonial-card">
+        <div class="tc-stars">★★★★★</div>
+        <p class="tc-text">"I'm in Magodo Phase 2. I've used three water suppliers before. Marpay Plus is the only one that actually delivers when they say they will. That consistency alone keeps me renewing every time."</p>
+        <div class="tc-author"><div class="tc-av av3">BB</div><div><div class="tc-name">Blessing Badmus</div><div class="tc-loc">Magodo Phase 2 · Premium Pack</div></div></div>
+      </div>
+      <div class="testimonial-card">
+        <div class="tc-stars">★★★★★</div>
+        <p class="tc-text">"I did the maths. I was spending over ₦30,000 monthly buying water in bits from the supermarket. Now I pay less, get more, and it comes to my door. Why did I wait this long?"</p>
+        <div class="tc-author"><div class="tc-av av4">CM</div><div><div class="tc-name">Chidi Madubuike</div><div class="tc-loc">Victoria Island · Office Order</div></div></div>
+      </div>
+      <div class="testimonial-card">
+        <div class="tc-stars">★★★★★</div>
+        <p class="tc-text">"My husband thought I was wasting money subscribing. Now he's the one reminding me to renew. The water quality is genuinely different — you can taste that it's fresh."</p>
+        <div class="tc-author"><div class="tc-av av5">RN</div><div><div class="tc-name">Rachael Nzekwe</div><div class="tc-loc">Gbagada Estate · Family Pack</div></div></div>
+      </div>
+      <div class="testimonial-card">
+        <div class="tc-stars">★★★★★</div>
+        <p class="tc-text">"I run a corporate office in Surulere. Getting water was always a logistical headache. Now our office manager just calls Marpay and it's handled. Professional, reliable, affordable."</p>
+        <div class="tc-author"><div class="tc-av av6">FO</div><div><div class="tc-name">Funmi Ojo</div><div class="tc-loc">Surulere · Monthly Office Order</div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======== CUSTOM BRANDING ======== -->
 <section class="branding-sec" id="branding">
   <div class="wrap">
-    <div class="branding-grid r">
-      <div>
+    <div class="branding-inner">
+      <div class="r">
         <span class="eyebrow">Custom Branding</span>
-        <h2 class="h2">Put your name on every bottle.</h2>
-        <p class="lead">Order 50 packs or more and every bottle at your event carries your name, your event title, or your brand. It is the detail guests notice — and the one they remember.</p>
-        <ul class="brand-bullets">
-          <li>Available from 50 packs and above</li>
-          <li>Your event name, brand name, or custom artwork on every bottle</li>
-          <li>Artwork requirements and file formats shared at the time of order</li>
-          <li>Included at no extra charge — built into the Growth and Premium tiers</li>
+        <h2 class="branding-heading">Put Your Name On Every Bottle.<br><span style="color:var(--cyan)">Make Every Sip Count.</span></h2>
+        <p class="branding-sub">Hosting a wedding, corporate dinner, product launch, or birthday bash? Order 50 packs or more and we print YOUR NAME on every single bottle. It's the detail your guests will notice and talk about.</p>
+        <ul class="branding-list">
+          <li><div class="bl-dot">✓</div> Available from 50 packs (Event Premium tier & above)</li>
+          <li><div class="bl-dot">✓</div> Your event name, brand logo, or custom artwork on every bottle</li>
+          <li><div class="bl-dot">✓</div> Professional label design — artwork requirements confirmed at order</li>
+          <li><div class="bl-dot">✓</div> Included FREE — no hidden charges, it's built into the price</li>
+          <li><div class="bl-dot">✓</div> Delivered to your Lagos venue within 24hrs of confirmation</li>
         </ul>
-        <p class="brand-note">Available from 50 packs. Artwork requirements shared at the time of order.</p>
-        <a href="#subscribe" class="btn btn-cta">Order Branded Water →</a>
+        <a href="#subscribe" class="btn btn-primary">Order Branded Water →</a>
       </div>
-      <div class="brand-visual">
-        <div class="bv-icon">🍶</div>
-        <div class="bv-tag">YOUR BRAND HERE</div>
-        <p style="margin-top:.85rem">Custom-labelled 50cl Marpay bottles<br>delivered to your event venue in Lagos</p>
+      <div class="r2">
+        <div class="bv-card">
+          <div class="bv-img">
+            <!-- REPLACE: Add branded bottle image here -->
+            <div class="bv-img-icon">🍶</div>
+            <div class="bv-img-ph">[ INSERT: Branded Bottle Product Photo ]<br>Replace this with your branded bottle image</div>
+            <div class="bv-img-tag">YOUR BRAND HERE</div>
+          </div>
+          <div class="bv-body">
+            <p>Custom-branded 75cl Marpay bottles<br>delivered to your event venue in Lagos</p>
+            <div class="bv-badge">FREE from 50 packs</div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- 07 STORAGE FAQ -->
-<section class="storage" id="storage">
+<!-- ======== GUARANTEE ======== -->
+<section class="guarantee-sec" id="guarantee">
+  <div class="wrap r">
+    <div class="guarantee-card">
+      <div class="g-icon">🛡️</div>
+      <h2 class="g-title">Our 24-Hour Delivery Promise</h2>
+      <p class="g-text">
+        We know what it means to order something in Lagos and not receive it on time. That is why we stand firmly behind this: <strong>once we confirm your order, your water arrives within 24 hours — or we make it right.</strong> No excuses. No runarounds. Just water at your door when we say it will be there.
+        <br><br>
+        If for any reason your delivery fails after confirmation, contact us directly on WhatsApp at <strong>+2348124266524</strong> and we will resolve it personally and immediately.
+      </p>
+      <a href="#subscribe" class="btn btn-primary btn-lg">Order With Confidence →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ======== MINI BANNER ======== -->
+<div class="mini-banner r">
+  <div class="mb-inner">
+    <h3>STOP PAYING <span class="red">₦250</span> PER BOTTLE IN THE SUPERMARKET.<br>PAY <span class="gold">₦142</span> AND GET IT <span class="cyan">DELIVERED.</span></h3>
+    <p>The same water. Better quality. Delivered to your gate. Pay online right now and save an extra ₦1,000.</p>
+    <a href="#subscribe" class="btn btn-primary btn-lg">Get My Water Now →</a>
+  </div>
+</div>
+
+<!-- ======== FAQ ======== -->
+<section class="faq-sec" id="faq">
   <div class="wrap">
-    <div class="storage-inner r">
-      <h2 class="h2">A quick word on storing your water.</h2>
-      <div class="faq-list">
-        <div class="faq-item">
-          <button class="faq-btn" data-faq="0">Where should I store my water packs? <span class="faq-arrow">▾</span></button>
-          <div class="faq-body" id="faq-0">Store packs upright in a cool, dry space — a pantry, store room, or kitchen corner works well.</div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-btn" data-faq="1">Can I leave them near a window or outside? <span class="faq-arrow">▾</span></button>
-          <div class="faq-body" id="faq-1">Avoid direct sunlight and keep away from strong-smelling chemicals or cleaning products.</div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-btn" data-faq="2">How long do the packs stay fresh? <span class="faq-arrow">▾</span></button>
-          <div class="faq-body" id="faq-2">Sealed packs stay fresh. Once a pack is opened, finish it within the week.</div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-btn" data-faq="3">How much space do I need for 10 packs? <span class="faq-arrow">▾</span></button>
-          <div class="faq-body" id="faq-3">Ten packs fit comfortably in a standard store room corner or large kitchen cabinet — roughly the size of a small shelf.</div>
-        </div>
+    <div class="faq-hdr r">
+      <div class="section-tag">Common Questions</div>
+      <h2 class="section-title" style="text-align:center">Every Question You Have,<br><span class="hl">Answered Honestly.</span></h2>
+      <p>If you're still wondering, you're not alone. Here's everything you need to know before you order.</p>
+    </div>
+    <div class="faq-list r2">
+      <div class="faq-item">
+        <button class="faq-q" data-faq="0">Is my estate included in your delivery coverage? <span class="faq-arrow">▾</span></button>
+        <div class="faq-ans" id="fa-0">We currently deliver to: <strong>Gbagada Estate, Millennium Estate, Ogudu GRA, Magodo Phase 1, Magodo Phase 2, Lekki Phase 1, Victoria Island, Ikoyi, and Surulere</strong>. If your estate is on this list, you're covered. If not, join our WhatsApp waitlist at +2348124266524 — we're expanding to new areas soon.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" data-faq="1">What is the minimum order? <span class="faq-arrow">▾</span></button>
+        <div class="faq-ans" id="fa-1">The minimum order is <strong>10 packs</strong> (120 × 75cl bottles). This is the threshold that allows us to deliver to your estate efficiently and keeps costs reasonable for everyone.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" data-faq="2">How does the ₦1,000 online payment discount work? <span class="faq-arrow">▾</span></button>
+        <div class="faq-ans" id="fa-2">When you choose to pay online (via card or transfer through Paystack), the ₦1,000 discount is applied automatically to your total order — regardless of your package or quantity. It's our way of rewarding you for confirming your order quickly. Pay online during checkout and the discount shows before you complete payment.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" data-faq="3">How quickly will I receive my order? <span class="faq-arrow">▾</span></button>
+        <div class="faq-ans" id="fa-3"><strong>Within 24 hours of order confirmation.</strong> After you place your order, our team calls or WhatsApps you to confirm details. Once confirmed, your water is dispatched and arrives at your gate within the next 24 hours. Customers who pay online typically receive priority processing.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" data-faq="4">Is the water NAFDAC certified? How do I know it's safe? <span class="faq-arrow">▾</span></button>
+        <div class="faq-ans" id="fa-4">Yes. All Marpay water products are <strong>NAFDAC certified and compliant</strong>. Every bottle is sealed at the factory and tested before packaging. We go directly from factory to your door — no storage in third-party warehouses, no compromise on freshness or safety.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" data-faq="5">Can I pay on delivery instead of online? <span class="faq-arrow">▾</span></button>
+        <div class="faq-ans" id="fa-5">Yes. We accept cash or transfer on delivery. However, the <strong>₦1,000 discount is exclusively available to customers who pay online</strong> during checkout. Pay-on-delivery orders will be charged the standard pack price with no discount.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" data-faq="6">How much space do I need for 10 packs? <span class="faq-arrow">▾</span></button>
+        <div class="faq-ans" id="fa-6">Ten packs fit comfortably in a standard store room corner, large kitchen cabinet, or pantry. Stack them neatly and they take up roughly the space of a small shelf. Store upright in a cool, dry spot away from direct sunlight and strong-smelling chemicals.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" data-faq="7">What if I have a large event and need custom labels? <span class="faq-arrow">▾</span></button>
+        <div class="faq-ans" id="fa-7">Custom-branded bottles are available from <strong>50 packs and above</strong> (Event Premium tier). It's included FREE — no extra charge. Once you place your order, we'll share artwork requirements and file formats with you. Your branded bottles will be ready and delivered to your venue within 24 hours of design confirmation.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" data-faq="8">What if my delivery is late or doesn't arrive? <span class="faq-arrow">▾</span></button>
+        <div class="faq-ans" id="fa-8">We back our 24-hour promise seriously. If your delivery fails after confirmation, <strong>contact us immediately on WhatsApp: +2348124266524</strong>. We will resolve it personally. Your satisfaction is not something we take lightly — our reputation in these estates depends on it.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" data-faq="9">Can I place a recurring or subscription order? <span class="faq-arrow">▾</span></button>
+        <div class="faq-ans" id="fa-9">Absolutely. Many of our customers order monthly. Once you've placed your first order and received it, simply WhatsApp us or fill the order form again. Repeat customers receive priority scheduling. You can also set a reminder with us — just mention it on WhatsApp and we'll prompt you when it's time to reorder.</div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- 08 SUBSCRIPTION FORM -->
+<!-- ======== ORDER FORM ======== -->
 <section class="form-sec" id="subscribe">
   <div class="wrap">
-    <div class="r">
-      <span class="eyebrow">Get Started</span>
-      <h2 class="h2">Start your subscription.</h2>
-      <p class="lead">Fill in the form and we'll be in touch within 24 hours to confirm your delivery.</p>
+    <div class="form-hdr r">
+      <div class="section-tag">Place Your Order</div>
+      <h2 class="section-title" style="text-align:center">Ready to Never Run Out of Water Again?<br><span class="gld">Order Now. Receive in 24 Hours.</span></h2>
+      <p>Fill in the form below. We'll confirm your order and have your water at your gate before tomorrow ends. Pay online and save ₦1,000 immediately.</p>
     </div>
-    <div class="form-card r">
-      <div id="form-body">
-        <form id="sub-form" novalidate>
-          <div class="form-grid">
-            <div class="fg">
-              <label for="f-name">Full Name *</label>
-              <input type="text" id="f-name" placeholder="e.g. Adaeze Okonkwo" required>
-            </div>
-            <div class="fg">
-              <label for="f-phone">Phone Number *</label>
-              <input type="tel" id="f-phone" placeholder="e.g. 0801 234 5678" required>
-            </div>
-            <div class="fg full">
-              <label for="f-email">Email Address <span style="opacity:.42">(optional)</span></label>
-              <input type="email" id="f-email" placeholder="e.g. adaeze@email.com">
-            </div>
-            <div class="fg full">
-              <label for="f-pkg">I am subscribing as *</label>
-              <select id="f-pkg" required>
-                <option value="" disabled selected>Select a package</option>
-                <option value="essential">Household Package — The Essential</option>
-                <option value="unlimited">Household Package — The Unlimited</option>
-                <option value="event">Event Package</option>
-              </select>
-            </div>
-            <div class="fg">
-              <label for="f-loc">Location in Lagos *</label>
-              <input type="text" id="f-loc" placeholder="e.g. Lekki Phase 1, VI, Surulere" required>
-            </div>
-            <div class="fg">
-              <label for="f-packs">Number of Packs *</label>
-              <input type="number" id="f-packs" placeholder="Min 10 / 20 / 30 by package" min="1" required>
-            </div>
-            <!-- Event conditionals -->
-            <div class="fg cond full" id="cond-date">
-              <label for="f-edate">Event Date</label>
-              <input type="date" id="f-edate">
-            </div>
-            <div class="fg cond full" id="cond-branded">
-              <label>Branded Bottles? <span style="opacity:.42">(optional)</span></label>
-              <div class="yn-row">
-                <label class="yn-opt" id="yn-yes"><input type="radio" name="branded" value="yes"> Yes, I'd like branded bottles</label>
-                <label class="yn-opt" id="yn-no"><input type="radio" name="branded" value="no"> No, standard bottles are fine</label>
-              </div>
-            </div>
-            <div class="fg full">
-              <label for="f-notes">Additional Notes <span style="opacity:.42">(optional)</span></label>
-              <textarea id="f-notes" rows="3" placeholder="Delivery instructions, gate details, or any special requests"></textarea>
+    <div class="form-wrap r2">
+      <div class="form-card">
+        <div id="form-body">
+
+          <!-- Payment method -->
+          <div style="margin-bottom:1.5rem">
+            <div style="font-size:.82rem;font-weight:600;color:rgba(255,255,255,.5);margin-bottom:.85rem;text-transform:uppercase;letter-spacing:.1em">Choose How You Pay</div>
+            <div class="pm-select">
+              <label class="pm-opt pm-delivery" id="pm-delivery-opt">
+                <input type="radio" name="pay_method" value="delivery" id="pay-delivery">
+                <div class="pm-top"><span class="pm-ico">💵</span><span class="pm-title">Pay on Delivery</span></div>
+                <div class="pm-desc">Cash or bank transfer when your water arrives</div>
+              </label>
+              <label class="pm-opt pm-online sel" id="pm-online-opt">
+                <span class="pm-save-tag">Save ₦1,000</span>
+                <input type="radio" name="pay_method" value="online" id="pay-online" checked>
+                <div class="pm-top"><span class="pm-ico">💳</span><span class="pm-title">Pay Online Now</span></div>
+                <div class="pm-desc">Save ₦1,000 instantly. Secure card payment via Paystack.</div>
+              </label>
             </div>
           </div>
-          <button type="submit" class="submit-btn">Send My Subscription Request →</button>
-        </form>
-      </div>
-      <div class="success" id="success">
-        <div class="ck">✅</div>
-        <h3>We've received your request.</h3>
-        <p>A Marpay Plus representative will contact you within 24 hours to confirm your order and delivery details.</p>
+
+          <!-- Order Summary -->
+          <div class="order-summary" id="order-summary">
+            <div class="os-title">📋 Order Summary</div>
+            <div class="os-row"><span class="osl">Package</span><span class="osv" id="os-pkg">—</span></div>
+            <div class="os-row"><span class="osl">Quantity</span><span class="osv" id="os-qty">—</span></div>
+            <div class="os-row"><span class="osl">Standard Total</span><span class="osv" id="os-standard">—</span></div>
+            <div class="os-row os-dis" id="os-dis-row" style="display:none"><span class="osl">💳 Online Discount</span><span class="osv">−₦1,000</span></div>
+            <div class="os-row os-total"><span class="osl" id="os-total-lbl">Total to Pay</span><span class="osv" id="os-total">—</span></div>
+          </div>
+
+          <!-- Form Fields -->
+          <form id="order-form" novalidate>
+            <div class="form-grid">
+              <div class="fg">
+                <label for="f-name">Full Name <span class="req">*</span></label>
+                <input type="text" id="f-name" placeholder="e.g. Adaeze Okonkwo" required>
+              </div>
+              <div class="fg">
+                <label for="f-phone">Phone Number <span class="req">*</span></label>
+                <input type="tel" id="f-phone" placeholder="e.g. 0801 234 5678" required>
+              </div>
+              <div class="fg full">
+                <label for="f-email">Email Address <span style="opacity:.4">(needed for online payment receipt)</span></label>
+                <input type="email" id="f-email" placeholder="e.g. adaeze@email.com">
+              </div>
+              <div class="fg full">
+                <label for="f-pkg">Select Your Package <span class="req">*</span></label>
+                <select id="f-pkg" required>
+                  <option value="" disabled selected>Choose a package...</option>
+                  <option value="starter">Starter Pack — 10 packs @ ₦1,700/pack (₦17,000)</option>
+                  <option value="family">Family Pack — 20 packs @ ₦1,680/pack (₦33,600) ⭐ Popular</option>
+                  <option value="premium">Premium Pack — 30 packs @ ₦1,650/pack (₦49,500)</option>
+                  <option value="event-starter">Event Pack — 10–29 packs @ ₦1,700/pack</option>
+                  <option value="event-premium">Event Premium — 50–99 packs @ ₦1,620/pack + FREE Label</option>
+                  <option value="event-grand">Grand Event — 100+ packs @ ₦1,600/pack + FREE Label</option>
+                </select>
+              </div>
+              <div class="fg" id="qty-field">
+                <label for="f-qty">Number of Packs <span class="req">*</span></label>
+                <input type="number" id="f-qty" placeholder="Minimum 10 packs" min="10" required>
+              </div>
+              <div class="fg">
+                <label for="f-loc">Your Delivery Estate <span class="req">*</span></label>
+                <select id="f-loc" required>
+                  <option value="" disabled selected>Select your estate...</option>
+                  <option value="Gbagada Estate">Gbagada Estate</option>
+                  <option value="Millennium Estate">Millennium Estate</option>
+                  <option value="Ogudu GRA">Ogudu GRA</option>
+                  <option value="Magodo Phase 1">Magodo Phase 1</option>
+                  <option value="Magodo Phase 2">Magodo Phase 2</option>
+                  <option value="Lekki Phase 1">Lekki Phase 1</option>
+                  <option value="Victoria Island">Victoria Island</option>
+                  <option value="Ikoyi">Ikoyi</option>
+                  <option value="Surulere">Surulere</option>
+                </select>
+              </div>
+              <div class="fg full">
+                <label for="f-address">Delivery Address / Gate Description <span class="req">*</span></label>
+                <input type="text" id="f-address" placeholder="e.g. No. 4 Peacock Close, near estate gate B" required>
+              </div>
+
+              <!-- Event conditionals -->
+              <div class="fg full field-cond" id="cond-date">
+                <label for="f-edate">Event Date</label>
+                <input type="date" id="f-edate">
+              </div>
+              <div class="fg full field-cond" id="cond-branded">
+                <label>Custom Label / Branding? <span style="opacity:.4">(For 50+ packs — Free)</span></label>
+                <select id="f-branded">
+                  <option value="no">No, standard bottles are fine</option>
+                  <option value="yes">Yes, I want custom-branded bottles</option>
+                </select>
+              </div>
+
+              <div class="fg full">
+                <label for="f-notes">Special Instructions <span style="opacity:.4">(optional)</span></label>
+                <textarea id="f-notes" rows="3" placeholder="Delivery time preference, gate code, special requests, etc."></textarea>
+              </div>
+            </div>
+
+            <div class="submit-area">
+              <button type="button" class="sbtn-online" id="btn-pay-online">
+                💳 Pay Online & Save ₦1,000 — <span id="btn-online-amount">Confirm Amount</span>
+              </button>
+              <button type="button" class="sbtn-delivery" id="btn-pay-delivery">
+                💵 Place Order (Pay on Delivery)
+              </button>
+              <p class="form-note">
+                🔒 Online payments are secured by Paystack. Your card details are never stored by us.<br>
+                Delivery: <strong style="color:#fff">Within 24 hours</strong> of order confirmation to your selected estate only.
+              </p>
+            </div>
+          </form>
+        </div>
+
+        <!-- Success State -->
+        <div class="form-success" id="form-success">
+          <div class="suc-icon" id="suc-icon">✅</div>
+          <h3 id="suc-title">Order Received!</h3>
+          <p id="suc-text">Your order has been placed successfully. Our team will contact you within a few hours to confirm your delivery details. Your water will be at your gate within 24 hours of confirmation.</p>
+          <a id="wa-confirm-link" href="https://wa.me/2348124266524" target="_blank" class="wa-btn-confirm">
+            <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            Confirm on WhatsApp
+          </a>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- 09 FOOTER -->
+<!-- ======== FOOTER ======== -->
 <footer>
   <div class="footer-inner">
     <div>
       <div class="f-logo">Marpay<span>+</span></div>
-      <div class="f-tagline">Water at your door, before you need it.</div>
+      <p class="f-desc">Factory-direct 75cl bottled water delivered to your door within 24 hours. Serving 9 select Lagos estates. Clean. Sealed. On time.</p>
+      <a href="https://wa.me/2348124266524?text=Hello%20Marpay%20Plus%2C%20I%20need%20assistance." target="_blank" class="f-wa-link">
+        <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        +2348124266524
+      </a>
     </div>
-    <div class="f-right">
-      <p>Marpay Plus is a service of Marpay Water, Lagos, Nigeria.</p>
-      <p>Delivery available within Lagos only.</p>
+    <div class="fcol">
+      <h5>Quick Links</h5>
+      <ul>
+        <li><a href="#solution">Why Choose Us</a></li>
+        <li><a href="#pricing">View Pricing</a></li>
+        <li><a href="#how">How It Works</a></li>
+        <li><a href="#branding">Custom Branding</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#subscribe">Order Now</a></li>
+      </ul>
+    </div>
+    <div class="fcol">
+      <h5>Delivery Areas</h5>
+      <ul>
+        <li><span>📍 Gbagada Estate</span></li>
+        <li><span>📍 Millennium Estate</span></li>
+        <li><span>📍 Ogudu GRA</span></li>
+        <li><span>📍 Magodo Phase 1 & 2</span></li>
+        <li><span>📍 Lekki Phase 1</span></li>
+        <li><span>📍 Victoria Island</span></li>
+        <li><span>📍 Ikoyi</span></li>
+        <li><span>📍 Surulere</span></li>
+      </ul>
     </div>
   </div>
-  <div class="footer-legal">
-    © 2025 Marpay Water. All rights reserved. Custom label minimum: 50 packs. Pricing subject to revision.
+  <div class="footer-bottom">
+    <p>© 2025 Marpay Water. All rights reserved. Custom label minimum: 50 packs. Pricing subject to revision.</p>
+    <div class="fd-delivery">✅ 24-Hour Delivery Guaranteed</div>
   </div>
 </footer>
 
+<!-- ======== SCRIPTS ======== -->
 <script>
-  // Main toggle: Household vs Event
-  document.querySelectorAll('.toggle-btn').forEach(btn => {
-    btn.addEventListener('click', () => {
-      document.querySelectorAll('.toggle-btn').forEach(b => b.classList.remove('active'));
-      document.querySelectorAll('.pkg-view').forEach(v => v.classList.remove('active'));
-      btn.classList.add('active');
-      document.getElementById('pkg-' + btn.dataset.pkg).classList.add('active');
-    });
+// =============================================
+// PAYSTACK CONFIGURATION
+// =============================================
+// 🔑 IMPORTANT: Replace with your actual Paystack public key before going live
+const PAYSTACK_PUBLIC_KEY = 'YOUR_PAYSTACK_PUBLIC_KEY_HERE';
+const WA_NUMBER = '2348124266524';
+
+// =============================================
+// PRICING TABLE
+// =============================================
+const PRICING = {
+  starter:       { label: 'Starter Pack',        pricePerPack: 1700, minQty: 10,  defaultQty: 10 },
+  family:        { label: 'Family Pack',          pricePerPack: 1680, minQty: 20,  defaultQty: 20 },
+  premium:       { label: 'Premium Pack',         pricePerPack: 1650, minQty: 30,  defaultQty: 30 },
+  'event-starter': { label: 'Event Pack',         pricePerPack: 1700, minQty: 10,  defaultQty: 10 },
+  'event-premium': { label: 'Event Premium Pack', pricePerPack: 1620, minQty: 50,  defaultQty: 50 },
+  'event-grand':   { label: 'Grand Event Pack',   pricePerPack: 1600, minQty: 100, defaultQty: 100 }
+};
+const ONLINE_DISCOUNT = 1000;
+
+// =============================================
+// UTILITY
+// =============================================
+const fmt = n => '₦' + Number(n).toLocaleString('en-NG');
+
+function calcOrder(pkgKey, qty) {
+  const p = PRICING[pkgKey];
+  if (!p) return null;
+  const validQty = Math.max(qty || p.minQty, p.minQty);
+  const standard = p.pricePerPack * validQty;
+  const online   = standard - ONLINE_DISCOUNT;
+  return { standard, online, validQty, label: p.label, pricePerPack: p.pricePerPack };
+}
+
+// =============================================
+// NAV SCROLL
+// =============================================
+const nav = document.getElementById('main-nav');
+window.addEventListener('scroll', () => {
+  nav.classList.toggle('scrolled', window.scrollY > 60);
+});
+
+// =============================================
+// SCROLL REVEAL
+// =============================================
+const ro = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.add('on');
+      ro.unobserve(e.target);
+    }
   });
+}, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
 
-  // Household sub-tabs
-  document.querySelectorAll('.sub-tab').forEach(tab => {
-    tab.addEventListener('click', () => {
-      document.querySelectorAll('.sub-tab').forEach(t => t.classList.remove('active'));
-      document.querySelectorAll('.sub-panel').forEach(p => p.classList.remove('active'));
-      tab.classList.add('active');
-      document.getElementById('sub-' + tab.dataset.sub).classList.add('active');
-    });
+document.querySelectorAll('.r,.r2,.r3').forEach(el => ro.observe(el));
+
+// =============================================
+// PRICING TABS
+// =============================================
+document.querySelectorAll('.ptab').forEach(tab => {
+  tab.addEventListener('click', () => {
+    document.querySelectorAll('.ptab').forEach(t => t.classList.remove('active'));
+    document.querySelectorAll('.ptab-view').forEach(v => v.classList.remove('active'));
+    tab.classList.add('active');
+    document.getElementById('tab-' + tab.dataset.tab).classList.add('active');
   });
+});
 
-  // Form conditionals
-  const fPkg   = document.getElementById('f-pkg');
-  const fPacks = document.getElementById('f-packs');
-  const cdDate     = document.getElementById('cond-date');
-  const cdBranded  = document.getElementById('cond-branded');
+// =============================================
+// PAYMENT METHOD TOGGLE
+// =============================================
+const pmDelivery = document.getElementById('pm-delivery-opt');
+const pmOnline   = document.getElementById('pm-online-opt');
+const payDelivery = document.getElementById('pay-delivery');
+const payOnline   = document.getElementById('pay-online');
+const btnOnline   = document.getElementById('btn-pay-online');
+const btnDelivery = document.getElementById('btn-pay-delivery');
+const osDis       = document.getElementById('os-dis-row');
+const osTotalLbl  = document.getElementById('os-total-lbl');
 
-  function updateConds() {
-    const isEvent = fPkg.value === 'event';
-    cdDate.classList.toggle('show', isEvent);
-    cdBranded.classList.toggle('show', isEvent && parseInt(fPacks.value) >= 50);
+function updatePMStyling() {
+  const isOnline = payOnline.checked;
+  pmDelivery.classList.toggle('sel', !isOnline);
+  pmOnline.classList.toggle('sel', isOnline);
+  if (osDis) osDis.style.display = isOnline ? 'flex' : 'none';
+  if (osTotalLbl) osTotalLbl.textContent = isOnline ? 'Total to Pay (Online)' : 'Total to Pay';
+  updateOrderSummary();
+}
+
+pmDelivery.addEventListener('click', () => { payDelivery.checked = true; payOnline.checked = false; updatePMStyling(); });
+pmOnline.addEventListener('click',   () => { payOnline.checked = true; payDelivery.checked = false; updatePMStyling(); });
+
+// =============================================
+// FORM LOGIC: PACKAGE SELECTION
+// =============================================
+const fPkg  = document.getElementById('f-pkg');
+const fQty  = document.getElementById('f-qty');
+const condDate    = document.getElementById('cond-date');
+const condBranded = document.getElementById('cond-branded');
+const orderSummary = document.getElementById('order-summary');
+
+function updateOrderSummary() {
+  const pkgKey = fPkg.value;
+  const qty    = parseInt(fQty.value) || 0;
+  if (!pkgKey || !qty || qty < (PRICING[pkgKey]?.minQty || 10)) {
+    orderSummary.classList.remove('vis');
+    document.getElementById('btn-online-amount').textContent = 'Confirm Amount';
+    return;
   }
-  fPkg.addEventListener('change', updateConds);
-  fPacks.addEventListener('input', updateConds);
 
-  // Radio styling
-  document.querySelectorAll('.yn-opt input[type=radio]').forEach(r => {
-    r.addEventListener('change', () => {
-      document.querySelectorAll('.yn-opt').forEach(o => o.classList.remove('sel'));
-      r.parentElement.classList.add('sel');
-    });
+  const calc = calcOrder(pkgKey, qty);
+  if (!calc) return;
+
+  const isOnline = payOnline.checked;
+
+  document.getElementById('os-pkg').textContent = calc.label;
+  document.getElementById('os-qty').textContent = calc.validQty + ' packs (' + (calc.validQty * 12) + ' bottles)';
+  document.getElementById('os-standard').textContent = fmt(calc.standard);
+  document.getElementById('os-total').textContent = isOnline ? fmt(calc.online) : fmt(calc.standard);
+  document.getElementById('btn-online-amount').textContent = fmt(calc.online);
+
+  orderSummary.classList.add('vis');
+  if (osDis) osDis.style.display = isOnline ? 'flex' : 'none';
+}
+
+function updateConditionals() {
+  const pkgKey = fPkg.value;
+  const isEvent = pkgKey && pkgKey.startsWith('event');
+  const qty = parseInt(fQty.value) || 0;
+  condDate.classList.toggle('show', isEvent);
+  condBranded.classList.toggle('show', isEvent && qty >= 50);
+
+  // Update minimum quantity
+  if (pkgKey && PRICING[pkgKey]) {
+    fQty.min = PRICING[pkgKey].minQty;
+    if (!fQty.value || parseInt(fQty.value) < PRICING[pkgKey].minQty) {
+      fQty.placeholder = 'Minimum ' + PRICING[pkgKey].minQty + ' packs';
+    }
+  }
+
+  updateOrderSummary();
+}
+
+fPkg.addEventListener('change', updateConditionals);
+fQty.addEventListener('input', updateConditionals);
+
+// =============================================
+// FORM VALIDATION
+// =============================================
+function validateForm() {
+  const name    = document.getElementById('f-name').value.trim();
+  const phone   = document.getElementById('f-phone').value.trim();
+  const email   = document.getElementById('f-email').value.trim();
+  const pkg     = fPkg.value;
+  const qty     = parseInt(fQty.value);
+  const loc     = document.getElementById('f-loc').value;
+  const address = document.getElementById('f-address').value.trim();
+
+  if (!name) { alert('Please enter your full name.'); return null; }
+  if (!phone) { alert('Please enter your phone number.'); return null; }
+  if (!pkg) { alert('Please select a package.'); return null; }
+  if (!qty || qty < (PRICING[pkg]?.minQty || 10)) {
+    alert('Minimum order is ' + (PRICING[pkg]?.minQty || 10) + ' packs for the selected package.');
+    return null;
+  }
+  if (!loc) { alert('Please select your delivery estate.'); return null; }
+  if (!address) { alert('Please enter your delivery address.'); return null; }
+
+  return { name, phone, email, pkg, qty, loc, address };
+}
+
+// =============================================
+// BUILD WHATSAPP MESSAGE
+// =============================================
+function buildWAMessage(data, paymentType, txRef) {
+  const calc = calcOrder(data.pkg, data.qty);
+  const total = paymentType === 'online' ? calc.online : calc.standard;
+  let msg = `Hello Marpay Plus! I just placed an order. Here are my details:%0A%0A`;
+  msg += `📦 *Package:* ${PRICING[data.pkg]?.label}%0A`;
+  msg += `🔢 *Quantity:* ${data.qty} packs (${data.qty * 12} bottles)%0A`;
+  msg += `📍 *Estate:* ${data.loc}%0A`;
+  msg += `🏠 *Address:* ${data.address}%0A`;
+  msg += `💰 *Total:* ${fmt(total)}%0A`;
+  msg += `💳 *Payment:* ${paymentType === 'online' ? 'Paid Online ✅' : 'Pay on Delivery'}%0A`;
+  if (txRef) msg += `🧾 *Transaction Ref:* ${txRef}%0A`;
+  msg += `%0APlease confirm my order. Thank you!`;
+  return `https://wa.me/${WA_NUMBER}?text=${msg}`;
+}
+
+// =============================================
+// SHOW SUCCESS STATE
+// =============================================
+function showSuccess(data, paymentType, txRef) {
+  document.getElementById('form-body').style.display = 'none';
+  const suc = document.getElementById('form-success');
+  suc.style.display = 'block';
+
+  if (paymentType === 'online') {
+    document.getElementById('suc-icon').textContent = '🎉';
+    document.getElementById('suc-title').textContent = 'Payment Confirmed! You Saved ₦1,000!';
+    document.getElementById('suc-text').textContent = `Your payment was successful and your order is confirmed. Your ${data.qty} packs will arrive at your gate in ${data.loc} within 24 hours. Tap below to send us your details on WhatsApp for faster processing.`;
+  } else {
+    document.getElementById('suc-icon').textContent = '✅';
+    document.getElementById('suc-title').textContent = 'Order Placed! We\'ll Be in Touch.';
+    document.getElementById('suc-text').textContent = `Your order for ${data.qty} packs has been received. Our team will contact you within a few hours to confirm your delivery to ${data.loc}. Your water arrives within 24 hours of confirmation.`;
+  }
+
+  const waLink = buildWAMessage(data, paymentType, txRef);
+  document.getElementById('wa-confirm-link').href = waLink;
+}
+
+// =============================================
+// PAYSTACK PAYMENT
+// =============================================
+function initiatePaystackPayment(data) {
+  const calc = calcOrder(data.pkg, data.qty);
+  if (!calc) return;
+
+  if (!data.email) {
+    alert('Please enter your email address to pay online. We need it for your payment receipt.');
+    document.getElementById('f-email').focus();
+    return;
+  }
+
+  const handler = PaystackPop.setup({
+    key: PAYSTACK_PUBLIC_KEY,
+    email: data.email,
+    amount: calc.online * 100, // Paystack uses kobo
+    currency: 'NGN',
+    ref: 'MP_' + Date.now() + '_' + Math.floor(Math.random() * 10000),
+    metadata: {
+      custom_fields: [
+        { display_name: 'Customer Name',  variable_name: 'name',    value: data.name },
+        { display_name: 'Phone',          variable_name: 'phone',   value: data.phone },
+        { display_name: 'Package',        variable_name: 'package', value: PRICING[data.pkg]?.label },
+        { display_name: 'Quantity',       variable_name: 'qty',     value: data.qty },
+        { display_name: 'Estate',         variable_name: 'estate',  value: data.loc },
+        { display_name: 'Address',        variable_name: 'address', value: data.address }
+      ]
+    },
+    callback: function(response) {
+      // Payment successful
+      showSuccess(data, 'online', response.reference);
+    },
+    onClose: function() {
+      // User closed payment popup — do nothing
+    }
   });
 
-  // FAQ accordion
-  document.querySelectorAll('.faq-btn').forEach(btn => {
-    btn.addEventListener('click', () => {
-      const id = btn.dataset.faq;
-      const body = document.getElementById('faq-' + id);
-      const isOpen = btn.classList.contains('open');
-      // close all
-      document.querySelectorAll('.faq-btn').forEach(b => b.classList.remove('open'));
-      document.querySelectorAll('.faq-body').forEach(b => b.classList.remove('open'));
-      if (!isOpen) {
-        btn.classList.add('open');
-        body.classList.add('open');
-      }
-    });
-  });
+  handler.openIframe();
+}
 
-  // Form submit
-  document.getElementById('sub-form').addEventListener('submit', e => {
-    e.preventDefault();
-    document.getElementById('form-body').style.display = 'none';
-    document.getElementById('success').style.display = 'block';
-  });
+// =============================================
+// BUTTON HANDLERS
+// =============================================
+btnOnline.addEventListener('click', () => {
+  const data = validateForm();
+  if (!data) return;
 
-  // Scroll reveal
-  const obs = new IntersectionObserver(entries => {
-    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('on'); obs.unobserve(e.target); } });
-  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
-  document.querySelectorAll('.r').forEach(el => obs.observe(el));
+  if (!data.email) {
+    const emailInput = document.getElementById('f-email');
+    emailInput.style.borderColor = 'var(--gold)';
+    emailInput.placeholder = 'Required for online payment';
+    emailInput.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    alert('Please enter your email address. It is required for your payment receipt.');
+    return;
+  }
+
+  initiatePaystackPayment(data);
+});
+
+btnDelivery.addEventListener('click', () => {
+  const data = validateForm();
+  if (!data) return;
+  showSuccess(data, 'delivery', null);
+});
+
+// =============================================
+// FAQ ACCORDION
+// =============================================
+document.querySelectorAll('.faq-q').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const id   = btn.dataset.faq;
+    const body = document.getElementById('fa-' + id);
+    const isOpen = btn.classList.contains('open');
+
+    document.querySelectorAll('.faq-q').forEach(b => b.classList.remove('open'));
+    document.querySelectorAll('.faq-ans').forEach(a => a.classList.remove('open'));
+
+    if (!isOpen) {
+      btn.classList.add('open');
+      body.classList.add('open');
+    }
+  });
+});
+
+// =============================================
+// PRICING CARD CTAs — scroll to form and pre-select
+// =============================================
+document.querySelectorAll('.pc-cta-btn[href="#subscribe"], a.btn[href="#subscribe"], .ep-cta a[href="#subscribe"]').forEach(link => {
+  link.addEventListener('click', e => {
+    // Just let scroll happen naturally
+  });
+});
+
+// Pricing card CTA pre-select
+function setupPricingCardLinks() {
+  const pkgMap = {
+    'starter': 'starter',
+    'family': 'family',
+    'premium': 'premium',
+    'event-starter': 'event-starter',
+    'event-premium': 'event-premium',
+    'event-grand': 'event-grand'
+  };
+  // Nothing to map directly — user can see and select from the form
+}
+setupPricingCardLinks();
+
+// =============================================
+// INITIAL STATE
+// =============================================
+pmOnline.checked = true;
+updatePMStyling();
 </script>
 </body>
 </html>
-Done
