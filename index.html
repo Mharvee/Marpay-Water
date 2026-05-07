@@ -153,7 +153,7 @@ section{padding:5.5rem 5%}
 
 .hero-headline{
   font-family:'Bebas Neue',cursive;
-  font-size:clamp(3.5rem,5.5vw,5.5rem);
+  font-size:clamp(4rem,6vw,6rem);
   color:#fff;line-height:.95;letter-spacing:.03em;margin-bottom:1.5rem;
 }
 .hero-headline .cyan{color:var(--cyan)}
@@ -180,12 +180,12 @@ section{padding:5.5rem 5%}
 .hero-product-wrap{position:relative;width:100%;max-width:460px}
 .hero-main-img{
   width:100%;aspect-ratio:4/5;
-  background:linear-gradient(135deg,var(--navy-mid) 0%,var(--navy-light) 100%);
-  border:1px solid var(--border);border-radius:var(--rlg);
+  background:transparent;
+  border:none;border-radius:var(--rlg);
   display:flex;flex-direction:column;align-items:center;justify-content:center;
-  position:relative;overflow:hidden;
+  position:relative;overflow:visible;
 }
-.hero-main-img::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 25%,rgba(0,212,245,.1) 0%,transparent 65%)}
+.hero-main-img::before{display:none}
 .hero-img-icon{font-size:5rem;position:relative;z-index:1;margin-bottom:.75rem}
 .hero-img-label{font-size:.72rem;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:.1em;position:relative;z-index:1;text-align:center;padding:0 1rem}
 .hero-img-sublabel{font-size:0.65rem;color:var(--cyan-dim);text-transform:uppercase;letter-spacing:.08em;position:relative;z-index:1;margin-top:.25rem;text-align:center}
@@ -268,7 +268,7 @@ section{padding:5.5rem 5%}
 .bi-txt p{font-size:.87rem;color:var(--muted);line-height:1.6}
 
 /* product image grid */
-.product-img-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.product-img-grid{display:grid;grid-template-columns:1fr;gap:1rem}
 .pimg-card{
   aspect-ratio:1;
   background:linear-gradient(135deg,var(--navy-mid),var(--navy-light));
@@ -386,9 +386,9 @@ section{padding:5.5rem 5%}
 .how-hdr .section-title{margin-bottom:.75rem}
 .how-hdr p{color:var(--muted);font-size:1rem}
 .how-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:2rem;position:relative}
-.how-steps::before{content:'';position:absolute;top:2.75rem;left:11%;right:11%;height:1px;background:linear-gradient(90deg,var(--cyan),rgba(0,212,245,.15));pointer-events:none}
+.how-steps::before{content:'';position:absolute;top:27px;left:calc(11% + 28px);right:calc(11% + 28px);height:2px;background:repeating-linear-gradient(90deg,var(--cyan) 0px,var(--cyan) 8px,transparent 8px,transparent 18px);pointer-events:none;opacity:0.35;}
 .how-step{text-align:center;position:relative}
-.step-num{width:56px;height:56px;border-radius:50%;border:2px solid var(--cyan);background:rgba(0,212,245,.08);font-family:'Sora',sans-serif;font-weight:800;font-size:1.2rem;color:var(--cyan);display:flex;align-items:center;justify-content:center;margin:0 auto 1.25rem;position:relative;z-index:1}
+.step-num{width:56px;height:56px;border-radius:50%;border:2px solid var(--cyan);background:#071e30;font-family:'Sora',sans-serif;font-weight:800;font-size:1.2rem;color:var(--cyan);display:flex;align-items:center;justify-content:center;margin:0 auto 1.25rem;position:relative;z-index:2}
 .how-step h4{font-size:1rem;font-weight:700;color:#fff;margin-bottom:.5rem}
 .how-step p{font-size:.87rem;color:var(--muted);line-height:1.65}
 @media(max-width:768px){.how-steps{grid-template-columns:repeat(2,1fr)}.how-steps::before{display:none}}
@@ -424,7 +424,7 @@ section{padding:5.5rem 5%}
 .branding-sub{color:var(--muted);font-size:1rem;line-height:1.8;margin-bottom:1.5rem}
 .branding-list{list-style:none;display:flex;flex-direction:column;gap:.75rem;margin-bottom:2rem}
 .branding-list li{display:flex;align-items:flex-start;gap:.75rem;font-size:.93rem;color:rgba(255,255,255,.7);line-height:1.5}
-.bl-dot{width:18px;height:18px;border-radius:50%;border:1px solid var(--cyan);background:rgba(0,212,245,.08);display:flex;align-items:center;justify-content:center;font-size:.6rem;color:var(--cyan);flex-shrink:0;margin-top:1px}
+.bl-dot{width:18px;height:18px;border-radius:50%;border:1px solid var(--cyan);background:#0A2840;display:flex;align-items:center;justify-content:center;font-size:.6rem;color:var(--cyan);flex-shrink:0;margin-top:1px}
 .bv-card{background:var(--navy);border:1px solid var(--border);border-radius:var(--rlg);overflow:hidden}
 .bv-img{
   aspect-ratio:4/3;
@@ -613,10 +613,10 @@ footer{background:#020E19;border-top:1px solid rgba(255,255,255,.05);padding:4re
     <div class="hero-left">
       <div class="hero-live"><i></i> Delivering Across Lagos Today</div>
       <h1 class="hero-headline">
-        STOP RUNNING<br>
+        <span style="font: size 100px;">STOP RUNNING<br>
         OUT OF
-        <span class="cyan">WATER</span><br>
-        <span style="font-size:70%">IN <span class="gold">YOUR OWN HOUSE.</span></span>
+        <span class="cyan">WATER</span><br></span>
+        <span style="font: size 100px;">IN <span class="gold">YOUR OWN HOUSE.</span></span>
       </h1>
       <p class="hero-sub">
         Factory-direct 75cl bottled water delivered to your door in <strong>24 hours</strong>. No traffic. No middleman. No excuses. From <strong>₦1,700/pack</strong> — straight from the source to your home.
@@ -637,17 +637,13 @@ footer{background:#020E19;border-top:1px solid rgba(255,255,255,.05);padding:4re
     </div>
 
     <div class="hero-visual">
-      <div class="hero-product-wrap">
         <div class="hero-main-img">
           <img src="hero.png">
-          <div class="hero-img-label"></div>
         </div>
         <div class="fsc fsc-1"><div class="fn">24hrs</div><div class="fl">Delivery Guaranteed</div></div>
         <div class="fsc fsc-2"><div class="fn">₦142</div><div class="fl">Per bottle — Factory Price</div></div>
         <div class="fsc fsc-3"><div class="fn">⭐ 4.9</div><div class="fl">Customer Satisfaction</div></div>
       </div>
-    </div>
-  </div>
 </section>
 
 <!-- ======== LOCATIONS MARQUEE ======== -->
@@ -793,28 +789,8 @@ footer{background:#020E19;border-top:1px solid rgba(255,255,255,.05);padding:4re
       </div>
       <div class="r2">
         <div class="product-img-grid">
-          <!-- REPLACE: Add your product images below -->
-          <div class="pimg-card">
-            <div class="pimg-icon">🍶</div>
-            <div class="pimg-label">[ Product Image 1 ]</div>
-            <div class="pimg-note">Replace with your photo</div>
-          </div>
-          <div class="pimg-card">
-            <div class="pimg-icon">📦</div>
-            <div class="pimg-label">[ Product Image 2 ]</div>
-            <div class="pimg-note">Replace with your photo</div>
-          </div>
-          <div class="pimg-card">
-            <div class="pimg-icon">💧</div>
-            <div class="pimg-label">[ Product Image 3 ]</div>
-            <div class="pimg-note">Replace with your photo</div>
-          </div>
-          <div class="pimg-card">
-            <div class="pimg-icon">✨</div>
-            <div class="pimg-label">[ Branded Bottle ]</div>
-            <div class="pimg-note">Replace with your photo</div>
-          </div>
-        </div>
+  <img src="solution.jpeg" style="width:100%;height:420px;object-fit:cover;border-radius:var(--rlg);border:1px solid var(--border);">
+</div>
         <div style="margin-top:1.25rem;background:rgba(245,166,35,.07);border:1px solid rgba(245,166,35,.2);border-radius:var(--r);padding:1.25rem;text-align:center">
           <div style="font-size:.8rem;font-weight:700;color:var(--gold);text-transform:uppercase;letter-spacing:.1em;margin-bottom:.3rem">💳 Pay Online & Save</div>
           <div style="font-size:1.05rem;font-weight:700;color:#fff">Get ₦1,000 OFF your total order</div>
@@ -837,7 +813,7 @@ footer{background:#020E19;border-top:1px solid rgba(255,255,255,.05);padding:4re
       <!-- REPLACE: Add your showcase images below -->
       <div class="showcase-card">
         <div class="sc-img">
-          <div class="sc-ico">💧</div>
+          <div class="sc-ico"><img src="girl 2.jpeg"></div>
           <div class="sc-ph">[ INSERT: Single Bottle Photo ]<br>Replace this placeholder with your product image</div>
         </div>
         <div class="sc-body">
@@ -847,8 +823,7 @@ footer{background:#020E19;border-top:1px solid rgba(255,255,255,.05);padding:4re
       </div>
       <div class="showcase-card">
         <div class="sc-img">
-          <div class="sc-ico">📦</div>
-          <div class="sc-ph">[ INSERT: Pack / Case Photo ]<br>Replace this placeholder with your product image</div>
+         <img src="standard water pack.jpeg">
         </div>
         <div class="sc-body">
           <h3>Standard Water Pack</h3>
@@ -857,8 +832,7 @@ footer{background:#020E19;border-top:1px solid rgba(255,255,255,.05);padding:4re
       </div>
       <div class="showcase-card">
         <div class="sc-img">
-          <div class="sc-ico">🏷️</div>
-          <div class="sc-ph">[ INSERT: Branded Bottle Photo ]<br>Replace this placeholder with your product image</div>
+          <img src="customize2.jpeg">
         </div>
         <div class="sc-body">
           <h3>Custom Branded Bottles</h3>
@@ -1115,17 +1089,9 @@ footer{background:#020E19;border-top:1px solid rgba(255,255,255,.05);padding:4re
         <a href="#subscribe" class="btn btn-primary">Order Branded Water →</a>
       </div>
       <div class="r2">
-        <div class="bv-card">
-          <div class="bv-img">
-            <!-- REPLACE: Add branded bottle image here -->
-            <div class="bv-img-icon">🍶</div>
-            <div class="bv-img-ph">[ INSERT: Branded Bottle Product Photo ]<br>Replace this with your branded bottle image</div>
-            <div class="bv-img-tag">YOUR BRAND HERE</div>
-          </div>
-          <div class="bv-body">
-            <p>Custom-branded 75cl Marpay bottles<br>delivered to your event venue in Lagos</p>
-            <div class="bv-badge">FREE from 50 packs</div>
-          </div>
+          <div class="bv-img" style="background:transparent;border:none;aspect-ratio:4/3;overflow:hidden;border-radius:var(--rlg);">
+  <img src="customize.jpeg" alt="Custom Branded Marpay Bottle" style="width:100%;height:100%;object-fit:cover;display:block;border-radius:var(--rlg);">
+</div>
         </div>
       </div>
     </div>
